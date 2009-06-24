@@ -1,0 +1,503 @@
+PocketPyGui Doc
+===============
+
+Introduction
+------------
+
+This tutorial assumes some knowledge
+of python and object-oriented programming. 
+Especially, ppygui uses new-style classes
+and properties. Properties are described in this
+document, you can get reference and examples `here <http://www.python.org/download/releases/2.2.3/descrintro/#property>`_ 
+for further documentation.
+However, it does not require any prior 
+knowledge of gui programming.
+
+Creating your first app
+-----------------------
+
+Most of times, a graphical handheld application is based on a main container window (the main frame), 
+on WinCe several conventions applies to this window :
+
+The main frame is divised between it's content and the command bar.
+
+'Screenshot here'
+
+* The content is the main part that displays all other 
+  child controls and windows (widgets)
+
+* The command bar contains, a shortcut action to the 
+  left, the Software Input Panel (SIP) controller in the 
+  middle and a menu to the right.
+
+* For better user experience, the content of the main frame should always be adapted to the current position of the input panel.
+
+PocketPyGui helps the programmer respecting these conventions and encapsulates a WinCE main frame in a single class : **CeFrame**
+
+We are going now to create a basic application with an empty main frame:
+
+.. sourcecode :: python
+
+  import ppygui as gui
+  # import the gui namespace
+
+  class MainFrame(gui.CeFrame):
+  # subclass to create our own main frame type
+      def __init__(self):
+           gui.CeFrame.__init__(self, title="Hello World")
+           
+  if __name__ == '__main__':
+     app = gui.Application(MainFrame())
+     # create an application bound to our main frame instance
+     app.run()
+     #launch the app !
+
+Paste this code in a python file or simply run `tut1.py <tut1.py>`_
+and you should see :
+
+'screen here'
+
+You'll notice that when you close the main frame, 
+the python interpreter exits. 
+Internally ppygui has bound the main frame 'close' event 
+( ~ signal) to the stop of our application instance. 
+We'll talk more about events and handlers later in
+this document.
+
+Populating our application
+--------------------------
+
+So far we've seen how to create a really basic application
+and main frame, in practice our main frame will be 
+populated by other child controls (~ widgets) 
+which have different usage for input and output of user data.
+For instance a **Button** control receives an user command, 
+a **Label** control displays a text to the user,  
+an **Edit** control will receive user text input. 
+More advanced controls like **List**, **Combo**, 
+**Tree**, **Table** displays information in a structured way.
+
+There are plenty of controls for different types of user input,
+and we do not talk yet about custom controls you can 
+create with the **Canvas** control. 
+We'll cover the API of these controls later. 
+Here, we will see the basic mechanism involved in ppygui 
+programming that are common to all controls.
+
+In this code we're going to add some controls to our main frame.
+We'll create a **Label**, a **Button** and an **Edit** control.
+The purpose of our (dummy) application will be to copy 
+the content of the edit into the label when we 
+press the button.
+
+You can launch `tut7.py <tut7.py>`_ to see the final 
+application.
+
+.. sourcecode :: python
+
+  import ppygui as gui
+  # import the gui namespace
+
+  class MainFrame(gui.CeFrame):
+  # subclass to create our own main frame type
+      def __init__(self):
+           gui.CeFrame.__init__(self, title="Hello World")
+           # Create some child control
+           self.text_entry = gui.Edit(self)
+           self.button = gui.Button(self, "Copy")
+           self.label = gui.Label(self)
+           
+  if __name__ == '__main__':
+     app = gui.Application(MainFrame())
+     # create an application bound to our main frame instance
+     app.run()
+     #launch the app !
+
+`tut2.py <tut2.py>`_
+
+You'll notice we give *self* as first argument to 
+the constructor of each control. 
+This way, we tell those controls that our main frame is their 
+parent, thus our controls are children of the main frame. 
+
+The second optional argument will always be the text 
+of the control (it defaults to the empty string ""). 
+This parameter is ignored where it doesn't make sense 
+for a control.
+
+Further arguments will depend on the type of control 
+constructed. 
+It is possible to initialize properties in the constructor, 
+but wait, we'll talk about properties later
+
+Now rerun the app and you'll see ... nothing new !
+Why ? Time to move to next part.
+
+Placing our controls
+--------------------
+
+We have now, a bunch of control created but we cannot see them
+yet. 
+Indeed we have not tell yet ppygui how to place these controls
+relatively to the main frame. 
+That's where sizers come. 
+Sizers help the programmer placing controls relatively 
+to one other without using absolute coordinates. 
+In mobile development, absolute coordinates are the roots of all
+evils (in desktop development too), 
+since resolution and fonts sizes may vary from a device 
+to another and a gui programmed for one device will not 
+display correctly on another.
+
+It is more effective to say : place this control after this one
+on a vertical/horizontal box or as a table, 
+and let ppygui compute the right positions and sizes for us.
+
+Sizers come in three flavors : **VBox**, **HBox**, **TBox**, 
+for VerticalBox, HorizontalBox and TableBox.
+
+* A **VBox** will pack control along a vertical line
+* A **HBox** will pack control along a horizontal line
+* A **TBox** will pack control as an array
+
+Let's use the **VBox** class in our little example: 
+
+
+.. sourcecode :: python
+
+  import ppygui as gui
+  # import the gui namespace
+
+  class MainFrame(gui.CeFrame):
+  # subclass to create our own main frame type
+      def __init__(self):
+           gui.CeFrame.__init__(self, title="Hello World")
+           # Create some child control
+           self.text_entry = gui.Edit(self)
+           self.button = gui.Button(self, "Copy")
+           self.label = gui.Label(self)
+           
+           # Place our controls in a vertical box
+           sizer = gui.VBox()
+           sizer.add(self.text_entry)
+           sizer.add(self.button)
+           sizer.add(self.label)
+           
+           # Set the vertical box as our main frame sizer
+           self.sizer = sizer
+
+  if __name__ == '__main__':
+     app = gui.Application(MainFrame())
+     # create an application bound to our main frame instance
+     app.run()
+     #launch the app !
+
+`tut3.py <tut3.py>`_
+
+Now run the app and then you should have (at least !) :
+
+'screenshot'
+
+
+There's a few things to note :
+
+* The **add** method of **VBox** will, by default, try to place the control to it's best minimal size (where all it's content is visible)
+
+* The **CeFrame** class has a **sizer** property. 
+
+Properties, as introduced in python 2.2 new style classes,
+allow to emulate attribute access using regular methods. 
+In ppygui the line 
+
+::
+
+  self.sizer = sizer 
+
+is strictly equivalent to 
+
+::
+
+  self.set_sizer(sizer)
+
+The sizer property allows to delegate the placing of controls
+to the given sizer. When our main frame is moved or resized it
+will tell it's sizer to replace the controls accordingly to 
+it's new size and position. 
+Sizers can also be added one into another, so you can do any layout you want.
+
+We'll see soon that properties are often used to manipulate ppygui objects when it makes sense.
+
+We gonna play a bit around the VBox class to see some possibilities offered by ppygui. 
+
+First we're going to aerate our frame a little by adding space around our controls, Let's :
+
+* Add white space around our controls (*border*)
+* Add white space between our controls (*spacing*)
+
+.. sourcecode :: python
+
+  import ppygui as gui
+  # import the gui namespace
+
+  class MainFrame(gui.CeFrame):
+  # subclass to create our own main frame type
+      def __init__(self):
+           gui.CeFrame.__init__(self, title="Hello World")
+           # Create some child control
+           self.text_entry = gui.Edit(self)
+           self.button = gui.Button(self, "Copy")
+           self.label = gui.Label(self)
+           
+           # Place our controls in a vertical box
+           sizer = gui.VBox(border=(2,2,2,2), spacing=2)
+           sizer.add(self.text_entry)
+           sizer.add(self.button)
+           sizer.add(self.label)
+           
+           # Set the vertical box as our main frame sizer
+           self.sizer = sizer
+
+  if __name__ == '__main__':
+     app = gui.Application(MainFrame())
+     # create an application bound to our main frame instance
+     app.run()
+     #launch the app !
+     
+`tut4.py <tut4.py>`_
+
+* The *border* argument is a tuple (left, top, right, bottom) which is respectively the space at each side of the boxed controls in pixels. Here we tell ppygui to add 2 px space around our controls
+
+* The *spacing* argument is an int which is the space between each control.
+
+Reacting to user input
+----------------------
+
+So we have our main frame and some controls in it. We can type some
+text in the edit field and press the button, but we have yet
+to implement our application logic. GUI programming is by
+definition event-driven :  on certain user input or 
+when user issues command we want our application to compute
+some stuff and/or display some results.  
+
+Events are emitted by user interaction and must be caught and handled by
+our application. 
+
+For instance, in ppygui, a button emits the 'clicked' event when the user clicks
+on it; an edit will emit the 'update' event when it's text is
+changed. An event handler is the piece of code that will be 
+executed in response to an event.
+
+To do so, ppygui exposes a simple mechanism : 
+the **bind** method. 
+
+The bind method of a control maps gui events coming 
+from the control to event handlers; it's signature is
+
+window.bind(* * kw)
+
+window.bind(event1=callback1, event2=callback2, ...)
+
+Event handlers are any python callable that takes a single argument.
+When the specified event occurs this callable will be called with an object
+wrapping event data as argument.
+
+Let's report to the console each time our button is clicked, and
+each time our edit is modified:
+
+.. sourcecode :: python
+
+  import ppygui as gui
+  # import the gui namespace
+
+  class MainFrame(gui.CeFrame):
+  # subclass to create our own main frame type
+      def __init__(self):
+           gui.CeFrame.__init__(self, title="Hello World")
+           # Create some child control
+           self.text_entry = gui.Edit(self)
+           self.button = gui.Button(self, "Copy")
+           self.label = gui.Label(self)
+           
+           # Place our controls in a vertical box
+           sizer = gui.VBox(border=(2,2,2,2), spacing=2)
+           sizer.add(self.text_entry)
+           sizer.add(self.button)
+           sizer.add(self.label)
+           
+           # Set the vertical box as our main frame sizer
+           self.sizer = sizer
+           
+           # Set the event handler for the button clicked event
+           self.button.bind(clicked=self.on_click)
+           # Set the event handler for the edit update event
+           self.text_entry.bind(update=self.on_text_update)
+      
+       def on_click(self, event):
+           # The code of our event handler
+           print "The button %s is clicked" %event.window
+           
+       def on_text_update(self, event):
+           # The code of our event handler
+           print "The text of edit control %s was changed" %event.window
+           
+  if __name__ == '__main__':
+     app = gui.Application(MainFrame())
+     # create an application bound to our main frame instance
+     app.run()
+     #launch the app !
+     
+`tut5.py <tut5.py>`_
+
+Click a few times the button and write some texts in the edit,
+you should get on the console lines like:
+
+::
+
+    The text of edit control <ppygui.controls.Edit object at 0x0053D690> was changed
+    The button <ppygui.controls.Button object at 0x008C4DF0> is clicked
+    
+Manipulate our controls
+-----------------------
+
+Now we know how to detect and react to user input, we will now implement our application
+logic. Remember we want the label to display the entry text when the user clicks the 'copy' button; in ppygui getting or
+setting the text of a control can be easily done with properties:
+
+Properties emulate attribute access and affectation, for instance:
+:: 
+ 
+  print control.text
+  
+will be translated into:
+::
+
+  print control.get_text()
+
+and 
+::
+
+  control.text = "some text"
+   
+will be translated into:
+::
+
+  control.set_text("some_text")
+  
+Properties of each class are referenced in the API documentation. 
+They are inherited like regular methods, and can be
+overriden by overriding the getter and setter methods 
+(i.e. methods get_xxx and set_xxx, where xxx is the property name)
+
+
+So here is the full code:
+
+.. sourcecode :: python
+
+  import ppygui as gui
+  # import the gui namespace
+
+  class MainFrame(gui.CeFrame):
+  # subclass to create our own main frame type
+      def __init__(self):
+           gui.CeFrame.__init__(self, title="Hello World")
+           # Create some child control
+           self.text_entry = gui.Edit(self)
+           self.button = gui.Button(self, "Copy")
+           self.label = gui.Label(self)
+           
+           # Place our controls in a vertical box
+           sizer = gui.VBox(border=(2,2,2,2), spacing=2)
+           sizer.add(self.text_entry)
+           sizer.add(self.button)
+           sizer.add(self.label)
+           
+           # Set the vertical box as our main frame sizer
+           self.sizer = sizer
+           
+           # Set the event handler for the button clicked event
+           self.button.bind(clicked=self.on_click)
+      
+       def on_click(self, event):
+           # The code of our event handler
+           self.label.text = self.text_entry.text
+           
+           
+  if __name__ == '__main__':
+     app = gui.Application(MainFrame())
+     # create an application bound to our main frame instance
+     app.run()
+     #launch the app !
+     
+`tut6.py <tut6.py>`_
+
+More on CeFrame
+---------------
+
+If you're targeting Windows Mobile 5.0 and 6.0, you can add an action button and a menu to the command bar.
+PocketPyGui tries to make their creation easy given the limitation of the underlying win32 API.
+To create an action button and a menu, the CeFrame constructor accept two particular keyword arguments:
+
+* *action* : gui.CeFrame(..., action=('My action label', my_callback)) -> it is a tuple (label, callback)
+
+  where label is a string and callback is an event handler (i.e. any python callable that takes a single argument).
+
+  You can later change the action button with the *cb_action* public attribute of your main frame instance.
+  For reference, *cb_action* is an instance of the **CommandBarAction** class.
+  
+* *menu* : gui.CeFrame(..., menu='My Menu Label') -> it takes the menu label as a string.
+  
+  You must then construct your menu in the constructor body, with the *cb_menu* public attribute of your main frame instance.
+  For reference, *cb_menu* is an instance of **CommandBarMenu** which inherits **Menu** methods.
+
+  
+Here is our final application using a menu action for copy :
+  
+.. sourcecode :: python
+
+  import ppygui as gui
+  # import the gui namespace
+
+  class MainFrame(gui.CeFrame):
+  # subclass to create our own main frame type
+      def __init__(self):
+           gui.CeFrame.__init__(self, title="Hello World"
+                                action=('Copy', self.on_click))
+           # Create some child control
+           self.text_entry = gui.Edit(self)
+           self.button = gui.Button(self, "Copy")
+           self.label = gui.Label(self)
+           
+           # Place our controls in a vertical box
+           sizer = gui.VBox(border=(2,2,2,2), spacing=2)
+           sizer.add(self.text_entry)
+           sizer.add(self.button)
+           sizer.add(self.label)
+           
+           # Set the vertical box as our main frame sizer
+           self.sizer = sizer
+           
+           # Set the event handler for the button clicked event
+           self.button.bind(clicked=self.on_click)
+      
+       def on_click(self, event):
+           # The code of our event handler
+           self.label.text = self.text_entry.text
+           
+           
+  if __name__ == '__main__':
+     app = gui.Application(MainFrame())
+     # create an application bound to our main frame instance
+     app.run()
+     #launch the app !
+
+`tut7.py <tut7.py>`_
+
+Conclusion
+----------
+
+This little tutorial is not a full reference of all ppygui API, however it aims to show the basic principle involved in gui creation
+and that will be common to all applications created with ppygui. 
+If you want to learn more about ppygui, I invite you to read 
+the source of the sample applications as well as the API reference.
+
+I hope you will enjoy using ppygui as much as I did writing it.

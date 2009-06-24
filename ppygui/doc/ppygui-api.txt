@@ -1,0 +1,657 @@
+PocketPyGui public API reference
+================================
+
+Classes
+-------
+
+Core classes
+............
+
+gui.GuiObject(object)
+#####################
+
+GuiObject is the base class of all ppygui classes.
+It implements automatic property generation:
+when a subclass implements one of *get_xxx*, *set_xxx* methods
+the property *xxx* is created.
+
+  **Methods**
+    *set(property1=value1, property2=value2, ...)*
+      set each property to the given
+      value.
+
+gui.Window(gui.GuiObject)
+#########################
+
+The base class of all gui elements.
+It introduces the *bind* method that allow the
+developper to flexibly handle events.
+
+  **Constructor**
+     *gui.Window(parent=None, title="PocketPyGui", style="normal", pos=(-1,-1,-1,-1), tab_traversal=True, * * kw)*
+       - *parent*: the parent window.
+       - *title*: the title as appearing in the title bar.
+       - *style*: 'normal' or 'control'.            
+       - *pos*: a tuple (left, top, width, height) that determines the initial position of the window.
+         use -1 in any tuple element for default positioning.
+         It is strongly recommanded to use the Sizer classes to perform the layout.
+       - *tab_traversal* : whether the Window should use automatic tab/jog-dial.
+       - kw : further property initialisation.
+  
+  **Methods**
+    *bind(event1=callback1, event2=callback2, ...)* 
+      maps gui events to callbacks (i.e. event handlers),
+      callbacks are any callable that 
+      accept a single argument to receive 
+      event data.
+      
+    *focus()*: force the focus on this window.
+
+    *show(val=True)*: show or hide the window, depending of the
+    boolean value of val.
+                       
+    *hide()*: shortcut for show(False).
+    
+    *enable(val=True)*: enable or disable the window, depending of the boolean value of val.
+    A window disabled will not receive user input.
+    
+    *disable()*: shortcut for enable(False).
+    
+    *move(self, left, top, width, height)*: move the window to the desired rect (left, top, width, height).
+    
+    *update()*: force the window to be repainted.
+    
+    *close()*: close the window.
+    
+    *destroy()*: destroy the window and its child, releasing their resources, and break 
+    reference cycle that could be induced by the event system.
+    
+    *bringtofront()*: bring the window to foreground.
+    
+  **Properties**
+    
+    *parent*: the parent window instance or None for a top level window.
+    
+    *pos*: the relative window position in its parent container as a tuple (left, top).
+    
+    *size*: the size of the window as a tuple (width, height).
+    
+    *redraw*: the redraw state as a bool. When setting it to
+    False, the window will not be repainted, until it
+    is set to True again.
+    
+  **Events**
+       *paint* -> **Event**: sent when the window needs repainting.
+       
+       *close* -> **Event**: sent when the user or os request the window to be closed.
+       
+       *destroy* -> **Event**: sent when the window is about to be destroyed.
+       
+       *size* -> **SizeEvent**: sent when the window is resized.
+       
+       *lbdown* -> **StylusEvent**: sent when the stylus is pressed down on the window.
+       
+       *lbmove* -> **StylusEvent**: sent when the stylus is sliding on the window.
+       
+       *lbup* -> **StylusEvent**: sent when the stylus is pressed down on the window.
+       
+gui.Control(gui.Window)
+#######################
+
+The base class for common controls.
+It introduces the text and font properties.
+
+  **Properties**
+    *text*: the text displayed by the control as a string.
+    
+    *font*: the font of the control as a **gui.Font** instance.
+    
+gui.Frame(gui.Window)
+#####################
+
+Frame extends Window to provide layout facilities.
+It is the base class of all container windows.
+You can set a sizer to a Frame with the sizer property.
+
+  **Properties**
+    *sizer*: a **gui.VBox**, **gui.HBox** or **gui.TBox** instance responsible of the layout.
+  
+Common controls
+...............
+
+gui.Label(gui.Control)
+######################
+
+The Label control displays a static text.
+
+  **Constructor**
+    *gui.Label(parent, title="", align="left", border=False, pos=(-1,-1,-1,-1), * * kw)*
+      - *parent*: the parent window.
+      - *title*: the text to be displayed.
+      - *align*: the text alignment in its window, can be "left", "center" or "right".
+      - *border*: a boolean that determines if this control should have a visible border.
+      - *pos* : see **gui.Window**.
+      
+  **Events**
+      - *clicked* -> **CommandEvent** (useful for implementing hyperlink).
+
+gui.Button(gui.Control)
+#######################
+
+The button control displays a command button,
+it can be a push button, a default button, or
+a check box. For a radio button see the RadioButton class.
+
+  **Constructor**
+    gui.Button(parent, title="", action=None, align="center", style="normal", border=False, pos=(-1,-1,-1,-1), * * kw)
+            - *title*: the text of the button.
+            - *action*: the callback called when the button is clicked (equivalent to button.bind(clicked=callback)).
+            - *align*: the text alignment, can be "left", "center" or "right".
+            - *style*:
+                - "normal" for a classic push button.
+                - "default" for a default push button.
+                - "check" for a check box.
+                
+            - *border*: a boolean that determines if this control should have a border.
+            - *pos* : see **gui.Window**.
+            
+  **Properties**
+    *checked* : the checked state of a button as a boolean (only useful for a button created with the "check" style).
+    
+gui.RadioButton(gui.Button)
+###########################
+
+The RadioButton control displays a radio button,
+when it belongs to a RadioGroup, it is mutually exclusive to other radio buttons in this group,
+It can be bound to a value (any python object) which is retrieved by
+the radio group *value* property when the radio is checked.
+
+  **Constructor**
+    gui.RadioButton(parent, title="", align="center", group=None, value=None, border=False, pos=(-1,-1,-1,-1), * * kw)
+            - *title*: the text of the button.
+            - *action*: the callback called when the button is clicked (equivalent to button.bind(clicked=callback)).
+            - *align*: the text alignment, can be "left", "center" or "right".
+            - *group*: the group of the radio as a **RadioGroup** instance or None.
+            - *value*: any python object bound to the RadioButton.
+            - *border*: a boolean that determines if this control should have a border.
+            - *pos* : see **gui.Window**.
+            
+  **Properties**
+    *checked* : the checked state of a button as a boolean (only useful for a button created with the "check" style).
+    
+    
+gui.RadioGroup(gui.GuiObject)
+#############################
+
+Represents a group of mutually exclusive RadioButton.
+
+  **Methods**
+    *bind(update=None)*: set the callback called when one of the radio buttons belonging to the group is pressed.
+    
+  **Properties**
+    *selection*: the current selected radio as a RadioButton instance, 
+    if set to a radio that does not belong to this group, ValueError is raised.
+    
+    *value* (read-only): the value of the selected radio button.
+    
+gui.Edit(gui.Control)
+#####################
+
+The Edit control displays an editable text field.
+
+  **Constructor**
+    gui.Edit(parent, text="", align="left", style="normal", password=False, multiline = False, line_wrap=False, readonly=False, border=True, pos=(-1,-1,-1,-1), * * kw)
+            - *parent*: the parent window.
+            - *text*: the initial text to display.
+            - align*: the text alignment, can be "left", "center" or "right".
+            - *style*:
+                - "normal": standard text field.
+                - "number": accept numeric input only.
+                
+            - *password*: a boolean that determines if the user input should be masked.
+            - *multiline*: a boolean that determines if the text should contain newlines.
+            - *readonly*: a boolean that determines if the text should be viewed only.
+            - *border*: a boolean that determines if this control should have a border.
+            - *pos*: see **gui.Window**.
+            
+   **Methods**
+     *append(text)*: append the string *text* to the edit.
+     
+     *select_all()*: select all the text.
+     
+     *undo()*: undo the last modification.
+     
+     *copy()*: copy the current selection to the clipboard.
+     
+     *cut()*: cut the current selection to the clipboard.
+     
+     *paste()*: paste the clipboard at the current position.
+     
+   **Properties**
+     *selection*: the zero-based index selection as a tuple of ints (start, stop).
+     
+     *readonly*: the read-only state of the edit as a boolean.
+     
+     *selected_text*: the string of the selected text.
+     when set it replaces the current selection.
+     
+     *modified*: the modification flag as a boolean.
+     It is set to True when the user modify the edit.
+     
+   **Event**
+     *update* -> **CommandEvent**: sent when the text is updated by the user.
+     
+gui.List(gui.Control)
+#####################
+
+  The List control displays a list of selectable strings
+  It implements some of the python list methods and protocol.
+  Especially, it implements the iterator protocol, so
+  you can iterate the choices of the List using a simple for loop. 
+  
+  **Constructor**
+    gui.List(parent, choices=[], sort=False, multiple=False, border=True, pos=(-1,-1,-1,-1), * * kw)
+      - *choices*: the initial possible choices as a list of string.
+      - *sort*: *True* if the choices have to be sorted in alphabetical order.
+      - *multiple*: *True* if the control should allow multiple selection.
+      - *border*: a boolean that determines if this control should have a visible border.
+      - *pos*: see **gui.Window**.
+     
+  **Methods**
+    *append(choice)*: add the string choice to the list of choices.
+    
+    *insert(i, choice)*: insert the string choice at index i.
+    
+    *__getitem__(i)*: list[i] -> return the choice at index i as a string.
+    
+    *__setitem__(i, choice)*: list[i] = somestring -> set the choice at index i.
+    
+    *__delitem__(i)*: del list[i] -> remove the choice at index i.
+    
+    *is_multiple()*: return *True* if the List control allows 
+    multiple selections, otherwise *False*.
+    
+  **Properties**
+    *selection*: for a multiple List - > the current selections as a list of index,
+    for a simple selection List -> the current selection index.
+    
+    *count* (read-only): the total number of choices in the list.
+    
+  **Events**
+    *selchanged* -> **CommandEvent**: sent when the list selection has changed.
+    
+    *itemactivated* -> **CommandEvent**: sent when the user double-click on an item.
+    
+gui.Combo(gui.Control)
+######################
+
+  The Combo control displays an edit field and a dropdown list of selectable strings
+  It implements some of the python list methods and protocol.
+  
+  **Constructor**
+    gui.Combo(parent, style="edit", sort=False, choices=[], pos=(-1,)*4, * * kw)
+      - *choices*: the initial possible choices as a list of string.
+      - *sort*: *True* if the choices have to be sorted in alphabetical order.
+      - *style*: 
+          - "edit": the edit field is editable.
+          - "list": the edit field is read-only, the combo acts as a drop down list.
+      - *pos*: see **gui.Window**
+     
+  **Methods**
+    *append(choice)*: add the string choice to the list of choices.
+    
+    *insert(i, choice)*: insert the string choice at index i.
+    
+    *__getitem__(i)*: combo[i] -> return the choice at index i as a string.
+    
+    *__setitem__(i, choice)*: combo[i] = somestring -> set the choice at index i.
+    
+    *__delitem__(i)*: del combo[i] -> remove the choice at index i.
+    
+    *is_multiple()*: return True if the List control allows 
+    multiple selections, otherwise False.
+    
+  **Properties**
+    *selection*:  the current selection index as an int
+    
+    *count* (read-only): the total number of choices in the list
+
+  **Events**
+    *selchanged* -> **CommandEvent** : sent when combo selection has changed
+    
+gui.Slider(gui.Control)
+#######################
+
+Displays a movable slider for selecting an integer in a given range (for instance a volume control)
+
+  **Constructor**
+    gui.Slider(parent, style="horizontal", range=(0,10), pos=(-1,-1,-1,-1), * * kw)
+        - *parent*: the parent window.
+        - *style*: the orientation of the slider, can be:
+            - "horizontal".
+            - "vertical".
+
+        - *range*: the initial range of possible values as the tuple *(min, max)*.
+        - *pos*: see **gui.Window**.
+        - kw: other properties initialisation.
+        
+  **Properties**
+    *range*: the range of possible values as a tuple *(min, max)*.
+  	
+    *value*: the position of the slider as an int.
+  	
+  **Events**
+    *update* -> **ScrollEvent**: sent when the user moves the slider
+  	
+gui.Progress(gui.Control)
+#########################
+
+Displays a progress bar to provide visual feedback of long computation/io operations.
+
+  **Constructor**
+    gui.Progress(parent, style="normal", orientation="horizontal", range=(0,100), pos=(-1,-1,-1,-1), * * kw)
+	
+        - *parent*: the parent window.
+        - *style*:
+            - "normal": the progress bar is made of distinct bar.
+            - "smooth": the progress bar is filled in a smooth way.
+
+        - *orientation*: the orientation of the slider, can be:
+            - "horizontal".
+            - "vertical".
+
+        - *range*: the initial range of possible values as a tuple *(min, max)*.
+        - *pos* : see **gui.Window**.
+        - *kw* : other properties initialisation.
+        
+  **Properties**
+  	*range*: the range of possible values as a tuple *(min, max)*.
+  	
+  	*value*: the position of the progress as an int.
+  	
+gui.Spin(gui.Control)
+#####################
+
+Display an editable field and up/down arrows to input an integer value.
+
+  **Constructor**
+    gui.Spin(parent, range=(0,100), pos=(-1,-1,-1,-1), * * kw)
+        - *parent*: the parent window.
+  	    - *range* : the initial range of possible values as a tuple *(min, max)*.
+        - *pos* : see **gui.Window**.
+        - *kw* : other properties initialisation.
+        
+  **Properties**
+  	*range*: the range of possible values as a tuple *(min, max)*.
+  	
+  	*value*: the value of the spin control as an int.
+  	
+  	
+  **Events**
+    *update* -> **NoneType**: sent when the value has changed.
+    
+gui.Date(gui.Control)
+#####################
+
+Display an editable field and a drop-down calendar to input a date.
+
+  **Properties**
+    *value*: the date as a **datetime.date** object (See standard library documentation).
+    
+  **Events**
+    *update* -> **NoneType**: sent when the date value has changed.
+
+gui.Time(gui.Control)
+#####################
+
+Display an editable field to input a day time.
+
+  **Properties**
+    *value*: time as a **datetime.time** object (See standard library documentation).
+    
+  **Events**
+    *update* -> **NoneType**: sent when the value has changed.
+
+gui.Html(gui.Control)
+#####################
+
+Display hmtl pages or text.
+
+  **Methods**
+    *navigate(url)*: display the html page located at url.
+    
+    *clear()*: clear the text buffer.
+    
+    *enablecontextmenu(val=True)*: enable or disable the context menu.
+    
+    *enableshrink(val=True)*: enable or disable image shrinking.
+
+  **Properties**
+    *value* (write-only): the html source as a string.
+    
+    *text* (write-only): the text displayed (not interpreted as html).
+    
+  **Events**
+    *navigate* -> **BeforeNavigateEvent**: occurs just berfore the user follow a hyperlink.
+    
+gui.NoteBook(gui.Frame)
+#######################
+
+Display multiple window as tabs in a notebook.
+
+  **Constructor**
+    gui.NoteBook(parent, pos=(-1-,1,-1,-1))
+        - *parent*: the parent window.
+        - *pos*: see **gui.Window**.
+        
+        
+  **Methods**
+    *append(self, title, tab)*: add a new tab to the notebook
+        - title: the title of the tab.
+        - tab: the child window.
+        
+    *insert(self, i, title, tab)*: insert a new tab in the notebook at index i
+        - title: the title of the tab.
+        - tab: the child window.
+        
+    *__getitem__(self, i)*: notebook[i] -> return the child window at index i.
+        
+    *__delitem__(self, i)*: del notebook[i] -> remove the tab at index i.
+    
+  **Properties**
+  	*selection*: index of the currently selected tab.
+
+The Table Control
+.................
+
+gui.Table(gui.Control)
+######################
+
+A Table control displays a bidimensional array of text.
+A Table has 2 public attributes : *rows* and *columns*.
+
+Columns are added/modified/deleted via the **TableColumns** instance variable *columns*.
+
+Rows are added/modified/deleted via the **TableRows** instance variable *rows*.
+
+You can get or set the text at row i, column j by indexing table[i, j].
+    
+  **Constructor**
+    gui.Table(parent, columns=[], autoadjust=True, multiple=False, has_header=True, border=True, pos=(-1,-1,-1,-1))
+        - *columns*: a list of title of the initial column headers.
+        - *autoadjust*: whether the column width should be automatically adjusted.
+        - *multiple*: whether the table should allow multiple rows selection.
+        - *has_header*: whether the table displays a header for its columns.
+        - *border*: a boolean that determines if this control should have a visible border.
+        - *pos*: see **gui.Window**.
+        
+  **Attributes**
+    *columns*: a **TableColumns** instance.
+    
+    *rows*: a **TableRows** instance.
+    
+  **Methods**
+  
+    *adjust_all()*: adjust all column widths to fit the text in it.
+  
+    *__getitem__(pos)*: table[i, j] -> return the text at the row i, column j.
+    
+    *__setitem__(pos, val)*: table[i, j] = txt -> set the text at the row i, column j to txt.
+  
+    *delete_all()*: remove all rows of the list.
+    
+  **Events**
+    *selchanged* -> **TableEvent**: occurs when user select or deselect a row.
+    
+    *itemactivated* -> **TableEvent**: occurs when user double click on a row.
+       
+gui.TableColumns(gui.GuiObject)
+###############################
+
+  **Methods**
+    *append(title, width=-1, align='left')*
+        add a new column to the table.
+    
+        - *title*: the text of the column.
+        - *width*: the width of the column in pixels,
+          -1 will set the width so that it contains the title.
+        - *align*: the alignment of the column content, can be "left", "center" or "right".
+        
+        return the index of the newly created column.
+        
+    *insert(i, title, width=-1, align='left')*
+        insert a new column to the table.
+        
+        - *i*: the index of the column to insert
+        - *title*: the text of the column
+        - *width*: the width of the column in pixels,
+          -1 will set the width so that it contains the title
+        - *align*: the alignment of the column content, can be "left", "center" or "right"
+        
+        return the index of the newly created column.
+
+    *set(i, title=None, width=None, align=None)*
+        change one or more settings of the column i.
+
+        - *i*: the index of the column to set.    
+        - *title*: the text of the column.
+        - *width*: the width of the column in pixels,
+          -1 will set the width so that it contains the title.
+        - *align*: the alignment of the column content, can be "left", "center" or "right".
+        
+    *adjust(i)*: adjust the width of the column i, to fit the content.
+    
+    *__delitem___(i)*: del table.columns[i] -> remove the column at index i.
+    
+gui.TableRows(gui.GuiObject)
+############################
+
+  **Methods**
+  
+    *append(row, data=None)*
+        add a new row at the bottom of the table.
+        
+        - *row*: a list of string.
+        - *data*: any python object that you want to link to the row.
+        
+    *insert(i, row, data=None)*
+        insert a new row at index i.
+        
+        - *i*: the index to insert the row
+        - *row*: a list of string.
+        - *data*: any python object that you want to link to the row.
+    
+    *__getitem__(i, row)*: table.rows[i] -> return the row at index i, as a list of strings.
+        
+    *__setitem__(i, row)*: table.rows[i] = ['a', 'b', ...] -> set the row at index i.
+    
+    *getdata(i, data)*: return any python object that was bound to the row or *None*.
+    
+    *setdata(i, data)*: bind any python object to the row at index i.
+    
+    *is_selected(i)*: return *True* if the row at index i is selected.
+        
+    *select(self, i)*: select the row at index i.
+    
+    *ensure_visible(i)*: ensure the row at index i is visible.
+    
+    *deselect(i)*: deselect the row at index i.
+    
+  **Properties**
+    *selection*: the current selection(s) as a list of index.
+    
+    *selected_count* (read-only): the number of rows selected as an int.
+
+The Tree control
+................
+
+WinCE specific classes
+......................
+
+gui.CeFrame(gui.Frame)
+######################
+
+Event classes
+.............
+
+gui.Event(gui.GuiObject)
+########################
+
+Other classes
+.............
+
+gui.Font(gui.GuiObject)
+#######################
+
+gui.Menu(gui.GuiObject)
+#######################
+
+gui.PopupMenu(gui.Menu)
+#######################
+
+Functions
+---------
+Message functions
+.................
+
+The message functions display predefined dialog for getting
+simple user input. The function name determines the number of button
+and the possible return values. All return values are strings, whose names
+are related to the user selection:
+
+    * gui.Message.ok(title, caption, icon, parent) -> 'ok'.
+    * gui.Message.okcancel(title, caption, icon, parent) -> 'ok' or 'cancel'.
+    * gui.Message.yesno(title, caption, icon, parent) -> 'yes' or 'no'.
+    * gui.Message.yesnocancel(title, caption, icon, parent) -> ''yes', 'no' or 'cancel'.
+
+Where arguments are:
+    * *title*: the title of the dialog
+    * *caption*: the text of the dialiog
+    * *icon*: a string in:
+        - 'info'.
+        - 'question'.
+        - 'warning'.
+        - 'error'.
+    * *parent*:  the window instance disabled until the dialog is closed.
+
+File dialog functions
+.......................
+
+The file dialog fuctions display dialog for opening, saving a file,
+or opening a folder. If tGetFile.dll is installed, it will be used instead
+of built-in dialog.
+
+    gui.FileDlg.open() -> path or ''
+    
+Context menu functions
+......................
+
+    gui.recon_context()
+    
+    gui.context_menu()
+    
+Thread functions
+................
+
+    gui.schedule()
+

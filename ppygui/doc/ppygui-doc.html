@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4: http://docutils.sourceforge.net/" />
+<title>PocketPyGui Doc</title>
+<style type="text/css">
+
+/*
+Author: Peter Parente
+Date: 2008/01/22
+Version: 1.0
+Copyright: This stylesheet has been placed in the public domain - free to edit and use for all uses.
+*/
+
+body {
+  font: 100% sans-serif;
+  background: #ffffff;
+  color: black;
+  margin: 2em;
+  padding: 0em 2em;
+}
+
+p.topic-title {
+  font-weight: bold;
+}
+
+table.docinfo {
+  text-align: left;
+  margin: 2em 0em;
+}
+
+a[href] {
+  color: #436976;
+  background-color: transparent;
+}
+
+a.toc-backref {
+  text-decoration: none;
+}
+
+h1 a[href] {
+  color: #003a6b;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a.strong {
+  font-weight: bold;
+}
+
+img {
+  margin: 0;
+  border: 0;
+}
+
+p {
+  margin: 0.5em 0 1em 0;
+  line-height: 1.5em;
+}
+
+p a:visited {
+  color: purple;
+  background-color: transparent;
+}
+
+p a:active {
+  color: red;
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+p img {
+  border: 0;
+  margin: 0;
+}
+
+p.rubric {
+  font-weight: bold;
+  font-style: italic;
+}
+
+h1.title {
+  color: #003a6b;
+  font-size: 250%;
+  margin-bottom: 0em;
+}
+
+h2.subtitle {
+  color: #003a6b;
+  border-bottom: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #555;
+  background-color: transparent;
+  margin: 0em;
+  padding-top: 0.5em;
+}
+
+h1 {
+  font-size: 160%;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid #aaa;
+}
+
+h2 {
+  font-size: 140%;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #aaa;
+}
+
+h3 {
+  font-size: 130%;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: 110%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+h5 {
+  font-size: 105%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+h6 {
+  font-size: 100%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+dt {
+  font-style: italic;
+}
+
+dd {
+  margin-bottom: 1.5em;
+}
+
+div.admonition, div.note, div.tip, div.caution, div.important {
+  margin: 2em 2em;
+  padding: 0em 1em;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  border-bottom: 2px solid #555;
+  border-right: 2px solid #555;
+}
+
+div.important {
+  background: transparent url('../images/important.png') 10px 2px no-repeat;
+}
+
+div.caution {
+  background: transparent url('../images/caution.png') 10px 2px no-repeat;
+}
+
+div.note {
+  background: transparent url('../images/note.png') 10px 2px no-repeat;
+}
+
+div.tip {
+  background: transparent url('../images/tip.png') 10px 2px no-repeat;
+}
+
+div.admonition-example {
+  background: transparent url('../images/tip.png') 10px 2px no-repeat;
+}
+
+div.admonition-critical-example {
+  background: transparent url('../images/important.png') 10px 2px no-repeat;
+}
+
+p.admonition-title {
+  font-weight: bold;
+  border-bottom: 1px solid #aaa;
+  padding-left: 30px;
+}
+
+table.docutils {
+  text-align: left;
+  border: 1px solid gray;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0em;
+}
+
+table.docutils caption {
+  font-style: italic;
+}
+
+table.docutils td, table.docutils th {
+  padding: 0.25em 0.5em;
+}
+
+table.docutils th {
+  background-color: #dddddd;
+}
+
+div.sidebar {
+  width: 33%;
+  float: right;
+  margin: 0em 2em;
+  padding: 0em 1em;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  border-bottom: 2px solid #555;
+  border-right: 2px solid #555;
+}
+
+p.sidebar-title {
+  margin-bottom: 0em;
+  color: #003a6b;
+  border-bottom: 1px solid #aaa;
+  font-weight: bold;
+}
+
+p.sidebar-subtitle {
+  margin-top: 0em;
+  font-style: italic;
+  color: #003a6b;
+}
+
+</style>
+</head>
+<body>
+<div class="document" id="pocketpygui-doc">
+<h1 class="title">PocketPyGui Doc</h1>
+<div class="section">
+<h1><a id="introduction" name="introduction">Introduction</a></h1>
+<p>This tutorial assumes some knowledge
+of python and object-oriented programming.
+Especially, ppygui uses new-style classes
+and properties. Properties are described in this
+document, you can get reference and examples <a class="reference" href="http://www.python.org/download/releases/2.2.3/descrintro/#property">here</a>
+for further documentation.
+However, it does not require any prior
+knowledge of gui programming.</p>
+</div>
+<div class="section">
+<h1><a id="creating-your-first-app" name="creating-your-first-app">Creating your first app</a></h1>
+<p>Most of times, a graphical handheld application is based on a main container window (the main frame),
+on WinCe several conventions applies to this window :</p>
+<p>The main frame is divised between it's content and the command bar.</p>
+<p>'Screenshot here'</p>
+<ul class="simple">
+<li>The content is the main part that displays all other
+child controls and windows (widgets)</li>
+<li>The command bar contains, a shortcut action to the
+left, the Software Input Panel (SIP) controller in the
+middle and a menu to the right.</li>
+<li>For better user experience, the content of the main frame should always be adapted to the current position of the input panel.</li>
+</ul>
+<p>PocketPyGui helps the programmer respecting these conventions and encapsulates a WinCE main frame in a single class : <strong>CeFrame</strong></p>
+<p>We are going now to create a basic application with an empty main frame:</p>
+<div class="highlight"><pre><span style="color: #0000aa">import</span> <span style="color: #00aaaa; text-decoration: underline">ppygui</span> <span style="color: #0000aa">as</span> <span style="color: #00aaaa; text-decoration: underline">gui</span><br/><span style="color: #aaaaaa; font-style: italic"># import the gui namespace</span><br/><br/><span style="color: #0000aa">class</span> <span style="color: #00aa00; text-decoration: underline">MainFrame</span>(gui.CeFrame):<br/><span style="color: #aaaaaa; font-style: italic"># subclass to create our own main frame type</span><br/>    <span style="color: #0000aa">def</span> <span style="color: #00aa00">__init__</span>(<span style="color: #00aaaa">self</span>):<br/>         gui.CeFrame.__init__(<span style="color: #00aaaa">self</span>, title=<span style="color: #aa5500">&quot;Hello World&quot;</span>)<br/><br/><span style="color: #0000aa">if</span> __name__ == <span style="color: #aa5500">&#39;__main__&#39;</span>:<br/>   app = gui.Application(MainFrame())<br/>   <span style="color: #aaaaaa; font-style: italic"># create an application bound to our main frame instance</span><br/>   app.run()<br/>   <span style="color: #aaaaaa; font-style: italic">#launch the app !</span><br/></pre></div>
+<p>Paste this code in a python file or simply run <a class="reference" href="tut1.py">tut1.py</a>
+and you should see :</p>
+<p>'screen here'</p>
+<p>You'll notice that when you close the main frame,
+the python interpreter exits.
+Internally ppygui has bound the main frame 'close' event
+( ~ signal) to the stop of our application instance.
+We'll talk more about events and handlers later in
+this document.</p>
+</div>
+<div class="section">
+<h1><a id="populating-our-application" name="populating-our-application">Populating our application</a></h1>
+<p>So far we've seen how to create a really basic application
+and main frame, in practice our main frame will be
+populated by other child controls (~ widgets)
+which have different usage for input and output of user data.
+For instance a <strong>Button</strong> control receives an user command,
+a <strong>Label</strong> control displays a text to the user,
+an <strong>Edit</strong> control will receive user text input.
+More advanced controls like <strong>List</strong>, <strong>Combo</strong>,
+<strong>Tree</strong>, <strong>Table</strong> displays information in a structured way.</p>
+<p>There are plenty of controls for different types of user input,
+and we do not talk yet about custom controls you can
+create with the <strong>Canvas</strong> control.
+We'll cover the API of these controls later.
+Here, we will see the basic mechanism involved in ppygui
+programming that are common to all controls.</p>
+<p>In this code we're going to add some controls to our main frame.
+We'll create a <strong>Label</strong>, a <strong>Button</strong> and an <strong>Edit</strong> control.
+The purpose of our (dummy) application will be to copy
+the content of the edit into the label when we
+press the button.</p>
+<p>You can launch <a class="reference" href="tut7.py">tut7.py</a> to see the final
+application.</p>
+<div class="highlight"><pre><span style="color: #0000aa">import</span> <span style="color: #00aaaa; text-decoration: underline">ppygui</span> <span style="color: #0000aa">as</span> <span style="color: #00aaaa; text-decoration: underline">gui</span><br/><span style="color: #aaaaaa; font-style: italic"># import the gui namespace</span><br/><br/><span style="color: #0000aa">class</span> <span style="color: #00aa00; text-decoration: underline">MainFrame</span>(gui.CeFrame):<br/><span style="color: #aaaaaa; font-style: italic"># subclass to create our own main frame type</span><br/>    <span style="color: #0000aa">def</span> <span style="color: #00aa00">__init__</span>(<span style="color: #00aaaa">self</span>):<br/>         gui.CeFrame.__init__(<span style="color: #00aaaa">self</span>, title=<span style="color: #aa5500">&quot;Hello World&quot;</span>)<br/>         <span style="color: #aaaaaa; font-style: italic"># Create some child control</span><br/>         <span style="color: #00aaaa">self</span>.text_entry = gui.Edit(<span style="color: #00aaaa">self</span>)<br/>         <span style="color: #00aaaa">self</span>.button = gui.Button(<span style="color: #00aaaa">self</span>, <span style="color: #aa5500">&quot;Copy&quot;</span>)<br/>         <span style="color: #00aaaa">self</span>.label = gui.Label(<span style="color: #00aaaa">self</span>)<br/><br/><span style="color: #0000aa">if</span> __name__ == <span style="color: #aa5500">&#39;__main__&#39;</span>:<br/>   app = gui.Application(MainFrame())<br/>   <span style="color: #aaaaaa; font-style: italic"># create an application bound to our main frame instance</span><br/>   app.run()<br/>   <span style="color: #aaaaaa; font-style: italic">#launch the app !</span><br/></pre></div>
+<p><a class="reference" href="tut2.py">tut2.py</a></p>
+<p>You'll notice we give <em>self</em> as first argument to
+the constructor of each control.
+This way, we tell those controls that our main frame is their
+parent, thus our controls are children of the main frame.</p>
+<p>The second optional argument will always be the text
+of the control (it defaults to the empty string &quot;&quot;).
+This parameter is ignored where it doesn't make sense
+for a control.</p>
+<p>Further arguments will depend on the type of control
+constructed.
+It is possible to initialize properties in the constructor,
+but wait, we'll talk about properties later</p>
+<p>Now rerun the app and you'll see ... nothing new !
+Why ? Time to move to next part.</p>
+</div>
+<div class="section">
+<h1><a id="placing-our-controls" name="placing-our-controls">Placing our controls</a></h1>
+<p>We have now, a bunch of control created but we cannot see them
+yet.
+Indeed we have not tell yet ppygui how to place these controls
+relatively to the main frame.
+That's where sizers come.
+Sizers help the programmer placing controls relatively
+to one other without using absolute coordinates.
+In mobile development, absolute coordinates are the roots of all
+evils (in desktop development too),
+since resolution and fonts sizes may vary from a device
+to another and a gui programmed for one device will not
+display correctly on another.</p>
+<p>It is more effective to say : place this control after this one
+on a vertical/horizontal box or as a table,
+and let ppygui compute the right positions and sizes for us.</p>
+<p>Sizers come in three flavors : <strong>VBox</strong>, <strong>HBox</strong>, <strong>TBox</strong>,
+for VerticalBox, HorizontalBox and TableBox.</p>
+<ul class="simple">
+<li>A <strong>VBox</strong> will pack control along a vertical line</li>
+<li>A <strong>HBox</strong> will pack control along a horizontal line</li>
+<li>A <strong>TBox</strong> will pack control as an array</li>
+</ul>
+<p>Let's use the <strong>VBox</strong> class in our little example:</p>
+<div class="highlight"><pre><span style="color: #0000aa">import</span> <span style="color: #00aaaa; text-decoration: underline">ppygui</span> <span style="color: #0000aa">as</span> <span style="color: #00aaaa; text-decoration: underline">gui</span><br/><span style="color: #aaaaaa; font-style: italic"># import the gui namespace</span><br/><br/><span style="color: #0000aa">class</span> <span style="color: #00aa00; text-decoration: underline">MainFrame</span>(gui.CeFrame):<br/><span style="color: #aaaaaa; font-style: italic"># subclass to create our own main frame type</span><br/>    <span style="color: #0000aa">def</span> <span style="color: #00aa00">__init__</span>(<span style="color: #00aaaa">self</span>):<br/>         gui.CeFrame.__init__(<span style="color: #00aaaa">self</span>, title=<span style="color: #aa5500">&quot;Hello World&quot;</span>)<br/>         <span style="color: #aaaaaa; font-style: italic"># Create some child control</span><br/>         <span style="color: #00aaaa">self</span>.text_entry = gui.Edit(<span style="color: #00aaaa">self</span>)<br/>         <span style="color: #00aaaa">self</span>.button = gui.Button(<span style="color: #00aaaa">self</span>, <span style="color: #aa5500">&quot;Copy&quot;</span>)<br/>         <span style="color: #00aaaa">self</span>.label = gui.Label(<span style="color: #00aaaa">self</span>)<br/><br/>         <span style="color: #aaaaaa; font-style: italic"># Place our controls in a vertical box</span><br/>         sizer = gui.VBox()<br/>         sizer.add(<span style="color: #00aaaa">self</span>.text_entry)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.button)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.label)<br/><br/>         <span style="color: #aaaaaa; font-style: italic"># Set the vertical box as our main frame sizer</span><br/>         <span style="color: #00aaaa">self</span>.sizer = sizer<br/><br/><span style="color: #0000aa">if</span> __name__ == <span style="color: #aa5500">&#39;__main__&#39;</span>:<br/>   app = gui.Application(MainFrame())<br/>   <span style="color: #aaaaaa; font-style: italic"># create an application bound to our main frame instance</span><br/>   app.run()<br/>   <span style="color: #aaaaaa; font-style: italic">#launch the app !</span><br/></pre></div>
+<p><a class="reference" href="tut3.py">tut3.py</a></p>
+<p>Now run the app and then you should have (at least !) :</p>
+<p>'screenshot'</p>
+<p>There's a few things to note :</p>
+<ul class="simple">
+<li>The <strong>add</strong> method of <strong>VBox</strong> will, by default, try to place the control to it's best minimal size (where all it's content is visible)</li>
+<li>The <strong>CeFrame</strong> class has a <strong>sizer</strong> property.</li>
+</ul>
+<p>Properties, as introduced in python 2.2 new style classes,
+allow to emulate attribute access using regular methods.
+In ppygui the line</p>
+<pre class="literal-block">
+self.sizer = sizer
+</pre>
+<p>is strictly equivalent to</p>
+<pre class="literal-block">
+self.set_sizer(sizer)
+</pre>
+<p>The sizer property allows to delegate the placing of controls
+to the given sizer. When our main frame is moved or resized it
+will tell it's sizer to replace the controls accordingly to
+it's new size and position.
+Sizers can also be added one into another, so you can do any layout you want.</p>
+<p>We'll see soon that properties are often used to manipulate ppygui objects when it makes sense.</p>
+<p>We gonna play a bit around the VBox class to see some possibilities offered by ppygui.</p>
+<p>First we're going to aerate our frame a little by adding space around our controls, Let's :</p>
+<ul class="simple">
+<li>Add white space around our controls (<em>border</em>)</li>
+<li>Add white space between our controls (<em>spacing</em>)</li>
+</ul>
+<div class="highlight"><pre><span style="color: #0000aa">import</span> <span style="color: #00aaaa; text-decoration: underline">ppygui</span> <span style="color: #0000aa">as</span> <span style="color: #00aaaa; text-decoration: underline">gui</span><br/><span style="color: #aaaaaa; font-style: italic"># import the gui namespace</span><br/><br/><span style="color: #0000aa">class</span> <span style="color: #00aa00; text-decoration: underline">MainFrame</span>(gui.CeFrame):<br/><span style="color: #aaaaaa; font-style: italic"># subclass to create our own main frame type</span><br/>    <span style="color: #0000aa">def</span> <span style="color: #00aa00">__init__</span>(<span style="color: #00aaaa">self</span>):<br/>         gui.CeFrame.__init__(<span style="color: #00aaaa">self</span>, title=<span style="color: #aa5500">&quot;Hello World&quot;</span>)<br/>         <span style="color: #aaaaaa; font-style: italic"># Create some child control</span><br/>         <span style="color: #00aaaa">self</span>.text_entry = gui.Edit(<span style="color: #00aaaa">self</span>)<br/>         <span style="color: #00aaaa">self</span>.button = gui.Button(<span style="color: #00aaaa">self</span>, <span style="color: #aa5500">&quot;Copy&quot;</span>)<br/>         <span style="color: #00aaaa">self</span>.label = gui.Label(<span style="color: #00aaaa">self</span>)<br/><br/>         <span style="color: #aaaaaa; font-style: italic"># Place our controls in a vertical box</span><br/>         sizer = gui.VBox(border=(<span style="color: #009999">2</span>,<span style="color: #009999">2</span>,<span style="color: #009999">2</span>,<span style="color: #009999">2</span>), spacing=<span style="color: #009999">2</span>)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.text_entry)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.button)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.label)<br/><br/>         <span style="color: #aaaaaa; font-style: italic"># Set the vertical box as our main frame sizer</span><br/>         <span style="color: #00aaaa">self</span>.sizer = sizer<br/><br/><span style="color: #0000aa">if</span> __name__ == <span style="color: #aa5500">&#39;__main__&#39;</span>:<br/>   app = gui.Application(MainFrame())<br/>   <span style="color: #aaaaaa; font-style: italic"># create an application bound to our main frame instance</span><br/>   app.run()<br/>   <span style="color: #aaaaaa; font-style: italic">#launch the app !</span><br/></pre></div>
+<p><a class="reference" href="tut4.py">tut4.py</a></p>
+<ul class="simple">
+<li>The <em>border</em> argument is a tuple (left, top, right, bottom) which is respectively the space at each side of the boxed controls in pixels. Here we tell ppygui to add 2 px space around our controls</li>
+<li>The <em>spacing</em> argument is an int which is the space between each control.</li>
+</ul>
+</div>
+<div class="section">
+<h1><a id="reacting-to-user-input" name="reacting-to-user-input">Reacting to user input</a></h1>
+<p>So we have our main frame and some controls in it. We can type some
+text in the edit field and press the button, but we have yet
+to implement our application logic. GUI programming is by
+definition event-driven :  on certain user input or
+when user issues command we want our application to compute
+some stuff and/or display some results.</p>
+<p>Events are emitted by user interaction and must be caught and handled by
+our application.</p>
+<p>For instance, in ppygui, a button emits the 'clicked' event when the user clicks
+on it; an edit will emit the 'update' event when it's text is
+changed. An event handler is the piece of code that will be
+executed in response to an event.</p>
+<p>To do so, ppygui exposes a simple mechanism :
+the <strong>bind</strong> method.</p>
+<p>The bind method of a control maps gui events coming
+from the control to event handlers; it's signature is</p>
+<p>window.bind(* * kw)</p>
+<p>window.bind(event1=callback1, event2=callback2, ...)</p>
+<p>Event handlers are any python callable that takes a single argument.
+When the specified event occurs this callable will be called with an object
+wrapping event data as argument.</p>
+<p>Let's report to the console each time our button is clicked, and
+each time our edit is modified:</p>
+<div class="highlight"><pre><span style="color: #0000aa">import</span> <span style="color: #00aaaa; text-decoration: underline">ppygui</span> <span style="color: #0000aa">as</span> <span style="color: #00aaaa; text-decoration: underline">gui</span><br/><span style="color: #aaaaaa; font-style: italic"># import the gui namespace</span><br/><br/><span style="color: #0000aa">class</span> <span style="color: #00aa00; text-decoration: underline">MainFrame</span>(gui.CeFrame):<br/><span style="color: #aaaaaa; font-style: italic"># subclass to create our own main frame type</span><br/>    <span style="color: #0000aa">def</span> <span style="color: #00aa00">__init__</span>(<span style="color: #00aaaa">self</span>):<br/>         gui.CeFrame.__init__(<span style="color: #00aaaa">self</span>, title=<span style="color: #aa5500">&quot;Hello World&quot;</span>)<br/>         <span style="color: #aaaaaa; font-style: italic"># Create some child control</span><br/>         <span style="color: #00aaaa">self</span>.text_entry = gui.Edit(<span style="color: #00aaaa">self</span>)<br/>         <span style="color: #00aaaa">self</span>.button = gui.Button(<span style="color: #00aaaa">self</span>, <span style="color: #aa5500">&quot;Copy&quot;</span>)<br/>         <span style="color: #00aaaa">self</span>.label = gui.Label(<span style="color: #00aaaa">self</span>)<br/><br/>         <span style="color: #aaaaaa; font-style: italic"># Place our controls in a vertical box</span><br/>         sizer = gui.VBox(border=(<span style="color: #009999">2</span>,<span style="color: #009999">2</span>,<span style="color: #009999">2</span>,<span style="color: #009999">2</span>), spacing=<span style="color: #009999">2</span>)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.text_entry)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.button)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.label)<br/><br/>         <span style="color: #aaaaaa; font-style: italic"># Set the vertical box as our main frame sizer</span><br/>         <span style="color: #00aaaa">self</span>.sizer = sizer<br/><br/>         <span style="color: #aaaaaa; font-style: italic"># Set the event handler for the button clicked event</span><br/>         <span style="color: #00aaaa">self</span>.button.bind(clicked=<span style="color: #00aaaa">self</span>.on_click)<br/>         <span style="color: #aaaaaa; font-style: italic"># Set the event handler for the edit update event</span><br/>         <span style="color: #00aaaa">self</span>.text_entry.bind(update=<span style="color: #00aaaa">self</span>.on_text_update)<br/><br/>     <span style="color: #0000aa">def</span> <span style="color: #00aa00">on_click</span>(<span style="color: #00aaaa">self</span>, event):<br/>         <span style="color: #aaaaaa; font-style: italic"># The code of our event handler</span><br/>         <span style="color: #0000aa">print</span> <span style="color: #aa5500">&quot;The button %s is clicked&quot;</span> %event.window<br/><br/>     <span style="color: #0000aa">def</span> <span style="color: #00aa00">on_text_update</span>(<span style="color: #00aaaa">self</span>, event):<br/>         <span style="color: #aaaaaa; font-style: italic"># The code of our event handler</span><br/>         <span style="color: #0000aa">print</span> <span style="color: #aa5500">&quot;The text of edit control %s was changed&quot;</span> %event.window<br/><br/><span style="color: #0000aa">if</span> __name__ == <span style="color: #aa5500">&#39;__main__&#39;</span>:<br/>   app = gui.Application(MainFrame())<br/>   <span style="color: #aaaaaa; font-style: italic"># create an application bound to our main frame instance</span><br/>   app.run()<br/>   <span style="color: #aaaaaa; font-style: italic">#launch the app !</span><br/></pre></div>
+<p><a class="reference" href="tut5.py">tut5.py</a></p>
+<p>Click a few times the button and write some texts in the edit,
+you should get on the console lines like:</p>
+<pre class="literal-block">
+The text of edit control &lt;ppygui.controls.Edit object at 0x0053D690&gt; was changed
+The button &lt;ppygui.controls.Button object at 0x008C4DF0&gt; is clicked
+</pre>
+</div>
+<div class="section">
+<h1><a id="manipulate-our-controls" name="manipulate-our-controls">Manipulate our controls</a></h1>
+<p>Now we know how to detect and react to user input, we will now implement our application
+logic. Remember we want the label to display the entry text when the user clicks the 'copy' button; in ppygui getting or
+setting the text of a control can be easily done with properties:</p>
+<p>Properties emulate attribute access and affectation, for instance:</p>
+<pre class="literal-block">
+print control.text
+</pre>
+<p>will be translated into:</p>
+<pre class="literal-block">
+print control.get_text()
+</pre>
+<p>and</p>
+<pre class="literal-block">
+control.text = &quot;some text&quot;
+</pre>
+<p>will be translated into:</p>
+<pre class="literal-block">
+control.set_text(&quot;some_text&quot;)
+</pre>
+<p>Properties of each class are referenced in the API documentation.
+They are inherited like regular methods, and can be
+overriden by overriding the getter and setter methods
+(i.e. methods get_xxx and set_xxx, where xxx is the property name)</p>
+<p>So here is the full code:</p>
+<div class="highlight"><pre><span style="color: #0000aa">import</span> <span style="color: #00aaaa; text-decoration: underline">ppygui</span> <span style="color: #0000aa">as</span> <span style="color: #00aaaa; text-decoration: underline">gui</span><br/><span style="color: #aaaaaa; font-style: italic"># import the gui namespace</span><br/><br/><span style="color: #0000aa">class</span> <span style="color: #00aa00; text-decoration: underline">MainFrame</span>(gui.CeFrame):<br/><span style="color: #aaaaaa; font-style: italic"># subclass to create our own main frame type</span><br/>    <span style="color: #0000aa">def</span> <span style="color: #00aa00">__init__</span>(<span style="color: #00aaaa">self</span>):<br/>         gui.CeFrame.__init__(<span style="color: #00aaaa">self</span>, title=<span style="color: #aa5500">&quot;Hello World&quot;</span>)<br/>         <span style="color: #aaaaaa; font-style: italic"># Create some child control</span><br/>         <span style="color: #00aaaa">self</span>.text_entry = gui.Edit(<span style="color: #00aaaa">self</span>)<br/>         <span style="color: #00aaaa">self</span>.button = gui.Button(<span style="color: #00aaaa">self</span>, <span style="color: #aa5500">&quot;Copy&quot;</span>)<br/>         <span style="color: #00aaaa">self</span>.label = gui.Label(<span style="color: #00aaaa">self</span>)<br/><br/>         <span style="color: #aaaaaa; font-style: italic"># Place our controls in a vertical box</span><br/>         sizer = gui.VBox(border=(<span style="color: #009999">2</span>,<span style="color: #009999">2</span>,<span style="color: #009999">2</span>,<span style="color: #009999">2</span>), spacing=<span style="color: #009999">2</span>)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.text_entry)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.button)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.label)<br/><br/>         <span style="color: #aaaaaa; font-style: italic"># Set the vertical box as our main frame sizer</span><br/>         <span style="color: #00aaaa">self</span>.sizer = sizer<br/><br/>         <span style="color: #aaaaaa; font-style: italic"># Set the event handler for the button clicked event</span><br/>         <span style="color: #00aaaa">self</span>.button.bind(clicked=<span style="color: #00aaaa">self</span>.on_click)<br/><br/>     <span style="color: #0000aa">def</span> <span style="color: #00aa00">on_click</span>(<span style="color: #00aaaa">self</span>, event):<br/>         <span style="color: #aaaaaa; font-style: italic"># The code of our event handler</span><br/>         <span style="color: #00aaaa">self</span>.label.text = <span style="color: #00aaaa">self</span>.text_entry.text<br/><br/><br/><span style="color: #0000aa">if</span> __name__ == <span style="color: #aa5500">&#39;__main__&#39;</span>:<br/>   app = gui.Application(MainFrame())<br/>   <span style="color: #aaaaaa; font-style: italic"># create an application bound to our main frame instance</span><br/>   app.run()<br/>   <span style="color: #aaaaaa; font-style: italic">#launch the app !</span><br/></pre></div>
+<p><a class="reference" href="tut6.py">tut6.py</a></p>
+</div>
+<div class="section">
+<h1><a id="more-on-ceframe" name="more-on-ceframe">More on CeFrame</a></h1>
+<p>If you're targeting Windows Mobile 5.0 and 6.0, you can add an action button and a menu to the command bar.
+PocketPyGui tries to make their creation easy given the limitation of the underlying win32 API.
+To create an action button and a menu, the CeFrame constructor accept two particular keyword arguments:</p>
+<ul>
+<li><p class="first"><em>action</em> : gui.CeFrame(..., action=('My action label', my_callback)) -&gt; it is a tuple (label, callback)</p>
+<p>where label is a string and callback is an event handler (i.e. any python callable that takes a single argument).</p>
+<p>You can later change the action button with the <em>cb_action</em> public attribute of your main frame instance.
+For reference, <em>cb_action</em> is an instance of the <strong>CommandBarAction</strong> class.</p>
+</li>
+<li><p class="first"><em>menu</em> : gui.CeFrame(..., menu='My Menu Label') -&gt; it takes the menu label as a string.</p>
+<p>You must then construct your menu in the constructor body, with the <em>cb_menu</em> public attribute of your main frame instance.
+For reference, <em>cb_menu</em> is an instance of <strong>CommandBarMenu</strong> which inherits <strong>Menu</strong> methods.</p>
+</li>
+</ul>
+<p>Here is our final application using a menu action for copy :</p>
+<div class="highlight"><pre><span style="color: #0000aa">import</span> <span style="color: #00aaaa; text-decoration: underline">ppygui</span> <span style="color: #0000aa">as</span> <span style="color: #00aaaa; text-decoration: underline">gui</span><br/><span style="color: #aaaaaa; font-style: italic"># import the gui namespace</span><br/><br/><span style="color: #0000aa">class</span> <span style="color: #00aa00; text-decoration: underline">MainFrame</span>(gui.CeFrame):<br/><span style="color: #aaaaaa; font-style: italic"># subclass to create our own main frame type</span><br/>    <span style="color: #0000aa">def</span> <span style="color: #00aa00">__init__</span>(<span style="color: #00aaaa">self</span>):<br/>         gui.CeFrame.__init__(<span style="color: #00aaaa">self</span>, title=<span style="color: #aa5500">&quot;Hello World&quot;</span><br/>                              action=(<span style="color: #aa5500">&#39;Copy&#39;</span>, <span style="color: #00aaaa">self</span>.on_click))<br/>         <span style="color: #aaaaaa; font-style: italic"># Create some child control</span><br/>         <span style="color: #00aaaa">self</span>.text_entry = gui.Edit(<span style="color: #00aaaa">self</span>)<br/>         <span style="color: #00aaaa">self</span>.button = gui.Button(<span style="color: #00aaaa">self</span>, <span style="color: #aa5500">&quot;Copy&quot;</span>)<br/>         <span style="color: #00aaaa">self</span>.label = gui.Label(<span style="color: #00aaaa">self</span>)<br/><br/>         <span style="color: #aaaaaa; font-style: italic"># Place our controls in a vertical box</span><br/>         sizer = gui.VBox(border=(<span style="color: #009999">2</span>,<span style="color: #009999">2</span>,<span style="color: #009999">2</span>,<span style="color: #009999">2</span>), spacing=<span style="color: #009999">2</span>)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.text_entry)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.button)<br/>         sizer.add(<span style="color: #00aaaa">self</span>.label)<br/><br/>         <span style="color: #aaaaaa; font-style: italic"># Set the vertical box as our main frame sizer</span><br/>         <span style="color: #00aaaa">self</span>.sizer = sizer<br/><br/>         <span style="color: #aaaaaa; font-style: italic"># Set the event handler for the button clicked event</span><br/>         <span style="color: #00aaaa">self</span>.button.bind(clicked=<span style="color: #00aaaa">self</span>.on_click)<br/><br/>     <span style="color: #0000aa">def</span> <span style="color: #00aa00">on_click</span>(<span style="color: #00aaaa">self</span>, event):<br/>         <span style="color: #aaaaaa; font-style: italic"># The code of our event handler</span><br/>         <span style="color: #00aaaa">self</span>.label.text = <span style="color: #00aaaa">self</span>.text_entry.text<br/><br/><br/><span style="color: #0000aa">if</span> __name__ == <span style="color: #aa5500">&#39;__main__&#39;</span>:<br/>   app = gui.Application(MainFrame())<br/>   <span style="color: #aaaaaa; font-style: italic"># create an application bound to our main frame instance</span><br/>   app.run()<br/>   <span style="color: #aaaaaa; font-style: italic">#launch the app !</span><br/></pre></div>
+<p><a class="reference" href="tut7.py">tut7.py</a></p>
+</div>
+<div class="section">
+<h1><a id="conclusion" name="conclusion">Conclusion</a></h1>
+<p>This little tutorial is not a full reference of all ppygui API, however it aims to show the basic principle involved in gui creation
+and that will be common to all applications created with ppygui.
+If you want to learn more about ppygui, I invite you to read
+the source of the sample applications as well as the API reference.</p>
+<p>I hope you will enjoy using ppygui as much as I did writing it.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4: http://docutils.sourceforge.net/" />
+<title>PocketPyGui public API reference</title>
+<style type="text/css">
+
+/*
+Author: Peter Parente
+Date: 2008/01/22
+Version: 1.0
+Copyright: This stylesheet has been placed in the public domain - free to edit and use for all uses.
+*/
+
+body {
+  font: 100% sans-serif;
+  background: #ffffff;
+  color: black;
+  margin: 2em;
+  padding: 0em 2em;
+}
+
+p.topic-title {
+  font-weight: bold;
+}
+
+table.docinfo {
+  text-align: left;
+  margin: 2em 0em;
+}
+
+a[href] {
+  color: #436976;
+  background-color: transparent;
+}
+
+a.toc-backref {
+  text-decoration: none;
+}
+
+h1 a[href] {
+  color: #003a6b;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a.strong {
+  font-weight: bold;
+}
+
+img {
+  margin: 0;
+  border: 0;
+}
+
+p {
+  margin: 0.5em 0 1em 0;
+  line-height: 1.5em;
+}
+
+p a:visited {
+  color: purple;
+  background-color: transparent;
+}
+
+p a:active {
+  color: red;
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+p img {
+  border: 0;
+  margin: 0;
+}
+
+p.rubric {
+  font-weight: bold;
+  font-style: italic;
+}
+
+h1.title {
+  color: #003a6b;
+  font-size: 250%;
+  margin-bottom: 0em;
+}
+
+h2.subtitle {
+  color: #003a6b;
+  border-bottom: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #555;
+  background-color: transparent;
+  margin: 0em;
+  padding-top: 0.5em;
+}
+
+h1 {
+  font-size: 160%;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid #aaa;
+}
+
+h2 {
+  font-size: 140%;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #aaa;
+}
+
+h3 {
+  font-size: 130%;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: 110%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+h5 {
+  font-size: 105%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+h6 {
+  font-size: 100%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+dt {
+  font-style: italic;
+}
+
+dd {
+  margin-bottom: 1.5em;
+}
+
+div.admonition, div.note, div.tip, div.caution, div.important {
+  margin: 2em 2em;
+  padding: 0em 1em;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  border-bottom: 2px solid #555;
+  border-right: 2px solid #555;
+}
+
+div.important {
+  background: transparent url('../images/important.png') 10px 2px no-repeat;
+}
+
+div.caution {
+  background: transparent url('../images/caution.png') 10px 2px no-repeat;
+}
+
+div.note {
+  background: transparent url('../images/note.png') 10px 2px no-repeat;
+}
+
+div.tip {
+  background: transparent url('../images/tip.png') 10px 2px no-repeat;
+}
+
+div.admonition-example {
+  background: transparent url('../images/tip.png') 10px 2px no-repeat;
+}
+
+div.admonition-critical-example {
+  background: transparent url('../images/important.png') 10px 2px no-repeat;
+}
+
+p.admonition-title {
+  font-weight: bold;
+  border-bottom: 1px solid #aaa;
+  padding-left: 30px;
+}
+
+table.docutils {
+  text-align: left;
+  border: 1px solid gray;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0em;
+}
+
+table.docutils caption {
+  font-style: italic;
+}
+
+table.docutils td, table.docutils th {
+  padding: 0.25em 0.5em;
+}
+
+table.docutils th {
+  background-color: #dddddd;
+}
+
+div.sidebar {
+  width: 33%;
+  float: right;
+  margin: 0em 2em;
+  padding: 0em 1em;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  border-bottom: 2px solid #555;
+  border-right: 2px solid #555;
+}
+
+p.sidebar-title {
+  margin-bottom: 0em;
+  color: #003a6b;
+  border-bottom: 1px solid #aaa;
+  font-weight: bold;
+}
+
+p.sidebar-subtitle {
+  margin-top: 0em;
+  font-style: italic;
+  color: #003a6b;
+}
+
+</style>
+</head>
+<body>
+<div class="document" id="pocketpygui-public-api-reference">
+<h1 class="title">PocketPyGui public API reference</h1>
+<div class="section">
+<h1><a id="classes" name="classes">Classes</a></h1>
+<div class="section">
+<h2><a id="core-classes" name="core-classes">Core classes</a></h2>
+<div class="section">
+<h3><a id="gui-guiobject-object" name="gui-guiobject-object">gui.GuiObject(object)</a></h3>
+<p>GuiObject is the base class of all ppygui classes.
+It implements automatic property generation:
+when a subclass implements one of <em>get_xxx</em>, <em>set_xxx</em> methods
+the property <em>xxx</em> is created.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Methods</strong></dt>
+<dd><dl class="first last docutils">
+<dt><em>set(property1=value1, property2=value2, ...)</em></dt>
+<dd>set each property to the given
+value.</dd>
+</dl>
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-window-gui-guiobject" name="gui-window-gui-guiobject">gui.Window(gui.GuiObject)</a></h3>
+<p>The base class of all gui elements.
+It introduces the <em>bind</em> method that allow the
+developper to flexibly handle events.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Constructor</strong></dt>
+<dd><dl class="first last docutils">
+<dt><em>gui.Window(parent=None, title=&quot;PocketPyGui&quot;, style=&quot;normal&quot;, pos=(-1,-1,-1,-1), tab_traversal=True, * * kw)</em></dt>
+<dd><ul class="first last simple">
+<li><em>parent</em>: the parent window.</li>
+<li><em>title</em>: the title as appearing in the title bar.</li>
+<li><em>style</em>: 'normal' or 'control'.</li>
+<li><em>pos</em>: a tuple (left, top, width, height) that determines the initial position of the window.
+use -1 in any tuple element for default positioning.
+It is strongly recommanded to use the Sizer classes to perform the layout.</li>
+<li><em>tab_traversal</em> : whether the Window should use automatic tab/jog-dial.</li>
+<li>kw : further property initialisation.</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>Methods</strong></dt>
+<dd><dl class="first docutils">
+<dt><em>bind(event1=callback1, event2=callback2, ...)</em></dt>
+<dd>maps gui events to callbacks (i.e. event handlers),
+callbacks are any callable that
+accept a single argument to receive
+event data.</dd>
+</dl>
+<p><em>focus()</em>: force the focus on this window.</p>
+<p><em>show(val=True)</em>: show or hide the window, depending of the
+boolean value of val.</p>
+<p><em>hide()</em>: shortcut for show(False).</p>
+<p><em>enable(val=True)</em>: enable or disable the window, depending of the boolean value of val.
+A window disabled will not receive user input.</p>
+<p><em>disable()</em>: shortcut for enable(False).</p>
+<p><em>move(self, left, top, width, height)</em>: move the window to the desired rect (left, top, width, height).</p>
+<p><em>update()</em>: force the window to be repainted.</p>
+<p><em>close()</em>: close the window.</p>
+<p><em>destroy()</em>: destroy the window and its child, releasing their resources, and break
+reference cycle that could be induced by the event system.</p>
+<p class="last"><em>bringtofront()</em>: bring the window to foreground.</p>
+</dd>
+</dl>
+<p><strong>Properties</strong></p>
+<blockquote>
+<p><em>parent</em>: the parent window instance or None for a top level window.</p>
+<p><em>pos</em>: the relative window position in its parent container as a tuple (left, top).</p>
+<p><em>size</em>: the size of the window as a tuple (width, height).</p>
+<p><em>redraw</em>: the redraw state as a bool. When setting it to
+False, the window will not be repainted, until it
+is set to True again.</p>
+</blockquote>
+<dl class="docutils">
+<dt><strong>Events</strong></dt>
+<dd><p class="first"><em>paint</em> -&gt; <strong>Event</strong>: sent when the window needs repainting.</p>
+<p><em>close</em> -&gt; <strong>Event</strong>: sent when the user or os request the window to be closed.</p>
+<p><em>destroy</em> -&gt; <strong>Event</strong>: sent when the window is about to be destroyed.</p>
+<p><em>size</em> -&gt; <strong>SizeEvent</strong>: sent when the window is resized.</p>
+<p><em>lbdown</em> -&gt; <strong>StylusEvent</strong>: sent when the stylus is pressed down on the window.</p>
+<p><em>lbmove</em> -&gt; <strong>StylusEvent</strong>: sent when the stylus is sliding on the window.</p>
+<p class="last"><em>lbup</em> -&gt; <strong>StylusEvent</strong>: sent when the stylus is pressed down on the window.</p>
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-control-gui-window" name="gui-control-gui-window">gui.Control(gui.Window)</a></h3>
+<p>The base class for common controls.
+It introduces the text and font properties.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Properties</strong></dt>
+<dd><p class="first"><em>text</em>: the text displayed by the control as a string.</p>
+<p class="last"><em>font</em>: the font of the control as a <strong>gui.Font</strong> instance.</p>
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-frame-gui-window" name="gui-frame-gui-window">gui.Frame(gui.Window)</a></h3>
+<p>Frame extends Window to provide layout facilities.
+It is the base class of all container windows.
+You can set a sizer to a Frame with the sizer property.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Properties</strong></dt>
+<dd><em>sizer</em>: a <strong>gui.VBox</strong>, <strong>gui.HBox</strong> or <strong>gui.TBox</strong> instance responsible of the layout.</dd>
+</dl>
+</blockquote>
+</div>
+</div>
+<div class="section">
+<h2><a id="common-controls" name="common-controls">Common controls</a></h2>
+<div class="section">
+<h3><a id="gui-label-gui-control" name="gui-label-gui-control">gui.Label(gui.Control)</a></h3>
+<p>The Label control displays a static text.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Constructor</strong></dt>
+<dd><dl class="first last docutils">
+<dt><em>gui.Label(parent, title=&quot;&quot;, align=&quot;left&quot;, border=False, pos=(-1,-1,-1,-1), * * kw)</em></dt>
+<dd><ul class="first last simple">
+<li><em>parent</em>: the parent window.</li>
+<li><em>title</em>: the text to be displayed.</li>
+<li><em>align</em>: the text alignment in its window, can be &quot;left&quot;, &quot;center&quot; or &quot;right&quot;.</li>
+<li><em>border</em>: a boolean that determines if this control should have a visible border.</li>
+<li><em>pos</em> : see <strong>gui.Window</strong>.</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>Events</strong></dt>
+<dd><ul class="first last simple">
+<li><em>clicked</em> -&gt; <strong>CommandEvent</strong> (useful for implementing hyperlink).</li>
+</ul>
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-button-gui-control" name="gui-button-gui-control">gui.Button(gui.Control)</a></h3>
+<p>The button control displays a command button,
+it can be a push button, a default button, or
+a check box. For a radio button see the RadioButton class.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Constructor</strong></dt>
+<dd><dl class="first last docutils">
+<dt>gui.Button(parent, title=&quot;&quot;, action=None, align=&quot;center&quot;, style=&quot;normal&quot;, border=False, pos=(-1,-1,-1,-1), * * kw)</dt>
+<dd><ul class="first last">
+<li><p class="first"><em>title</em>: the text of the button.</p>
+</li>
+<li><p class="first"><em>action</em>: the callback called when the button is clicked (equivalent to button.bind(clicked=callback)).</p>
+</li>
+<li><p class="first"><em>align</em>: the text alignment, can be &quot;left&quot;, &quot;center&quot; or &quot;right&quot;.</p>
+</li>
+<li><dl class="first docutils">
+<dt><em>style</em>:</dt>
+<dd><ul class="first last simple">
+<li>&quot;normal&quot; for a classic push button.</li>
+<li>&quot;default&quot; for a default push button.</li>
+<li>&quot;check&quot; for a check box.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><em>border</em>: a boolean that determines if this control should have a border.</p>
+</li>
+<li><p class="first"><em>pos</em> : see <strong>gui.Window</strong>.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>Properties</strong></dt>
+<dd><em>checked</em> : the checked state of a button as a boolean (only useful for a button created with the &quot;check&quot; style).</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-radiobutton-gui-button" name="gui-radiobutton-gui-button">gui.RadioButton(gui.Button)</a></h3>
+<p>The RadioButton control displays a radio button,
+when it belongs to a RadioGroup, it is mutually exclusive to other radio buttons in this group,
+It can be bound to a value (any python object) which is retrieved by
+the radio group <em>value</em> property when the radio is checked.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Constructor</strong></dt>
+<dd><dl class="first last docutils">
+<dt>gui.RadioButton(parent, title=&quot;&quot;, align=&quot;center&quot;, group=None, value=None, border=False, pos=(-1,-1,-1,-1), * * kw)</dt>
+<dd><ul class="first last simple">
+<li><em>title</em>: the text of the button.</li>
+<li><em>action</em>: the callback called when the button is clicked (equivalent to button.bind(clicked=callback)).</li>
+<li><em>align</em>: the text alignment, can be &quot;left&quot;, &quot;center&quot; or &quot;right&quot;.</li>
+<li><em>group</em>: the group of the radio as a <strong>RadioGroup</strong> instance or None.</li>
+<li><em>value</em>: any python object bound to the RadioButton.</li>
+<li><em>border</em>: a boolean that determines if this control should have a border.</li>
+<li><em>pos</em> : see <strong>gui.Window</strong>.</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>Properties</strong></dt>
+<dd><em>checked</em> : the checked state of a button as a boolean (only useful for a button created with the &quot;check&quot; style).</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-radiogroup-gui-guiobject" name="gui-radiogroup-gui-guiobject">gui.RadioGroup(gui.GuiObject)</a></h3>
+<p>Represents a group of mutually exclusive RadioButton.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Methods</strong></dt>
+<dd><em>bind(update=None)</em>: set the callback called when one of the radio buttons belonging to the group is pressed.</dd>
+<dt><strong>Properties</strong></dt>
+<dd><p class="first"><em>selection</em>: the current selected radio as a RadioButton instance,
+if set to a radio that does not belong to this group, ValueError is raised.</p>
+<p class="last"><em>value</em> (read-only): the value of the selected radio button.</p>
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-edit-gui-control" name="gui-edit-gui-control">gui.Edit(gui.Control)</a></h3>
+<p>The Edit control displays an editable text field.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Constructor</strong></dt>
+<dd><blockquote class="first">
+<dl class="docutils">
+<dt>gui.Edit(parent, text=&quot;&quot;, align=&quot;left&quot;, style=&quot;normal&quot;, password=False, multiline = False, line_wrap=False, readonly=False, border=True, pos=(-1,-1,-1,-1), * * kw)</dt>
+<dd><ul class="first last">
+<li><p class="first"><em>parent</em>: the parent window.</p>
+</li>
+<li><p class="first"><em>text</em>: the initial text to display.</p>
+</li>
+<li><p class="first">align*: the text alignment, can be &quot;left&quot;, &quot;center&quot; or &quot;right&quot;.</p>
+</li>
+<li><dl class="first docutils">
+<dt><em>style</em>:</dt>
+<dd><ul class="first last simple">
+<li>&quot;normal&quot;: standard text field.</li>
+<li>&quot;number&quot;: accept numeric input only.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><em>password</em>: a boolean that determines if the user input should be masked.</p>
+</li>
+<li><p class="first"><em>multiline</em>: a boolean that determines if the text should contain newlines.</p>
+</li>
+<li><p class="first"><em>readonly</em>: a boolean that determines if the text should be viewed only.</p>
+</li>
+<li><p class="first"><em>border</em>: a boolean that determines if this control should have a border.</p>
+</li>
+<li><p class="first"><em>pos</em>: see <strong>gui.Window</strong>.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</blockquote>
+<dl class="last docutils">
+<dt><strong>Methods</strong></dt>
+<dd><p class="first"><em>append(text)</em>: append the string <em>text</em> to the edit.</p>
+<p><em>select_all()</em>: select all the text.</p>
+<p><em>undo()</em>: undo the last modification.</p>
+<p><em>copy()</em>: copy the current selection to the clipboard.</p>
+<p><em>cut()</em>: cut the current selection to the clipboard.</p>
+<p class="last"><em>paste()</em>: paste the clipboard at the current position.</p>
+</dd>
+<dt><strong>Properties</strong></dt>
+<dd><p class="first"><em>selection</em>: the zero-based index selection as a tuple of ints (start, stop).</p>
+<p><em>readonly</em>: the read-only state of the edit as a boolean.</p>
+<p><em>selected_text</em>: the string of the selected text.
+when set it replaces the current selection.</p>
+<p class="last"><em>modified</em>: the modification flag as a boolean.
+It is set to True when the user modify the edit.</p>
+</dd>
+<dt><strong>Event</strong></dt>
+<dd><em>update</em> -&gt; <strong>CommandEvent</strong>: sent when the text is updated by the user.</dd>
+</dl>
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-list-gui-control" name="gui-list-gui-control">gui.List(gui.Control)</a></h3>
+<blockquote>
+<p>The List control displays a list of selectable strings
+It implements some of the python list methods and protocol.
+Especially, it implements the iterator protocol, so
+you can iterate the choices of the List using a simple for loop.</p>
+<dl class="docutils">
+<dt><strong>Constructor</strong></dt>
+<dd><dl class="first last docutils">
+<dt>gui.List(parent, choices=[], sort=False, multiple=False, border=True, pos=(-1,-1,-1,-1), * * kw)</dt>
+<dd><ul class="first last simple">
+<li><em>choices</em>: the initial possible choices as a list of string.</li>
+<li><em>sort</em>: <em>True</em> if the choices have to be sorted in alphabetical order.</li>
+<li><em>multiple</em>: <em>True</em> if the control should allow multiple selection.</li>
+<li><em>border</em>: a boolean that determines if this control should have a visible border.</li>
+<li><em>pos</em>: see <strong>gui.Window</strong>.</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>Methods</strong></dt>
+<dd><p class="first"><em>append(choice)</em>: add the string choice to the list of choices.</p>
+<p><em>insert(i, choice)</em>: insert the string choice at index i.</p>
+<p><em>__getitem__(i)</em>: list[i] -&gt; return the choice at index i as a string.</p>
+<p><em>__setitem__(i, choice)</em>: list[i] = somestring -&gt; set the choice at index i.</p>
+<p><em>__delitem__(i)</em>: del list[i] -&gt; remove the choice at index i.</p>
+<p class="last"><em>is_multiple()</em>: return <em>True</em> if the List control allows
+multiple selections, otherwise <em>False</em>.</p>
+</dd>
+<dt><strong>Properties</strong></dt>
+<dd><p class="first"><em>selection</em>: for a multiple List - &gt; the current selections as a list of index,
+for a simple selection List -&gt; the current selection index.</p>
+<p class="last"><em>count</em> (read-only): the total number of choices in the list.</p>
+</dd>
+<dt><strong>Events</strong></dt>
+<dd><p class="first"><em>selchanged</em> -&gt; <strong>CommandEvent</strong>: sent when the list selection has changed.</p>
+<p class="last"><em>itemactivated</em> -&gt; <strong>CommandEvent</strong>: sent when the user double-click on an item.</p>
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-combo-gui-control" name="gui-combo-gui-control">gui.Combo(gui.Control)</a></h3>
+<blockquote>
+<p>The Combo control displays an edit field and a dropdown list of selectable strings
+It implements some of the python list methods and protocol.</p>
+<dl class="docutils">
+<dt><strong>Constructor</strong></dt>
+<dd><dl class="first last docutils">
+<dt>gui.Combo(parent, style=&quot;edit&quot;, sort=False, choices=[], pos=(-1,)*4, * * kw)</dt>
+<dd><ul class="first last">
+<li><p class="first"><em>choices</em>: the initial possible choices as a list of string.</p>
+</li>
+<li><p class="first"><em>sort</em>: <em>True</em> if the choices have to be sorted in alphabetical order.</p>
+</li>
+<li><dl class="first docutils">
+<dt><em>style</em>:</dt>
+<dd><ul class="first last simple">
+<li>&quot;edit&quot;: the edit field is editable.</li>
+<li>&quot;list&quot;: the edit field is read-only, the combo acts as a drop down list.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><em>pos</em>: see <strong>gui.Window</strong></p>
+</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>Methods</strong></dt>
+<dd><p class="first"><em>append(choice)</em>: add the string choice to the list of choices.</p>
+<p><em>insert(i, choice)</em>: insert the string choice at index i.</p>
+<p><em>__getitem__(i)</em>: combo[i] -&gt; return the choice at index i as a string.</p>
+<p><em>__setitem__(i, choice)</em>: combo[i] = somestring -&gt; set the choice at index i.</p>
+<p><em>__delitem__(i)</em>: del combo[i] -&gt; remove the choice at index i.</p>
+<p class="last"><em>is_multiple()</em>: return True if the List control allows
+multiple selections, otherwise False.</p>
+</dd>
+<dt><strong>Properties</strong></dt>
+<dd><p class="first"><em>selection</em>:  the current selection index as an int</p>
+<p class="last"><em>count</em> (read-only): the total number of choices in the list</p>
+</dd>
+<dt><strong>Events</strong></dt>
+<dd><em>selchanged</em> -&gt; <strong>CommandEvent</strong> : sent when combo selection has changed</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-slider-gui-control" name="gui-slider-gui-control">gui.Slider(gui.Control)</a></h3>
+<p>Displays a movable slider for selecting an integer in a given range (for instance a volume control)</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Constructor</strong></dt>
+<dd><dl class="first last docutils">
+<dt>gui.Slider(parent, style=&quot;horizontal&quot;, range=(0,10), pos=(-1,-1,-1,-1), * * kw)</dt>
+<dd><ul class="first last">
+<li><p class="first"><em>parent</em>: the parent window.</p>
+</li>
+<li><dl class="first docutils">
+<dt><em>style</em>: the orientation of the slider, can be:</dt>
+<dd><ul class="first last simple">
+<li>&quot;horizontal&quot;.</li>
+<li>&quot;vertical&quot;.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><em>range</em>: the initial range of possible values as the tuple <em>(min, max)</em>.</p>
+</li>
+<li><p class="first"><em>pos</em>: see <strong>gui.Window</strong>.</p>
+</li>
+<li><p class="first">kw: other properties initialisation.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>Properties</strong></dt>
+<dd><p class="first"><em>range</em>: the range of possible values as a tuple <em>(min, max)</em>.</p>
+<p class="last"><em>value</em>: the position of the slider as an int.</p>
+</dd>
+<dt><strong>Events</strong></dt>
+<dd><em>update</em> -&gt; <strong>ScrollEvent</strong>: sent when the user moves the slider</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-progress-gui-control" name="gui-progress-gui-control">gui.Progress(gui.Control)</a></h3>
+<p>Displays a progress bar to provide visual feedback of long computation/io operations.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Constructor</strong></dt>
+<dd><p class="first">gui.Progress(parent, style=&quot;normal&quot;, orientation=&quot;horizontal&quot;, range=(0,100), pos=(-1,-1,-1,-1), * * kw)</p>
+<blockquote class="last">
+<ul>
+<li><p class="first"><em>parent</em>: the parent window.</p>
+</li>
+<li><dl class="first docutils">
+<dt><em>style</em>:</dt>
+<dd><ul class="first last simple">
+<li>&quot;normal&quot;: the progress bar is made of distinct bar.</li>
+<li>&quot;smooth&quot;: the progress bar is filled in a smooth way.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><em>orientation</em>: the orientation of the slider, can be:</dt>
+<dd><ul class="first last simple">
+<li>&quot;horizontal&quot;.</li>
+<li>&quot;vertical&quot;.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><em>range</em>: the initial range of possible values as a tuple <em>(min, max)</em>.</p>
+</li>
+<li><p class="first"><em>pos</em> : see <strong>gui.Window</strong>.</p>
+</li>
+<li><p class="first"><em>kw</em> : other properties initialisation.</p>
+</li>
+</ul>
+</blockquote>
+</dd>
+<dt><strong>Properties</strong></dt>
+<dd><p class="first"><em>range</em>: the range of possible values as a tuple <em>(min, max)</em>.</p>
+<p class="last"><em>value</em>: the position of the progress as an int.</p>
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-spin-gui-control" name="gui-spin-gui-control">gui.Spin(gui.Control)</a></h3>
+<p>Display an editable field and up/down arrows to input an integer value.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Constructor</strong></dt>
+<dd><dl class="first last docutils">
+<dt>gui.Spin(parent, range=(0,100), pos=(-1,-1,-1,-1), * * kw)</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt><em>parent</em>: the parent window.</dt>
+<dd><ul class="first last simple">
+<li><em>range</em> : the initial range of possible values as a tuple <em>(min, max)</em>.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><em>pos</em> : see <strong>gui.Window</strong>.</p>
+</li>
+<li><p class="first"><em>kw</em> : other properties initialisation.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>Properties</strong></dt>
+<dd><p class="first"><em>range</em>: the range of possible values as a tuple <em>(min, max)</em>.</p>
+<p class="last"><em>value</em>: the value of the spin control as an int.</p>
+</dd>
+<dt><strong>Events</strong></dt>
+<dd><em>update</em> -&gt; <strong>NoneType</strong>: sent when the value has changed.</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-date-gui-control" name="gui-date-gui-control">gui.Date(gui.Control)</a></h3>
+<p>Display an editable field and a drop-down calendar to input a date.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Properties</strong></dt>
+<dd><em>value</em>: the date as a <strong>datetime.date</strong> object (See standard library documentation).</dd>
+<dt><strong>Events</strong></dt>
+<dd><em>update</em> -&gt; <strong>NoneType</strong>: sent when the date value has changed.</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-time-gui-control" name="gui-time-gui-control">gui.Time(gui.Control)</a></h3>
+<p>Display an editable field to input a day time.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Properties</strong></dt>
+<dd><em>value</em>: time as a <strong>datetime.time</strong> object (See standard library documentation).</dd>
+<dt><strong>Events</strong></dt>
+<dd><em>update</em> -&gt; <strong>NoneType</strong>: sent when the value has changed.</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-html-gui-control" name="gui-html-gui-control">gui.Html(gui.Control)</a></h3>
+<p>Display hmtl pages or text.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Methods</strong></dt>
+<dd><p class="first"><em>navigate(url)</em>: display the html page located at url.</p>
+<p><em>clear()</em>: clear the text buffer.</p>
+<p><em>enablecontextmenu(val=True)</em>: enable or disable the context menu.</p>
+<p class="last"><em>enableshrink(val=True)</em>: enable or disable image shrinking.</p>
+</dd>
+<dt><strong>Properties</strong></dt>
+<dd><p class="first"><em>value</em> (write-only): the html source as a string.</p>
+<p class="last"><em>text</em> (write-only): the text displayed (not interpreted as html).</p>
+</dd>
+<dt><strong>Events</strong></dt>
+<dd><em>navigate</em> -&gt; <strong>BeforeNavigateEvent</strong>: occurs just berfore the user follow a hyperlink.</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-notebook-gui-frame" name="gui-notebook-gui-frame">gui.NoteBook(gui.Frame)</a></h3>
+<p>Display multiple window as tabs in a notebook.</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Constructor</strong></dt>
+<dd><dl class="first last docutils">
+<dt>gui.NoteBook(parent, pos=(-1-,1,-1,-1))</dt>
+<dd><ul class="first last simple">
+<li><em>parent</em>: the parent window.</li>
+<li><em>pos</em>: see <strong>gui.Window</strong>.</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>Methods</strong></dt>
+<dd><dl class="first docutils">
+<dt><em>append(self, title, tab)</em>: add a new tab to the notebook</dt>
+<dd><ul class="first last simple">
+<li>title: the title of the tab.</li>
+<li>tab: the child window.</li>
+</ul>
+</dd>
+<dt><em>insert(self, i, title, tab)</em>: insert a new tab in the notebook at index i</dt>
+<dd><ul class="first last simple">
+<li>title: the title of the tab.</li>
+<li>tab: the child window.</li>
+</ul>
+</dd>
+</dl>
+<p><em>__getitem__(self, i)</em>: notebook[i] -&gt; return the child window at index i.</p>
+<p class="last"><em>__delitem__(self, i)</em>: del notebook[i] -&gt; remove the tab at index i.</p>
+</dd>
+<dt><strong>Properties</strong></dt>
+<dd><em>selection</em>: index of the currently selected tab.</dd>
+</dl>
+</blockquote>
+</div>
+</div>
+<div class="section">
+<h2><a id="the-table-control" name="the-table-control">The Table Control</a></h2>
+<div class="section">
+<h3><a id="gui-table-gui-control" name="gui-table-gui-control">gui.Table(gui.Control)</a></h3>
+<p>A Table control displays a bidimensional array of text.
+A Table has 2 public attributes : <em>rows</em> and <em>columns</em>.</p>
+<p>Columns are added/modified/deleted via the <strong>TableColumns</strong> instance variable <em>columns</em>.</p>
+<p>Rows are added/modified/deleted via the <strong>TableRows</strong> instance variable <em>rows</em>.</p>
+<p>You can get or set the text at row i, column j by indexing table[i, j].</p>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Constructor</strong></dt>
+<dd><dl class="first last docutils">
+<dt>gui.Table(parent, columns=[], autoadjust=True, multiple=False, has_header=True, border=True, pos=(-1,-1,-1,-1))</dt>
+<dd><ul class="first last simple">
+<li><em>columns</em>: a list of title of the initial column headers.</li>
+<li><em>autoadjust</em>: whether the column width should be automatically adjusted.</li>
+<li><em>multiple</em>: whether the table should allow multiple rows selection.</li>
+<li><em>has_header</em>: whether the table displays a header for its columns.</li>
+<li><em>border</em>: a boolean that determines if this control should have a visible border.</li>
+<li><em>pos</em>: see <strong>gui.Window</strong>.</li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt><strong>Attributes</strong></dt>
+<dd><p class="first"><em>columns</em>: a <strong>TableColumns</strong> instance.</p>
+<p class="last"><em>rows</em>: a <strong>TableRows</strong> instance.</p>
+</dd>
+</dl>
+<p><strong>Methods</strong></p>
+<blockquote>
+<p><em>adjust_all()</em>: adjust all column widths to fit the text in it.</p>
+<p><em>__getitem__(pos)</em>: table[i, j] -&gt; return the text at the row i, column j.</p>
+<p><em>__setitem__(pos, val)</em>: table[i, j] = txt -&gt; set the text at the row i, column j to txt.</p>
+<p><em>delete_all()</em>: remove all rows of the list.</p>
+</blockquote>
+<dl class="docutils">
+<dt><strong>Events</strong></dt>
+<dd><p class="first"><em>selchanged</em> -&gt; <strong>TableEvent</strong>: occurs when user select or deselect a row.</p>
+<p class="last"><em>itemactivated</em> -&gt; <strong>TableEvent</strong>: occurs when user double click on a row.</p>
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-tablecolumns-gui-guiobject" name="gui-tablecolumns-gui-guiobject">gui.TableColumns(gui.GuiObject)</a></h3>
+<blockquote>
+<dl class="docutils">
+<dt><strong>Methods</strong></dt>
+<dd><dl class="first docutils">
+<dt><em>append(title, width=-1, align='left')</em></dt>
+<dd><p class="first">add a new column to the table.</p>
+<ul class="simple">
+<li><em>title</em>: the text of the column.</li>
+<li><em>width</em>: the width of the column in pixels,
+-1 will set the width so that it contains the title.</li>
+<li><em>align</em>: the alignment of the column content, can be &quot;left&quot;, &quot;center&quot; or &quot;right&quot;.</li>
+</ul>
+<p class="last">return the index of the newly created column.</p>
+</dd>
+<dt><em>insert(i, title, width=-1, align='left')</em></dt>
+<dd><p class="first">insert a new column to the table.</p>
+<ul class="simple">
+<li><em>i</em>: the index of the column to insert</li>
+<li><em>title</em>: the text of the column</li>
+<li><em>width</em>: the width of the column in pixels,
+-1 will set the width so that it contains the title</li>
+<li><em>align</em>: the alignment of the column content, can be &quot;left&quot;, &quot;center&quot; or &quot;right&quot;</li>
+</ul>
+<p class="last">return the index of the newly created column.</p>
+</dd>
+<dt><em>set(i, title=None, width=None, align=None)</em></dt>
+<dd><p class="first">change one or more settings of the column i.</p>
+<ul class="last simple">
+<li><em>i</em>: the index of the column to set.</li>
+<li><em>title</em>: the text of the column.</li>
+<li><em>width</em>: the width of the column in pixels,
+-1 will set the width so that it contains the title.</li>
+<li><em>align</em>: the alignment of the column content, can be &quot;left&quot;, &quot;center&quot; or &quot;right&quot;.</li>
+</ul>
+</dd>
+</dl>
+<p><em>adjust(i)</em>: adjust the width of the column i, to fit the content.</p>
+<p class="last"><em>__delitem___(i)</em>: del table.columns[i] -&gt; remove the column at index i.</p>
+</dd>
+</dl>
+</blockquote>
+</div>
+<div class="section">
+<h3><a id="gui-tablerows-gui-guiobject" name="gui-tablerows-gui-guiobject">gui.TableRows(gui.GuiObject)</a></h3>
+<blockquote>
+<p><strong>Methods</strong></p>
+<blockquote>
+<dl class="docutils">
+<dt><em>append(row, data=None)</em></dt>
+<dd><p class="first">add a new row at the bottom of the table.</p>
+<ul class="last simple">
+<li><em>row</em>: a list of string.</li>
+<li><em>data</em>: any python object that you want to link to the row.</li>
+</ul>
+</dd>
+<dt><em>insert(i, row, data=None)</em></dt>
+<dd><p class="first">insert a new row at index i.</p>
+<ul class="last simple">
+<li><em>i</em>: the index to insert the row</li>
+<li><em>row</em>: a list of string.</li>
+<li><em>data</em>: any python object that you want to link to the row.</li>
+</ul>
+</dd>
+</dl>
+<p><em>__getitem__(i, row)</em>: table.rows[i] -&gt; return the row at index i, as a list of strings.</p>
+<p><em>__setitem__(i, row)</em>: table.rows[i] = ['a', 'b', ...] -&gt; set the row at index i.</p>
+<p><em>getdata(i, data)</em>: return any python object that was bound to the row or <em>None</em>.</p>
+<p><em>setdata(i, data)</em>: bind any python object to the row at index i.</p>
+<p><em>is_selected(i)</em>: return <em>True</em> if the row at index i is selected.</p>
+<p><em>select(self, i)</em>: select the row at index i.</p>
+<p><em>ensure_visible(i)</em>: ensure the row at index i is visible.</p>
+<p><em>deselect(i)</em>: deselect the row at index i.</p>
+</blockquote>
+<dl class="docutils">
+<dt><strong>Properties</strong></dt>
+<dd><p class="first"><em>selection</em>: the current selection(s) as a list of index.</p>
+<p class="last"><em>selected_count</em> (read-only): the number of rows selected as an int.</p>
+</dd>
+</dl>
+</blockquote>
+</div>
+</div>
+<div class="section">
+<h2><a id="the-tree-control" name="the-tree-control">The Tree control</a></h2>
+</div>
+<div class="section">
+<h2><a id="wince-specific-classes" name="wince-specific-classes">WinCE specific classes</a></h2>
+<div class="section">
+<h3><a id="gui-ceframe-gui-frame" name="gui-ceframe-gui-frame">gui.CeFrame(gui.Frame)</a></h3>
+</div>
+</div>
+<div class="section">
+<h2><a id="event-classes" name="event-classes">Event classes</a></h2>
+<div class="section">
+<h3><a id="gui-event-gui-guiobject" name="gui-event-gui-guiobject">gui.Event(gui.GuiObject)</a></h3>
+</div>
+</div>
+<div class="section">
+<h2><a id="other-classes" name="other-classes">Other classes</a></h2>
+<div class="section">
+<h3><a id="gui-font-gui-guiobject" name="gui-font-gui-guiobject">gui.Font(gui.GuiObject)</a></h3>
+</div>
+<div class="section">
+<h3><a id="gui-menu-gui-guiobject" name="gui-menu-gui-guiobject">gui.Menu(gui.GuiObject)</a></h3>
+</div>
+<div class="section">
+<h3><a id="gui-popupmenu-gui-menu" name="gui-popupmenu-gui-menu">gui.PopupMenu(gui.Menu)</a></h3>
+</div>
+</div>
+</div>
+<div class="section">
+<h1><a id="functions" name="functions">Functions</a></h1>
+<div class="section">
+<h2><a id="message-functions" name="message-functions">Message functions</a></h2>
+<p>The message functions display predefined dialog for getting
+simple user input. The function name determines the number of button
+and the possible return values. All return values are strings, whose names
+are related to the user selection:</p>
+<blockquote>
+<ul class="simple">
+<li>gui.Message.ok(title, caption, icon, parent) -&gt; 'ok'.</li>
+<li>gui.Message.okcancel(title, caption, icon, parent) -&gt; 'ok' or 'cancel'.</li>
+<li>gui.Message.yesno(title, caption, icon, parent) -&gt; 'yes' or 'no'.</li>
+<li>gui.Message.yesnocancel(title, caption, icon, parent) -&gt; ''yes', 'no' or 'cancel'.</li>
+</ul>
+</blockquote>
+<dl class="docutils">
+<dt>Where arguments are:</dt>
+<dd><ul class="first last">
+<li><p class="first"><em>title</em>: the title of the dialog</p>
+</li>
+<li><p class="first"><em>caption</em>: the text of the dialiog</p>
+</li>
+<li><dl class="first docutils">
+<dt><em>icon</em>: a string in:</dt>
+<dd><ul class="first last simple">
+<li>'info'.</li>
+<li>'question'.</li>
+<li>'warning'.</li>
+<li>'error'.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first"><em>parent</em>:  the window instance disabled until the dialog is closed.</p>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a id="common-dialog-functions" name="common-dialog-functions">Common dialog functions</a></h2>
+<blockquote>
+gui.FileDlg.open() -&gt; path or ''</blockquote>
+</div>
+<div class="section">
+<h2><a id="context-menu-functions" name="context-menu-functions">Context menu functions</a></h2>
+<blockquote>
+<p>gui.recon_context()</p>
+<p>gui.context_menu()</p>
+</blockquote>
+</div>
+<div class="section">
+<h2><a id="thread-functions" name="thread-functions">Thread functions</a></h2>
+<blockquote>
+gui.schedule()</blockquote>
+</div>
+</div>
+</div>
+</body>
+</html>

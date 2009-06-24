@@ -1,0 +1,135 @@
+------------------------------------------------------------
+revno: 3
+committer: Damien Elmes <bzr@ichi2.net>
+branch nick: fc
+timestamp: Thu 2007-03-22 09:19:27 -0700
+message:
+  support appending to end of deck, add samples, temporary hack for saving
+------------------------------------------------------------
+revno: 2
+committer: Damien Elmes <bzr@ichi2.net>
+branch nick: fc
+timestamp: Thu 2007-03-22 08:37:20 -0700
+message:
+  update sync & upgrade code, set deckVersion on creation
+  - syncing now sends a protocol and client version on checkAuth
+  - don't touch lastModified when converting to the fc scheduler
+  - when correcting for sm5 mischeduling, do so idempotently
+  - make sure to convert new fc card attributes to float/int
+------------------------------------------------------------
+revno: 1
+committer: Damien Elmes <bzr@ichi2.net>
+branch nick: fc
+timestamp: Tue 2007-03-20 11:47:51 -0700
+message:
+  import from darcs (see ChangeLog.old for previous history)
+------------------------------------------------------------
+Tue Mar 20 11:27:51 PDT 2007  fc@ichi2.net
+  * move to new scheduling algorithm, add lang updates, etc
+  
+  The new scheduling algorithm is more conservative than sm5, and fixes a number
+  of problems with cards being scheduled too far into the future. The factor
+  matrix has been removed in favour of per-card factor modification. Each card
+  starts at factor=1.5, with factorChange=0.05. Easy cards are increased by
+  factorChange, difficult cards are reduced by it. In the future factorChange
+  could be modified to speed up ease adjustments.
+  
+  The new algorithm has five ease levels when answering a card, instead of the
+  earlier 6.
+  
+  - track totalCount, correctCount and succesivelyCorrect in cards for future
+    statistics
+  - apply deviation just before scheduling, so we don't confuse the user
+  - add quasi-i18n support via setLang to set format of fc string output
+  - add deckFormat and deckVersion to ease future upgrades
+  - fc.sched is now the default algorithm and doesn't require makeDefault()
+  - remove emacs deck conversion support (it was a hack)
+  - move emacs support and utilities into separate directories
+  - add GPL boilerplates & COPYING
+
+Fri Mar  9 05:19:26 PST 2007  fc@ichi2.net
+  * add a command to reset pending cards without updating statistics
+
+Fri Feb 23 23:32:30 PST 2007  fc@ichi2.net
+  * correct previous matrixsize patch
+
+Thu Feb 22 23:17:45 PST 2007  fc@ichi2.net
+  * ensure count and ease are bounded to the matrix size
+
+Wed Jan 24 09:40:22 PST 2007  LaC
+  * LaC lazy launch of kakasi
+  - kakasi is launched only when first used
+  - simpler availability check
+
+Wed Jan 24 08:04:40 PST 2007  LaC
+  * LaC shared kakasi
+  - use a single instance of kakasi, instead of launching it anew on every
+    keystroke; this makes the "add cards" dialog more responsive, at least on
+    my system
+
+Mon Jan  8 19:20:16 PST 2007  fc@ichi2.net
+  * display approximate time to next appearance
+
+Sat Dec 23 08:31:18 PST 2006  fc@ichi2.net
+  * find kakasi on mac
+
+Tue Dec 12 00:53:13 PST 2006  fc@ichi2.net
+  * fix negative numbers in status report
+
+Tue Dec 12 00:51:09 PST 2006  fc@ichi2.net
+  * improve backup/support old style format/provide deckCon
+
+Thu Dec  7 06:33:23 PST 2006  fc@ichi2.net
+  * handle deleted-and-readded cards and empty furigana
+
+Thu Dec  7 06:08:31 PST 2006  fc@ichi2.net
+  * add backup support
+
+Thu Dec  7 02:13:06 PST 2006  fc@ichi2.net
+  * if furigana is explictly provided, don't try invoke kakasi. no kana
+    generation
+
+Thu Dec  7 01:19:53 PST 2006  fc@ichi2.net
+  * use the :80 url for syncing
+
+Wed Dec  6 21:29:18 PST 2006  fc@ichi2.net
+  * implement add cards
+
+Wed Nov 29 20:30:19 PST 2006  fc@ichi2.net
+  * emacs support, big refactor
+
+Fri Nov 17 06:42:21 PST 2006  fc@ichi2.net
+  * add more deck creation support, various other things
+
+Wed Nov 15 10:37:30 PST 2006  fc@ichi2.net
+  * sync support w/ server working
+
+Tue Nov 14 10:31:25 PST 2006  fc@ichi2.net
+  * add deck editing and more
+
+Mon Nov 13 08:52:05 PST 2006  fc@ichi2.net
+  * add server support, syncing, etc
+
+Fri Nov 10 09:10:28 PST 2006  fc@ichi2.net
+  * misc patches
+
+Mon Oct 23 04:01:20 PDT 2006  fc@ichi2.net
+  * new interface seems okay for now
+
+Mon Oct 23 00:55:37 PDT 2006  fc@ichi2.net
+  * add missing files
+
+Mon Oct 23 00:55:00 PDT 2006  fc@ichi2.net
+  * move out fc_web, reorganise structure
+
+Sat Oct 21 16:57:31 PDT 2006  fc@ichi2.net
+  * add all new files from 3am commit
+
+Sat Oct 21 03:36:03 PDT 2006  fc@ichi2.net
+  * 3:30am commit
+
+Fri Oct 20 21:08:19 PDT 2006  fc@ichi2.net
+  * add pylons dir
+
+Fri Oct 20 21:06:10 PDT 2006  fc@ichi2.net
+  * initial import

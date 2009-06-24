@@ -1,0 +1,690 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ppygui.message</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ppygui.html"><font color="#ffffff">ppygui</font></a>.message</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/my%20documents/python/installer/ppygui/message.py">\my documents\python\installer\ppygui\message.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="ctypes.html">ctypes</a><br>
+</td><td width="25%" valign=top><a href="weakref.html">weakref</a><br>
+</td><td width="25%" valign=top><a href="ctypes.wintypes.html">ctypes.wintypes</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ppygui.message.html#Message">Message</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Message">class <strong>Message</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Class methods defined here:<br>
+<dl><dt><a name="Message-ok"><strong>ok</strong></a>(cls, title, caption, icon<font color="#909090">='info'</font>, parent<font color="#909090">=None</font>)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Message-okcancel"><strong>okcancel</strong></a>(cls, title, caption, icon<font color="#909090">='info'</font>, parent<font color="#909090">=None</font>)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Message-yesno"><strong>yesno</strong></a>(cls, title, caption, icon<font color="#909090">='info'</font>, parent<font color="#909090">=None</font>)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<dl><dt><a name="Message-yesnocancel"><strong>yesnocancel</strong></a>(cls, title, caption, icon<font color="#909090">='info'</font>, parent<font color="#909090">=None</font>)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-FormatError"><strong>FormatError</strong></a>(...)</dt><dd><tt><a href="#-FormatError">FormatError</a>([integer])&nbsp;-&gt;&nbsp;string<br>
+&nbsp;<br>
+Convert&nbsp;a&nbsp;win32&nbsp;error&nbsp;code&nbsp;into&nbsp;a&nbsp;string.&nbsp;If&nbsp;the&nbsp;error&nbsp;code&nbsp;is&nbsp;not<br>
+given,&nbsp;the&nbsp;return&nbsp;value&nbsp;of&nbsp;a&nbsp;call&nbsp;to&nbsp;GetLastError()&nbsp;is&nbsp;used.</tt></dd></dl>
+ <dl><dt><a name="-addressof"><strong>addressof</strong></a>(...)</dt><dd><tt><a href="#-addressof">addressof</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;integer<br>
+Return&nbsp;the&nbsp;address&nbsp;of&nbsp;the&nbsp;C&nbsp;instance&nbsp;internal&nbsp;buffer</tt></dd></dl>
+ <dl><dt><a name="-alignment"><strong>alignment</strong></a>(...)</dt><dd><tt><a href="#-alignment">alignment</a>(C&nbsp;type)&nbsp;-&gt;&nbsp;integer<br>
+<a href="#-alignment">alignment</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;integer<br>
+Return&nbsp;the&nbsp;alignment&nbsp;requirements&nbsp;of&nbsp;a&nbsp;C&nbsp;instance</tt></dd></dl>
+ <dl><dt><a name="-byref"><strong>byref</strong></a>(...)</dt><dd><tt><a href="#-byref">byref</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;byref-<a href="__builtin__.html#object">object</a><br>
+Return&nbsp;a&nbsp;pointer&nbsp;lookalike&nbsp;to&nbsp;a&nbsp;C&nbsp;instance,&nbsp;only&nbsp;usable<br>
+as&nbsp;function&nbsp;argument</tt></dd></dl>
+ <dl><dt><a name="-resize"><strong>resize</strong></a>(...)</dt><dd><tt>Resize&nbsp;the&nbsp;memory&nbsp;buffer&nbsp;of&nbsp;a&nbsp;ctypes&nbsp;instance</tt></dd></dl>
+ <dl><dt><a name="-set_conversion_mode"><strong>set_conversion_mode</strong></a>(...)</dt><dd><tt><a href="#-set_conversion_mode">set_conversion_mode</a>(encoding,&nbsp;errors)&nbsp;-&gt;&nbsp;(previous-encoding,&nbsp;previous-errors)<br>
+&nbsp;<br>
+Set&nbsp;the&nbsp;encoding&nbsp;and&nbsp;error&nbsp;handling&nbsp;ctypes&nbsp;uses&nbsp;when&nbsp;converting<br>
+between&nbsp;unicode&nbsp;and&nbsp;strings.&nbsp;&nbsp;Returns&nbsp;the&nbsp;previous&nbsp;values.</tt></dd></dl>
+ <dl><dt><a name="-sizeof"><strong>sizeof</strong></a>(...)</dt><dd><tt><a href="#-sizeof">sizeof</a>(C&nbsp;type)&nbsp;-&gt;&nbsp;integer<br>
+<a href="#-sizeof">sizeof</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;integer<br>
+Return&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes&nbsp;of&nbsp;a&nbsp;C&nbsp;instance</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>AppendMenu</strong> = &lt;_FuncPtr object at 0x005623F0&gt;<br>
+<strong>BDR_INNER</strong> = 12<br>
+<strong>BDR_OUTER</strong> = 3<br>
+<strong>BDR_RAISED</strong> = 5<br>
+<strong>BDR_RAISEDINNER</strong> = 4<br>
+<strong>BDR_RAISEDOUTER</strong> = 1<br>
+<strong>BDR_SUNKEN</strong> = 10<br>
+<strong>BDR_SUNKENINNER</strong> = 8<br>
+<strong>BDR_SUNKENOUTER</strong> = 2<br>
+<strong>BF_BOTTOM</strong> = 8<br>
+<strong>BF_LEFT</strong> = 1<br>
+<strong>BF_RIGHT</strong> = 4<br>
+<strong>BF_TOP</strong> = 2<br>
+<strong>BN_CLICKED</strong> = 0<br>
+<strong>BS_DEFPUSHBUTTON</strong> = 1L<br>
+<strong>BS_GROUPBOX</strong> = 7<br>
+<strong>BTNS_SHOWTEXT</strong> = 64<br>
+<strong>BeginDeferWindowPos</strong> = &lt;_FuncPtr object at 0x00562F30&gt;<br>
+<strong>BeginPaint</strong> = &lt;_FuncPtr object at 0x00562A80&gt;<br>
+<strong>BitBlt</strong> = &lt;_FuncPtr object at 0x00569B70&gt;<br>
+<strong>ButtonDefaultFont</strong> = &lt;ppygui.font.Font object at 0x00575BD0&gt;<br>
+<strong>CF_TEXT</strong> = 1<br>
+<strong>COLOR_3DDKSHADOW</strong> = 21<br>
+<strong>COLOR_3DFACE</strong> = 15<br>
+<strong>COLOR_3DHIGHLIGHT</strong> = 20<br>
+<strong>COLOR_3DHILIGHT</strong> = 20<br>
+<strong>COLOR_3DLIGHT</strong> = 22<br>
+<strong>COLOR_3DSHADOW</strong> = 16<br>
+<strong>COLOR_ACTIVEBORDER</strong> = 10<br>
+<strong>COLOR_ACTIVECAPTION</strong> = 2<br>
+<strong>COLOR_APPWORKSPACE</strong> = 12<br>
+<strong>COLOR_BACKGROUND</strong> = 1<br>
+<strong>COLOR_BTNFACE</strong> = 15<br>
+<strong>COLOR_BTNHIGHLIGHT</strong> = 20<br>
+<strong>COLOR_BTNHILIGHT</strong> = 20<br>
+<strong>COLOR_BTNSHADOW</strong> = 16<br>
+<strong>COLOR_BTNTEXT</strong> = 18<br>
+<strong>COLOR_CAPTIONTEXT</strong> = 9<br>
+<strong>COLOR_DESKTOP</strong> = 1<br>
+<strong>COLOR_GRAYTEXT</strong> = 17<br>
+<strong>COLOR_HIGHLIGHT</strong> = 13<br>
+<strong>COLOR_HIGHLIGHTTEXT</strong> = 14<br>
+<strong>COLOR_INACTIVEBORDER</strong> = 11<br>
+<strong>COLOR_INACTIVECAPTION</strong> = 3<br>
+<strong>COLOR_INACTIVECAPTIONTEXT</strong> = 19<br>
+<strong>COLOR_INFOBK</strong> = 24<br>
+<strong>COLOR_INFOTEXT</strong> = 23<br>
+<strong>COLOR_MENU</strong> = 4<br>
+<strong>COLOR_MENUTEXT</strong> = 7<br>
+<strong>COLOR_SCROLLBAR</strong> = 0<br>
+<strong>COLOR_WINDOW</strong> = 5<br>
+<strong>COLOR_WINDOWFRAME</strong> = 6<br>
+<strong>COLOR_WINDOWTEXT</strong> = 8<br>
+<strong>COMBOXBOX</strong> = 133<br>
+<strong>CP_ACP</strong> = 0<br>
+<strong>CS_HREDRAW</strong> = 2<br>
+<strong>CS_VREDRAW</strong> = 1<br>
+<strong>CTLCOLOR_BTN</strong> = 3<br>
+<strong>CTLCOLOR_DLG</strong> = 4<br>
+<strong>CTLCOLOR_EDIT</strong> = 1<br>
+<strong>CTLCOLOR_LISTBOX</strong> = 2<br>
+<strong>CTLCOLOR_MAX</strong> = 7<br>
+<strong>CTLCOLOR_MSGBOX</strong> = 0<br>
+<strong>CTLCOLOR_SCROLLBAR</strong> = 5<br>
+<strong>CTLCOLOR_STATIC</strong> = 6<br>
+<strong>CW_USEDEFAULT</strong> = 2147483648L<br>
+<strong>CallNextHookEx</strong> = &lt;_FuncPtr object at 0x005666C0&gt;<br>
+<strong>CallWindowProc</strong> = &lt;_FuncPtr object at 0x005298A0&gt;<br>
+<strong>CheckMenuItem</strong> = &lt;_FuncPtr object at 0x005624E0&gt;<br>
+<strong>ChildWindowFromPoint</strong> = &lt;_FuncPtr object at 0x005663F0&gt;<br>
+<strong>ClientToScreen</strong> = &lt;_FuncPtr object at 0x00562D50&gt;<br>
+<strong>CloseClipboard</strong> = &lt;_FuncPtr object at 0x00566BE8&gt;<br>
+<strong>CommandBar_Create</strong> = &lt;_FuncPtr object at 0x0056C468&gt;<br>
+<strong>CreateAcceleratorTable</strong> = &lt;_FuncPtr object at 0x00566120&gt;<br>
+<strong>CreateBitmap</strong> = &lt;_FuncPtr object at 0x00569DC8&gt;<br>
+<strong>CreateCompatibleBitmap</strong> = &lt;_FuncPtr object at 0x00569990&gt;<br>
+<strong>CreateCompatibleDC</strong> = &lt;_FuncPtr object at 0x00569918&gt;<br>
+<strong>CreateDIBSection</strong> = &lt;_FuncPtr object at 0x0056C120&gt;<br>
+<strong>CreateDialogIndirectParam</strong> = &lt;_FuncPtr object at 0x00569030&gt;<br>
+<strong>CreateEvent</strong> = &lt;_FuncPtr object at 0x00569468&gt;<br>
+<strong>CreateFontIndirect</strong> = &lt;_FuncPtr object at 0x0056C210&gt;<br>
+<strong>CreateMenu</strong> = &lt;_FuncPtr object at 0x00562288&gt;<br>
+<strong>CreatePatternBrush</strong> = &lt;_FuncPtr object at 0x00569CD8&gt;<br>
+<strong>CreatePen</strong> = &lt;_FuncPtr object at 0x0056C030&gt;<br>
+<strong>CreatePopupMenu</strong> = &lt;_FuncPtr object at 0x00562300&gt;<br>
+<strong>CreateSolidBrush</strong> = &lt;_FuncPtr object at 0x00569D50&gt;<br>
+<strong>CreateWindowEx</strong> = &lt;_FuncPtr object at 0x00529D50&gt;<br>
+<strong>DCX_CACHE</strong> = 2<br>
+<strong>DCX_CLIPCHILDREN</strong> = 8<br>
+<strong>DCX_CLIPSIBLINGS</strong> = 16<br>
+<strong>DCX_EXCLUDERGN</strong> = 64<br>
+<strong>DCX_INTERSECTRGN</strong> = 128<br>
+<strong>DCX_LOCKWINDOWUPDATE</strong> = 1024<br>
+<strong>DCX_NORESETATTRS</strong> = 4<br>
+<strong>DCX_PARENTCLIP</strong> = 32<br>
+<strong>DCX_VALIDATE</strong> = 2097152<br>
+<strong>DCX_WINDOW</strong> = 1<br>
+<strong>DEFAULT_MODE</strong> = 0<br>
+<strong>DS_MODALFRAME</strong> = 128<br>
+<strong>DS_SETFONT</strong> = 64<br>
+<strong>DT_HIDEPREFIX</strong> = 1048576<br>
+<strong>DT_NOPREFIX</strong> = 2048<br>
+<strong>DefWindowProc</strong> = &lt;_FuncPtr object at 0x00529828&gt;<br>
+<strong>DefaultFont</strong> = &lt;ppygui.font.Font object at 0x00575B70&gt;<br>
+<strong>DeferWindowPos</strong> = &lt;_FuncPtr object at 0x00566030&gt;<br>
+<strong>DeleteDC</strong> = &lt;_FuncPtr object at 0x0056C198&gt;<br>
+<strong>DeleteObject</strong> = &lt;_FuncPtr object at 0x00569AF8&gt;<br>
+<strong>DestroyAcceleratorTable</strong> = &lt;_FuncPtr object at 0x00566198&gt;<br>
+<strong>DestroyIcon</strong> = &lt;_FuncPtr object at 0x00529AF8&gt;<br>
+<strong>DestroyMenu</strong> = &lt;_FuncPtr object at 0x00562378&gt;<br>
+<strong>DestroyWindow</strong> = &lt;_FuncPtr object at 0x00562210&gt;<br>
+<strong>DialogBoxIndirectParam</strong> = &lt;_FuncPtr object at 0x005690A8&gt;<br>
+<strong>DispatchMessage</strong> = &lt;_FuncPtr object at 0x005620A8&gt;<br>
+<strong>DrawEdge</strong> = &lt;_FuncPtr object at 0x005698A0&gt;<br>
+<strong>DrawFocusRect</strong> = &lt;_FuncPtr object at 0x00569F30&gt;<br>
+<strong>DrawMenuBar</strong> = &lt;_FuncPtr object at 0x0056C3F0&gt;<br>
+<strong>DrawText</strong> = &lt;_FuncPtr object at 0x0056C0A8&gt;<br>
+<strong>EDGE_BUMP</strong> = 9<br>
+<strong>EDGE_ETCHED</strong> = 6<br>
+<strong>EDGE_RAISED</strong> = 5<br>
+<strong>EDGE_SUNKEN</strong> = 10<br>
+<strong>EDITTEXT</strong> = 129<br>
+<strong>EN_CHANGE</strong> = 768<br>
+<strong>ES_AUTOHSCROLL</strong> = 128L<br>
+<strong>ES_AUTOVSCROLL</strong> = 64L<br>
+<strong>ES_MULTILINE</strong> = 4<br>
+<strong>ES_READONLY</strong> = 2048<br>
+<strong>EVENT_ALL_ACCESS</strong> = 2031619L<br>
+<strong>Ellipse</strong> = &lt;_FuncPtr object at 0x005695D0&gt;<br>
+<strong>EmptyClipboard</strong> = &lt;_FuncPtr object at 0x00566A08&gt;<br>
+<strong>EnableMenuItem</strong> = &lt;_FuncPtr object at 0x00562468&gt;<br>
+<strong>EnableWindow</strong> = &lt;_FuncPtr object at 0x00529EB8&gt;<br>
+<strong>EndDeferWindowPos</strong> = &lt;_FuncPtr object at 0x005660A8&gt;<br>
+<strong>EndDialog</strong> = &lt;_FuncPtr object at 0x00566E40&gt;<br>
+<strong>EndPaint</strong> = &lt;_FuncPtr object at 0x00562AF8&gt;<br>
+<strong>EnumClipboardFormats</strong> = &lt;_FuncPtr object at 0x00566C60&gt;<br>
+<strong>FALSE</strong> = 0<br>
+<strong>FALT</strong> = 16<br>
+<strong>FCONTROL</strong> = 8<br>
+<strong>FNOINVERT</strong> = 2<br>
+<strong>FSHIFT</strong> = 4<br>
+<strong>FVIRTKEY</strong> = 1<br>
+<strong>FillRect</strong> = &lt;_FuncPtr object at 0x0056C300&gt;<br>
+<strong>FindResource</strong> = &lt;_FuncPtr object at 0x00566288&gt;<br>
+<strong>FindWindow</strong> = &lt;_FuncPtr object at 0x00566300&gt;<br>
+<strong>GCL_STYLE</strong> = -26<br>
+<strong>GMEM_DDESHARE</strong> = 8192<br>
+<strong>GMEM_DISCARDABLE</strong> = 256<br>
+<strong>GMEM_FIXED</strong> = 0<br>
+<strong>GMEM_INVALID_HANDLE</strong> = 32768<br>
+<strong>GMEM_LOWER</strong> = 4096<br>
+<strong>GMEM_MODIFY</strong> = 128<br>
+<strong>GMEM_MOVEABLE</strong> = 2<br>
+<strong>GMEM_NOCOMPACT</strong> = 16<br>
+<strong>GMEM_NODISCARD</strong> = 32<br>
+<strong>GMEM_NOTIFY</strong> = 16384<br>
+<strong>GMEM_NOT_BANKED</strong> = 4096<br>
+<strong>GMEM_SHARE</strong> = 8192<br>
+<strong>GMEM_VALID_FLAGS</strong> = 32626<br>
+<strong>GMEM_ZEROINIT</strong> = 64<br>
+<strong>GN_CONTEXTMENU</strong> = 1000<br>
+<strong>GWL_WNDPROC</strong> = -4<br>
+<strong>GetActiveWindow</strong> = &lt;_FuncPtr object at 0x00562E40&gt;<br>
+<strong>GetCapture</strong> = &lt;_FuncPtr object at 0x00562BE8&gt;<br>
+<strong>GetClassInfo</strong> = &lt;_FuncPtr object at 0x00569378&gt;<br>
+<strong>GetClassLong</strong> = &lt;_FuncPtr object at 0x00562918&gt;<br>
+<strong>GetClassName</strong> = &lt;_FuncPtr object at 0x00566DC8&gt;<br>
+<strong>GetClientRect</strong> = &lt;_FuncPtr object at 0x00562648&gt;<br>
+<strong>GetClipboardData</strong> = &lt;_FuncPtr object at 0x00566AF8&gt;<br>
+<strong>GetCursorPos</strong> = &lt;_FuncPtr object at 0x00569288&gt;<br>
+<strong>GetDC</strong> = &lt;_FuncPtr object at 0x00529990&gt;<br>
+<strong>GetDCEx</strong> = &lt;_FuncPtr object at 0x00529918&gt;<br>
+<strong>GetDesktopWindow</strong> = &lt;_FuncPtr object at 0x00566EB8&gt;<br>
+<strong>GetDlgItem</strong> = &lt;_FuncPtr object at 0x00566D50&gt;<br>
+<strong>GetFocus</strong> = &lt;_FuncPtr object at 0x005668A0&gt;<br>
+<strong>GetForegroundWindow</strong> = &lt;_FuncPtr object at 0x00566378&gt;<br>
+<strong>GetLastError</strong> = &lt;_FuncPtr object at 0x00529378&gt;<br>
+<strong>GetMenuItemInfo</strong> = &lt;_FuncPtr object at 0x005664E0&gt;<br>
+<strong>GetMessage</strong> = &lt;_FuncPtr object at 0x00529F30&gt;<br>
+<strong>GetMessagePos</strong> = &lt;_FuncPtr object at 0x00562EB8&gt;<br>
+<strong>GetModuleHandle</strong> = &lt;_FuncPtr object at 0x00529738&gt;<br>
+<strong>GetObject</strong> = &lt;_FuncPtr object at 0x00569A80&gt;<br>
+<strong>GetParent</strong> = &lt;_FuncPtr object at 0x00562738&gt;<br>
+<strong>GetStockObject</strong> = &lt;_FuncPtr object at 0x005696C0&gt;<br>
+<strong>GetSubMenu</strong> = &lt;_FuncPtr object at 0x00566558&gt;<br>
+<strong>GetSysColorBrush</strong> = &lt;_FuncPtr object at 0x00569C60&gt;<br>
+<strong>GetTextExtentExPointW</strong> = &lt;_FuncPtr object at 0x0056C7B0&gt;<br>
+<strong>GetVersion</strong> = &lt;_FuncPtr object at 0x00529648&gt;<br>
+<strong>GetWindowLong</strong> = &lt;_FuncPtr object at 0x005627B0&gt;<br>
+<strong>GetWindowRect</strong> = &lt;_FuncPtr object at 0x00562120&gt;<br>
+<strong>GlobalAlloc</strong> = &lt;_FuncPtr object at 0x005694E0&gt;<br>
+<strong>GlobalFree</strong> = &lt;_FuncPtr object at 0x00569558&gt;<br>
+<strong>HIRES</strong> = True<br>
+<strong>HWND_BOTTOM</strong> = 1<br>
+<strong>HWND_TOP</strong> = 0<br>
+<strong>HWND_TOPMOST</strong> = -1<br>
+<strong>IDABORT</strong> = 3<br>
+<strong>IDCANCEL</strong> = 2<br>
+<strong>IDCLOSE</strong> = 8<br>
+<strong>IDC_ARROW</strong> = 32512<br>
+<strong>IDC_SIZE</strong> = 32640<br>
+<strong>IDC_SIZEALL</strong> = 32646<br>
+<strong>IDC_SIZENESW</strong> = 32643<br>
+<strong>IDC_SIZENS</strong> = 32645<br>
+<strong>IDC_SIZENWSE</strong> = 32642<br>
+<strong>IDC_SIZEWE</strong> = 32644<br>
+<strong>IDHELP</strong> = 9<br>
+<strong>IDIGNORE</strong> = 5<br>
+<strong>IDI_APPLICATION</strong> = 32512<br>
+<strong>IDNO</strong> = 7<br>
+<strong>IDOK</strong> = 1<br>
+<strong>IDRETRY</strong> = 4<br>
+<strong>IDYES</strong> = 6<br>
+<strong>ILC_COLOR</strong> = 0<br>
+<strong>ILC_COLOR16</strong> = 16<br>
+<strong>ILC_COLOR24</strong> = 24<br>
+<strong>ILC_COLOR32</strong> = 32<br>
+<strong>ILC_COLOR4</strong> = 4<br>
+<strong>ILC_COLOR8</strong> = 8<br>
+<strong>ILC_COLORDDB</strong> = 254<br>
+<strong>ILC_MASK</strong> = 1<br>
+<strong>ILC_PALETTE</strong> = 2048<br>
+<strong>IMAGE_BITMAP</strong> = 0<br>
+<strong>IMAGE_ICON</strong> = 1<br>
+<strong>I_IMAGENONE</strong> = -2<br>
+<strong>InvalidateRect</strong> = &lt;_FuncPtr object at 0x00562A08&gt;<br>
+<strong>InvertRect</strong> = &lt;_FuncPtr object at 0x00569EB8&gt;<br>
+<strong>IsClipboardFormatAvailable</strong> = &lt;_FuncPtr object at 0x00566CD8&gt;<br>
+<strong>IsDialogMessage</strong> = &lt;_FuncPtr object at 0x00562DC8&gt;<br>
+<strong>IsWindowVisible</strong> = &lt;_FuncPtr object at 0x00569210&gt;<br>
+<strong>KillTimer</strong> = &lt;_FuncPtr object at 0x00569198&gt;<br>
+<strong>LISTBOX</strong> = 131<br>
+<strong>LOCALE_SYSTEM_DEFAULT</strong> = 2048<br>
+<strong>LR_LOADFROMFILE</strong> = 16<br>
+<strong>LR_LOADMAP3DCOLORS</strong> = 4096<br>
+<strong>LR_LOADTRANSPARENT</strong> = 32<br>
+<strong>LR_VGACOLOR</strong> = 128<br>
+<strong>LTEXT</strong> = 130<br>
+<strong>LVSIL_NORMAL</strong> = 0<br>
+<strong>LVSIL_SMALL</strong> = 1<br>
+<strong>LVSIL_STATE</strong> = 2<br>
+<strong>LineTo</strong> = &lt;_FuncPtr object at 0x00569738&gt;<br>
+<strong>LoadCursor</strong> = &lt;_FuncPtr object at 0x00529B70&gt;<br>
+<strong>LoadIcon</strong> = &lt;_FuncPtr object at 0x00529A80&gt;<br>
+<strong>LoadImage</strong> = &lt;_FuncPtr object at 0x00529BE8&gt;<br>
+<strong>LoadLibrary</strong> = &lt;_FuncPtr object at 0x00566210&gt;<br>
+<strong>MAX_PATH</strong> = 260<br>
+<strong>MB_ABORTRETRYIGNORE</strong> = 2<br>
+<strong>MB_ICONASTERISK</strong> = 64<br>
+<strong>MB_ICONERROR</strong> = 16<br>
+<strong>MB_ICONEXCLAMATION</strong> = 48<br>
+<strong>MB_ICONHAND</strong> = 16<br>
+<strong>MB_ICONINFORMATION</strong> = 64<br>
+<strong>MB_ICONMASK</strong> = 240<br>
+<strong>MB_ICONQUESTION</strong> = 32<br>
+<strong>MB_ICONSTOP</strong> = 16<br>
+<strong>MB_ICONWARNING</strong> = 48<br>
+<strong>MB_OK</strong> = 0<br>
+<strong>MB_OKCANCEL</strong> = 1<br>
+<strong>MB_RETRYCANCEL</strong> = 5<br>
+<strong>MB_YESNO</strong> = 4<br>
+<strong>MB_YESNOCANCEL</strong> = 3<br>
+<strong>MFS_CHECKED</strong> = 8<br>
+<strong>MFS_DEFAULT</strong> = 4096<br>
+<strong>MFS_DISABLED</strong> = 3L<br>
+<strong>MFS_ENABLED</strong> = 0<br>
+<strong>MFS_GRAYED</strong> = 3L<br>
+<strong>MFS_HILITE</strong> = 128<br>
+<strong>MFS_UNCHECKED</strong> = 0<br>
+<strong>MFS_UNHILITE</strong> = 0<br>
+<strong>MFT_BITMAP</strong> = 4<br>
+<strong>MFT_MENUBARBREAK</strong> = 32<br>
+<strong>MFT_MENUBREAK</strong> = 64<br>
+<strong>MFT_OWNERDRAW</strong> = 256<br>
+<strong>MFT_RADIOCHECK</strong> = 512<br>
+<strong>MFT_RIGHTJUSTIFY</strong> = 16384<br>
+<strong>MFT_RIGHTORDER</strong> = 8192L<br>
+<strong>MFT_SEPARATOR</strong> = 2048<br>
+<strong>MFT_STRING</strong> = 0<br>
+<strong>MF_APPEND</strong> = 256<br>
+<strong>MF_BITMAP</strong> = 4<br>
+<strong>MF_BYCOMMAND</strong> = 0<br>
+<strong>MF_BYPOSITION</strong> = 1024<br>
+<strong>MF_CHANGE</strong> = 128<br>
+<strong>MF_CHECKED</strong> = 8<br>
+<strong>MF_DEFAULT</strong> = 4096<br>
+<strong>MF_DELETE</strong> = 512<br>
+<strong>MF_DISABLED</strong> = 2<br>
+<strong>MF_ENABLED</strong> = 0<br>
+<strong>MF_END</strong> = 128<br>
+<strong>MF_GRAYED</strong> = 1<br>
+<strong>MF_HELP</strong> = 16384<br>
+<strong>MF_HILITE</strong> = 128<br>
+<strong>MF_INSERT</strong> = 0<br>
+<strong>MF_MENUBARBREAK</strong> = 32<br>
+<strong>MF_MENUBREAK</strong> = 64<br>
+<strong>MF_MOUSESELECT</strong> = 32768<br>
+<strong>MF_OWNERDRAW</strong> = 256<br>
+<strong>MF_POPUP</strong> = 16<br>
+<strong>MF_REMOVE</strong> = 4096<br>
+<strong>MF_RIGHTJUSTIFY</strong> = 16384<br>
+<strong>MF_SEPARATOR</strong> = 2048<br>
+<strong>MF_STRING</strong> = 0<br>
+<strong>MF_SYSMENU</strong> = 8192<br>
+<strong>MF_UNCHECKED</strong> = 0<br>
+<strong>MF_UNHILITE</strong> = 0<br>
+<strong>MF_USECHECKBITMAPS</strong> = 512<br>
+<strong>MIIM_BITMAP</strong> = 128<br>
+<strong>MIIM_CHECKMARKS</strong> = 8<br>
+<strong>MIIM_DATA</strong> = 32<br>
+<strong>MIIM_FTYPE</strong> = 256<br>
+<strong>MIIM_ID</strong> = 2<br>
+<strong>MIIM_STATE</strong> = 1<br>
+<strong>MIIM_STRING</strong> = 64<br>
+<strong>MIIM_SUBMENU</strong> = 4<br>
+<strong>MIIM_TYPE</strong> = 16<br>
+<strong>MK_CONTROL</strong> = 8<br>
+<strong>MK_LBUTTON</strong> = 1<br>
+<strong>MK_MBUTTON</strong> = 16<br>
+<strong>MK_RBUTTON</strong> = 2<br>
+<strong>MK_SHIFT</strong> = 4<br>
+<strong>MSGS</strong> = [('WM_NULL', 0), ('WM_CREATE', 1), ('WM_CANCELMODE', 31), ('WM_CAPTURECHANGED', 533), ('WM_CLOSE', 16), ('WM_COMMAND', 273), ('WM_DESTROY', 2), ('WM_ERASEBKGND', 20), ('WM_ENABLE', 10), ('WM_GETFONT', 49), ('WM_INITDIALOG', 272), ('WM_INITMENUPOPUP', 279), ('WM_KEYDOWN', 256), ('WM_KEYFIRST', 256), ('WM_KEYLAST', 264), ('WM_KEYUP', 257), ('WM_LBUTTONDBLCLK', 515), ('WM_LBUTTONDOWN', 513), ('WM_LBUTTONUP', 514), ('WM_MBUTTONDBLCLK', 521), ...]<br>
+<strong>MessageBox</strong> = &lt;_FuncPtr object at 0x005667B0&gt;<br>
+<strong>MoveToEx</strong> = &lt;_FuncPtr object at 0x005697B0&gt;<br>
+<strong>MoveWindow</strong> = &lt;_FuncPtr object at 0x00562198&gt;<br>
+<strong>MultiByteToWideChar</strong> = &lt;_FuncPtr object at 0x00566F30&gt;<br>
+<strong>NULL</strong> = 0<br>
+<strong>OpenClipboard</strong> = &lt;_FuncPtr object at 0x00566990&gt;<br>
+<strong>OpenEvent</strong> = &lt;_FuncPtr object at 0x005693F0&gt;<br>
+<strong>PUSHBUTTON</strong> = 128<br>
+<strong>PatBlt</strong> = &lt;_FuncPtr object at 0x00569E40&gt;<br>
+<strong>Polyline</strong> = &lt;_FuncPtr object at 0x0056C288&gt;<br>
+<strong>PostMessage</strong> = &lt;_FuncPtr object at 0x005625D0&gt;<br>
+<strong>PostQuitMessage</strong> = &lt;_FuncPtr object at 0x005297B0&gt;<br>
+<strong>PtInRect</strong> = &lt;_FuncPtr object at 0x005296C0&gt;<br>
+<strong>RBBIM_BACKGROUND</strong> = 128<br>
+<strong>RBBIM_CHILD</strong> = 16<br>
+<strong>RBBIM_CHILDSIZE</strong> = 32<br>
+<strong>RBBIM_COLORS</strong> = 2<br>
+<strong>RBBIM_ID</strong> = 256<br>
+<strong>RBBIM_IDEALSIZE</strong> = 512<br>
+<strong>RBBIM_IMAGE</strong> = 8<br>
+<strong>RBBIM_SIZE</strong> = 64<br>
+<strong>RBBIM_STYLE</strong> = 1<br>
+<strong>RBBIM_TEXT</strong> = 4<br>
+<strong>RB_GETBANDCOUNT</strong> = 1036<br>
+<strong>RB_INSERTBAND</strong> = 1025<br>
+<strong>RB_INSERTBANDA</strong> = 1025<br>
+<strong>RB_INSERTBANDW</strong> = 1034<br>
+<strong>RB_SETBARINFO</strong> = 1028<br>
+<strong>RTLD_GLOBAL</strong> = 0<br>
+<strong>RTLD_LOCAL</strong> = 0<br>
+<strong>RT_DIALOG</strong> = '5'<br>
+<strong>RegisterClass</strong> = &lt;_FuncPtr object at 0x00529C60&gt;<br>
+<strong>RegisterClipboardFormat</strong> = &lt;_FuncPtr object at 0x00566B70&gt;<br>
+<strong>RegisterWindowMessage</strong> = &lt;_FuncPtr object at 0x005626C0&gt;<br>
+<strong>ReleaseCapture</strong> = &lt;_FuncPtr object at 0x00562C60&gt;<br>
+<strong>ReleaseDC</strong> = &lt;_FuncPtr object at 0x00529A08&gt;<br>
+<strong>SB_BOTH</strong> = 3<br>
+<strong>SB_BOTTOM</strong> = 7<br>
+<strong>SB_CTL</strong> = 2<br>
+<strong>SB_ENDSCROLL</strong> = 8<br>
+<strong>SB_HORZ</strong> = 0<br>
+<strong>SB_LEFT</strong> = 6<br>
+<strong>SB_LINEDOWN</strong> = 1<br>
+<strong>SB_LINELEFT</strong> = 0<br>
+<strong>SB_LINERIGHT</strong> = 1<br>
+<strong>SB_LINEUP</strong> = 0<br>
+<strong>SB_PAGEDOWN</strong> = 3<br>
+<strong>SB_PAGELEFT</strong> = 2<br>
+<strong>SB_PAGERIGHT</strong> = 3<br>
+<strong>SB_PAGEUP</strong> = 2<br>
+<strong>SB_RIGHT</strong> = 7<br>
+<strong>SB_THUMBPOSITION</strong> = 4<br>
+<strong>SB_THUMBTRACK</strong> = 5<br>
+<strong>SB_TOP</strong> = 6<br>
+<strong>SB_VERT</strong> = 1<br>
+<strong>SCROLLBAR</strong> = 132<br>
+<strong>SHCMBF_COLORBK</strong> = 8<br>
+<strong>SHCMBF_EMPTYBAR</strong> = 1<br>
+<strong>SHCMBF_HIDDEN</strong> = 2<br>
+<strong>SHCMBF_HIDESIPBUTTON</strong> = 4<br>
+<strong>SHCMBF_HMENU</strong> = 16<br>
+<strong>SHCreateMenuBar</strong> = &lt;_FuncPtr object at 0x0056C4E0&gt;<br>
+<strong>SHHandleWMActivate</strong> = &lt;_FuncPtr object at 0x0056C6C0&gt;<br>
+<strong>SHHandleWMSettingChange</strong> = &lt;_FuncPtr object at 0x0056C738&gt;<br>
+<strong>SHIDIF_DONEBUTTON</strong> = 1<br>
+<strong>SHIDIF_SIZEDLGFULLSCREEN</strong> = 4<br>
+<strong>SHInitDialog</strong> = &lt;_FuncPtr object at 0x0056C5D0&gt;<br>
+<strong>SHRG_RETURNCMD</strong> = 1<br>
+<strong>SHRecognizeGesture</strong> = &lt;_FuncPtr object at 0x0056C648&gt;<br>
+<strong>SHSipInfo</strong> = &lt;_FuncPtr object at 0x0056C558&gt;<br>
+<strong>SPI_GETSIPINFO</strong> = 225<br>
+<strong>SPI_SETSIPINFO</strong> = 224<br>
+<strong>SRCCOPY</strong> = 13369376<br>
+<strong>STANDARD_RIGHTS_REQUIRED</strong> = 983040L<br>
+<strong>SWP_ASYNCWINDOWPOS</strong> = 16384<br>
+<strong>SWP_DEFERERASE</strong> = 8192<br>
+<strong>SWP_DRAWFRAME</strong> = 32<br>
+<strong>SWP_FRAMECHANGED</strong> = 32<br>
+<strong>SWP_HIDEWINDOW</strong> = 128<br>
+<strong>SWP_NOACTIVATE</strong> = 16<br>
+<strong>SWP_NOCOPYBITS</strong> = 256<br>
+<strong>SWP_NOMOVE</strong> = 2<br>
+<strong>SWP_NOOWNERZORDER</strong> = 512<br>
+<strong>SWP_NOREDRAW</strong> = 8<br>
+<strong>SWP_NOREPOSITION</strong> = 512<br>
+<strong>SWP_NOSENDCHANGING</strong> = 1024<br>
+<strong>SWP_NOSIZE</strong> = 1<br>
+<strong>SWP_NOZORDER</strong> = 4<br>
+<strong>SWP_SHOWWINDOW</strong> = 64<br>
+<strong>SW_HIDE</strong> = 0<br>
+<strong>SW_SHOW</strong> = 5<br>
+<strong>SW_SHOWNORMAL</strong> = 1<br>
+<strong>SYNCHRONIZE</strong> = 1048576L<br>
+<strong>ScreenToClient</strong> = &lt;_FuncPtr object at 0x00562CD8&gt;<br>
+<strong>SelectObject</strong> = &lt;_FuncPtr object at 0x00569A08&gt;<br>
+<strong>SendMessage</strong> = &lt;_FuncPtr object at 0x00562558&gt;<br>
+<strong>SetBkColor</strong> = &lt;_FuncPtr object at 0x00569648&gt;<br>
+<strong>SetCapture</strong> = &lt;_FuncPtr object at 0x00562B70&gt;<br>
+<strong>SetClassLong</strong> = &lt;_FuncPtr object at 0x005628A0&gt;<br>
+<strong>SetClipboardData</strong> = &lt;_FuncPtr object at 0x00566A80&gt;<br>
+<strong>SetCursor</strong> = &lt;_FuncPtr object at 0x00529CD8&gt;<br>
+<strong>SetFocus</strong> = &lt;_FuncPtr object at 0x00566918&gt;<br>
+<strong>SetForegroundWindow</strong> = &lt;_FuncPtr object at 0x00569300&gt;<br>
+<strong>SetMenuItemInfo</strong> = &lt;_FuncPtr object at 0x005665D0&gt;<br>
+<strong>SetTextColor</strong> = &lt;_FuncPtr object at 0x0056C378&gt;<br>
+<strong>SetTimer</strong> = &lt;_FuncPtr object at 0x00569120&gt;<br>
+<strong>SetWindowLong</strong> = &lt;_FuncPtr object at 0x00562828&gt;<br>
+<strong>SetWindowPos</strong> = &lt;_FuncPtr object at 0x00562990&gt;<br>
+<strong>SetWindowText</strong> = &lt;_FuncPtr object at 0x00566828&gt;<br>
+<strong>SetWindowsHookEx</strong> = &lt;_FuncPtr object at 0x00566648&gt;<br>
+<strong>ShowWindow</strong> = &lt;_FuncPtr object at 0x00529DC8&gt;<br>
+<strong>StretchBlt</strong> = &lt;_FuncPtr object at 0x00569BE8&gt;<br>
+<strong>TBIF_TEXT</strong> = 2<br>
+<strong>TBSTATE_ENABLED</strong> = 4<br>
+<strong>TCIF_IMAGE</strong> = 2<br>
+<strong>TCIF_PARAM</strong> = 8<br>
+<strong>TCIF_RTLREADING</strong> = 4<br>
+<strong>TCIF_TEXT</strong> = 1<br>
+<strong>TCS_MULTILINE</strong> = 512<br>
+<strong>TPM_BOTTOMALIGN</strong> = 32<br>
+<strong>TPM_CENTERALIGN</strong> = 4<br>
+<strong>TPM_HORIZONTAL</strong> = 0<br>
+<strong>TPM_LEFTALIGN</strong> = 0<br>
+<strong>TPM_LEFTBUTTON</strong> = 0<br>
+<strong>TPM_NONOTIFY</strong> = 128<br>
+<strong>TPM_RETURNCMD</strong> = 256<br>
+<strong>TPM_RIGHTALIGN</strong> = 8<br>
+<strong>TPM_RIGHTBUTTON</strong> = 2<br>
+<strong>TPM_TOPALIGN</strong> = 0<br>
+<strong>TPM_VCENTERALIGN</strong> = 16<br>
+<strong>TPM_VERTICAL</strong> = 64<br>
+<strong>TRUE</strong> = 1<br>
+<strong>TVSIL_NORMAL</strong> = 0<br>
+<strong>TVSIL_STATE</strong> = 2<br>
+<strong>TrackPopupMenuEx</strong> = &lt;_FuncPtr object at 0x00566468&gt;<br>
+<strong>TranslateMessage</strong> = &lt;_FuncPtr object at 0x00562030&gt;<br>
+<strong>UnhookWindowsHookEx</strong> = &lt;_FuncPtr object at 0x00566738&gt;<br>
+<strong>UpdateWindow</strong> = &lt;_FuncPtr object at 0x00529E40&gt;<br>
+<strong>VK_DELETE</strong> = 46<br>
+<strong>VK_DOWN</strong> = 40<br>
+<strong>VK_LEFT</strong> = 37<br>
+<strong>VK_RIGHT</strong> = 39<br>
+<strong>WA_ACTIVE</strong> = 1<br>
+<strong>WA_CLICKACTIVE</strong> = 2<br>
+<strong>WA_INACTIVE</strong> = 0<br>
+<strong>WHITE_BRUSH</strong> = 0<br>
+<strong>WH_CBT</strong> = 5<br>
+<strong>WH_MSGFILTER</strong> = -1<br>
+<strong>WIN32_IE</strong> = 1360<br>
+<strong>WM_ACTIVATE</strong> = 6<br>
+<strong>WM_APP</strong> = 32768<br>
+<strong>WM_CANCELMODE</strong> = 31<br>
+<strong>WM_CAPTURECHANGED</strong> = 533<br>
+<strong>WM_CHAR</strong> = 258<br>
+<strong>WM_CLOSE</strong> = 16<br>
+<strong>WM_COMMAND</strong> = 273<br>
+<strong>WM_CONTEXTMENU</strong> = 123<br>
+<strong>WM_COPY</strong> = 769<br>
+<strong>WM_COPYDATA</strong> = 74<br>
+<strong>WM_CREATE</strong> = 1<br>
+<strong>WM_CTLCOLORBTN</strong> = 309<br>
+<strong>WM_CTLCOLORDLG</strong> = 310<br>
+<strong>WM_CTLCOLOREDIT</strong> = 307<br>
+<strong>WM_CTLCOLORLISTBOX</strong> = 308<br>
+<strong>WM_CTLCOLORMSGBOX</strong> = 306<br>
+<strong>WM_CTLCOLORSCROLLBAR</strong> = 311<br>
+<strong>WM_CTLCOLORSTATIC</strong> = 312<br>
+<strong>WM_CUT</strong> = 768<br>
+<strong>WM_DESTROY</strong> = 2<br>
+<strong>WM_ENABLE</strong> = 10<br>
+<strong>WM_ERASEBKGND</strong> = 20<br>
+<strong>WM_GETFONT</strong> = 49<br>
+<strong>WM_GETTEXT</strong> = 13<br>
+<strong>WM_GETTEXTLENGTH</strong> = 14<br>
+<strong>WM_HSCROLL</strong> = 276<br>
+<strong>WM_INITDIALOG</strong> = 272<br>
+<strong>WM_INITMENUPOPUP</strong> = 279<br>
+<strong>WM_KEYDOWN</strong> = 256<br>
+<strong>WM_KEYFIRST</strong> = 256<br>
+<strong>WM_KEYLAST</strong> = 264<br>
+<strong>WM_KEYUP</strong> = 257<br>
+<strong>WM_LBUTTONDBLCLK</strong> = 515<br>
+<strong>WM_LBUTTONDOWN</strong> = 513<br>
+<strong>WM_LBUTTONUP</strong> = 514<br>
+<strong>WM_MBUTTONDBLCLK</strong> = 521<br>
+<strong>WM_MBUTTONDOWN</strong> = 519<br>
+<strong>WM_MBUTTONUP</strong> = 520<br>
+<strong>WM_MENUSELECT</strong> = 287<br>
+<strong>WM_MOUSEFIRST</strong> = 512<br>
+<strong>WM_MOUSEHOVER</strong> = 673<br>
+<strong>WM_MOUSELEAVE</strong> = 675<br>
+<strong>WM_MOUSEMOVE</strong> = 512<br>
+<strong>WM_MOVE</strong> = 3<br>
+<strong>WM_NCCREATE</strong> = 129<br>
+<strong>WM_NCDESTROY</strong> = 130<br>
+<strong>WM_NOTIFY</strong> = 78<br>
+<strong>WM_NULL</strong> = 0<br>
+<strong>WM_PAINT</strong> = 15<br>
+<strong>WM_PASTE</strong> = 770<br>
+<strong>WM_RBUTTONDBLCLK</strong> = 518<br>
+<strong>WM_RBUTTONDOWN</strong> = 516<br>
+<strong>WM_RBUTTONUP</strong> = 517<br>
+<strong>WM_SCHEDULE</strong> = 32770<br>
+<strong>WM_SETCURSOR</strong> = 32<br>
+<strong>WM_SETFOCUS</strong> = 7<br>
+<strong>WM_SETFONT</strong> = 48<br>
+<strong>WM_SETREDRAW</strong> = 11<br>
+<strong>WM_SETTEXT</strong> = 12<br>
+<strong>WM_SETTINGCHANGE</strong> = 26<br>
+<strong>WM_SIZE</strong> = 5<br>
+<strong>WM_SYSKEYDOWN</strong> = 260<br>
+<strong>WM_SYSKEYUP</strong> = 261<br>
+<strong>WM_TIMER</strong> = 275<br>
+<strong>WM_USER</strong> = 1024<br>
+<strong>WM_VSCROLL</strong> = 277<br>
+<strong>WM_WINDOWPOSCHANGED</strong> = 71<br>
+<strong>WM_WINDOWPOSCHANGING</strong> = 70<br>
+<strong>WS_BORDER</strong> = 8388608<br>
+<strong>WS_CAPTION</strong> = 12582912<br>
+<strong>WS_CHILD</strong> = 1073741824<br>
+<strong>WS_CHILDWINDOW</strong> = 1073741824<br>
+<strong>WS_CLIPCHILDREN</strong> = 33554432<br>
+<strong>WS_CLIPSIBLINGS</strong> = 67108864<br>
+<strong>WS_DISABLED</strong> = 134217728<br>
+<strong>WS_DLGFRAME</strong> = 4194304<br>
+<strong>WS_EX_APPWINDOW</strong> = 262144<br>
+<strong>WS_EX_CLIENTEDGE</strong> = 512<br>
+<strong>WS_EX_LEFT</strong> = 0<br>
+<strong>WS_EX_LTRREADING</strong> = 0<br>
+<strong>WS_EX_OVERLAPPEDWINDOW</strong> = 768<br>
+<strong>WS_EX_RIGHTSCROLLBAR</strong> = 0<br>
+<strong>WS_EX_STATICEDGE</strong> = 131072<br>
+<strong>WS_EX_TOOLWINDOW</strong> = 128<br>
+<strong>WS_EX_WINDOWEDGE</strong> = 256<br>
+<strong>WS_GROUP</strong> = 131072<br>
+<strong>WS_HSCROLL</strong> = 1048576<br>
+<strong>WS_ICONIC</strong> = 536870912<br>
+<strong>WS_MAXIMIZE</strong> = 16777216<br>
+<strong>WS_MAXIMIZEBOX</strong> = 65536<br>
+<strong>WS_MINIMIZE</strong> = 536870912<br>
+<strong>WS_MINIMIZEBOX</strong> = 131072<br>
+<strong>WS_OVERLAPPED</strong> = 0<br>
+<strong>WS_OVERLAPPEDWINDOW</strong> = 13565952<br>
+<strong>WS_POPUP</strong> = 2147483648L<br>
+<strong>WS_POPUPWINDOW</strong> = 2156396544L<br>
+<strong>WS_SIZEBOX</strong> = 262144<br>
+<strong>WS_SYSMENU</strong> = 524288<br>
+<strong>WS_TABSTOP</strong> = 65536<br>
+<strong>WS_THICKFRAME</strong> = 262144<br>
+<strong>WS_TILED</strong> = 0<br>
+<strong>WS_TILEDWINDOW</strong> = 13565952<br>
+<strong>WS_VISIBLE</strong> = 268435456<br>
+<strong>WS_VSCROLL</strong> = 2097152<br>
+<strong>cGlobalWndProc</strong> = &lt;WinFunctionType object at 0x0056C828&gt;<br>
+<strong>cdll</strong> = &lt;ctypes.LibraryLoader object at 0x00552A70&gt;<br>
+<strong>createHndlMap</strong> = {}<br>
+<strong>hInstance</strong> = -1548321378<br>
+<strong>hwndWindowMap</strong> = &lt;WeakValueDictionary at 5710312&gt;<br>
+<strong>key</strong> = 'WM_CHAR'<br>
+<strong>mainframe_hwnd</strong> = 0<br>
+<strong>memmove</strong> = &lt;CFunctionType object at 0x005293F0&gt;<br>
+<strong>memset</strong> = &lt;CFunctionType object at 0x00529468&gt;<br>
+<strong>oledll</strong> = &lt;ctypes.LibraryLoader object at 0x00552AF0&gt;<br>
+<strong>pydll</strong> = &lt;ctypes.LibraryLoader object at 0x00552A90&gt;<br>
+<strong>pythonapi</strong> = &lt;PyDLL 'python dll', handle 82c8de6c at 552ab0&gt;<br>
+<strong>registeredEventDispatcher</strong> = &lt;ppygui.core.RegisteredEventsDispatcher object at 0x00575C30&gt;<br>
+<strong>schedulees</strong> = {}<br>
+<strong>theMessageLoop</strong> = &lt;ppygui.core.MessageLoop instance at 0x0057E350&gt;<br>
+<strong>val</strong> = 258<br>
+<strong>versionInfo</strong> = &lt;ppygui.w32api.OSVERSIONINFO object at 0x00517F30&gt;<br>
+<strong>windll</strong> = &lt;ctypes.LibraryLoader object at 0x00552AD0&gt;<br>
+<strong>wndClasses</strong> = []</td></tr></table>
+</body></html>

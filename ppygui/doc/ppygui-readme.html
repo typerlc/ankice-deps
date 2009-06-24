@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.4: http://docutils.sourceforge.net/" />
+<title>logo PocketPyGui readme</title>
+<meta name="author" content="Alexandre Delattre" />
+<meta name="date" content="26/01/08" />
+<style type="text/css">
+
+/*
+Author: Peter Parente
+Date: 2008/01/22
+Version: 1.0
+Copyright: This stylesheet has been placed in the public domain - free to edit and use for all uses.
+*/
+
+body {
+  font: 100% sans-serif;
+  background: #ffffff;
+  color: black;
+  margin: 2em;
+  padding: 0em 2em;
+}
+
+p.topic-title {
+  font-weight: bold;
+}
+
+table.docinfo {
+  text-align: left;
+  margin: 2em 0em;
+}
+
+a[href] {
+  color: #436976;
+  background-color: transparent;
+}
+
+a.toc-backref {
+  text-decoration: none;
+}
+
+h1 a[href] {
+  color: #003a6b;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a.strong {
+  font-weight: bold;
+}
+
+img {
+  margin: 0;
+  border: 0;
+}
+
+p {
+  margin: 0.5em 0 1em 0;
+  line-height: 1.5em;
+}
+
+p a:visited {
+  color: purple;
+  background-color: transparent;
+}
+
+p a:active {
+  color: red;
+  background-color: transparent;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+p img {
+  border: 0;
+  margin: 0;
+}
+
+p.rubric {
+  font-weight: bold;
+  font-style: italic;
+}
+
+h1.title {
+  color: #003a6b;
+  font-size: 250%;
+  margin-bottom: 0em;
+}
+
+h2.subtitle {
+  color: #003a6b;
+  border-bottom: 0px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #555;
+  background-color: transparent;
+  margin: 0em;
+  padding-top: 0.5em;
+}
+
+h1 {
+  font-size: 160%;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid #aaa;
+}
+
+h2 {
+  font-size: 140%;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #aaa;
+}
+
+h3 {
+  font-size: 130%;
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: 110%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+h5 {
+  font-size: 105%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+h6 {
+  font-size: 100%;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+dt {
+  font-style: italic;
+}
+
+dd {
+  margin-bottom: 1.5em;
+}
+
+div.admonition, div.note, div.tip, div.caution, div.important {
+  margin: 2em 2em;
+  padding: 0em 1em;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  border-bottom: 2px solid #555;
+  border-right: 2px solid #555;
+}
+
+div.important {
+  background: transparent url('../images/important.png') 10px 2px no-repeat;
+}
+
+div.caution {
+  background: transparent url('../images/caution.png') 10px 2px no-repeat;
+}
+
+div.note {
+  background: transparent url('../images/note.png') 10px 2px no-repeat;
+}
+
+div.tip {
+  background: transparent url('../images/tip.png') 10px 2px no-repeat;
+}
+
+div.admonition-example {
+  background: transparent url('../images/tip.png') 10px 2px no-repeat;
+}
+
+div.admonition-critical-example {
+  background: transparent url('../images/important.png') 10px 2px no-repeat;
+}
+
+p.admonition-title {
+  font-weight: bold;
+  border-bottom: 1px solid #aaa;
+  padding-left: 30px;
+}
+
+table.docutils {
+  text-align: left;
+  border: 1px solid gray;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0em;
+}
+
+table.docutils caption {
+  font-style: italic;
+}
+
+table.docutils td, table.docutils th {
+  padding: 0.25em 0.5em;
+}
+
+table.docutils th {
+  background-color: #dddddd;
+}
+
+div.sidebar {
+  width: 33%;
+  float: right;
+  margin: 0em 2em;
+  padding: 0em 1em;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  border-bottom: 2px solid #555;
+  border-right: 2px solid #555;
+}
+
+p.sidebar-title {
+  margin-bottom: 0em;
+  color: #003a6b;
+  border-bottom: 1px solid #aaa;
+  font-weight: bold;
+}
+
+p.sidebar-subtitle {
+  margin-top: 0em;
+  font-style: italic;
+  color: #003a6b;
+}
+
+</style>
+</head>
+<body>
+<div class="document" id="logo-pocketpygui-readme">
+<h1 class="title"><img alt="logo" src="python.bmp" /> PocketPyGui readme</h1>
+<table class="docinfo" frame="void" rules="none">
+<col class="docinfo-name" />
+<col class="docinfo-content" />
+<tbody valign="top">
+<tr><th class="docinfo-name">Author:</th>
+<td>Alexandre Delattre</td></tr>
+<tr><th class="docinfo-name">Date:</th>
+<td>26/01/08</td></tr>
+<tr><th class="docinfo-name">Version:</th>
+<td>ppygui-0.5</td></tr>
+</tbody>
+</table>
+<div class="section">
+<h1><a id="background" name="background">Background</a></h1>
+<p>PocketPyGui is a native GUI toolkit for PythonCE,
+it is an 'almost from scratch' rewrite of the
+VensterCE toolkit with a brand new API.</p>
+<p>Indeed, even knowing a bit the Win32 API from a C++
+point of view,
+I found tiresome to always do the same low-level stuff for
+simple GUIs and to always have to look in MSDN for some Win32 API
+reference.</p>
+<p>Besides, even if I did write a tutorial for it, I admit
+it is quite difficult to get in VensterCE for a python dev without Win32 API experience. The lack of API docs for VensterCE was
+not a problem for ones used to dig in MSDN, but was a pain for all others.</p>
+<p>Anyway, porting Venster to WinCE was a good experience as
+I learned a lot from it, and it was my first open-source contribution.</p>
+<p>So I decided to take the good stuff of VensterCE (native, ligthweight and pure python library) and
+create a toolkit by python developers for python developers.</p>
+<p>The major features of PocketPyGui are:</p>
+<blockquote>
+<ul class="simple">
+<li>Rich common-controls library (almost all VensterCE widgets supported and more).
+with pythonic APIs (i.e. zero knowledge of Win32 API).</li>
+<li>Transparent event-handling: you associate gui events to
+your callbacks, and ppygui will call them at the right time.</li>
+<li>Flexible layout system: ppygui revamps the VensterCE layout system
+and you can now let ppygui compute the size of your controls based on
+their contents and fonts.</li>
+<li>Automatic unicode coercion: you can use raw and unicode strings.</li>
+</ul>
+</blockquote>
+</div>
+<div class="section">
+<h1><a id="requirements" name="requirements">Requirements</a></h1>
+<ul class="simple">
+<li>PythonCE &gt;= 2.4.</li>
+<li><strong>HIGHLY RECOMMENDED</strong>:
+a WinCE task manager for really closing windows when pressing the X button is really advised for better experience
+with ppygui. I suggest you <a class="reference" href="http://pda.jasnapaka.com/tman/">tMan</a>, which is freeware, but any other
+task mananger should be ok.</li>
+</ul>
+</div>
+<div class="section">
+<h1><a id="archive-contents" name="archive-contents">Archive contents</a></h1>
+<p>Ppygui will come in three packages:</p>
+<ul>
+<li><dl class="first docutils">
+<dt>ppygui.zip package</dt>
+<dd><p class="first">The core library, docs and a simple demo.</p>
+<ul class="last simple">
+<li>install.py: the graphical installer (start with this).</li>
+<li>doc/: contains the quick-start tutorial and its scripts, the API reference and auto-generated docs.</li>
+<li>ppygui/: the toolkit source.</li>
+<li>demo.py: a simple demo application for an overview of ppygui controls.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>ppygui-samples.zip package</dt>
+<dd><p class="first">Useful applications to learn ppygui from sources.</p>
+<ul class="last simple">
+<li>demo/canvas/: the WIP canvas control.</li>
+<li>demo/app/outliner/: a tree-view based task outliner.</li>
+<li>demo/app/restEditor/: a simple reStructuredText editor for html/latex generation (requires docutils).</li>
+<li>demo/app/mpc/: a MPD (Music Player Daemon) client.</li>
+<li>demo/app/jabberce/: a simple Jabber client (requires tlslite and xmpppy).</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>ppygui-3rdparty-tools.zip</dt>
+<dd><p class="first">Libraries and tools tweaked to run with PythonCE or gathered here for convenience.
+Be sure to read the respective licenses of these great tools.</p>
+<ul class="last simple">
+<li>tlslite/: implementation of SSL/TLS and other security protocols (required for JabberCE).</li>
+<li>xmpppy/: a Jabber protocol library (required for JabberCE).</li>
+<li>docutils/: API and command line tools for reStructuredText processing (required for restEditor).</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section">
+<h1><a id="installation" name="installation">Installation</a></h1>
+<ul class="simple">
+<li>Extract the archive on your pda (warning some sd-mmc card readers tends to uppercase some files ...).</li>
+<li>Run install.py and let the graphical installer guide you !</li>
+</ul>
+</div>
+<div class="section">
+<h1><a id="documentation" name="documentation">Documentation</a></h1>
+<p>PocketPyGui documentation is splitted in:</p>
+<ul class="simple">
+<li>a <a class="reference" href="doc/ppygui-doc.html">tutorial</a>.</li>
+<li>the <a class="reference" href="doc/ppygui-api.html">API reference</a>.</li>
+</ul>
+</div>
+<div class="section">
+<h1><a id="contact" name="contact">Contact</a></h1>
+<p>You can post your questions/suggestions on
+the ppygui sourceforge forum page
+(<a class="reference" href="http://sf.net/projects/ppygui">http://sf.net/projects/ppygui</a>).</p>
+</div>
+<div class="section">
+<h1><a id="copyright" name="copyright">Copyright</a></h1>
+<p>PocketPyGui is released under the BSD License.
+Samples and 3rd party apps shipped with PocketPyGui
+are subject to their own license.</p>
+</div>
+<div class="section">
+<h1><a id="credits" name="credits">Credits</a></h1>
+<p>Special Thanks to Mirko &quot;<a class="reference" href="mailto:D&#64;ten">D&#64;ten</a>&quot; Vogt.</p>
+</div>
+</div>
+</body>
+</html>

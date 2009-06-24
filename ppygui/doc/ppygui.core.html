@@ -1,0 +1,2114 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module ppygui.core</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="ppygui.html"><font color="#ffffff">ppygui</font></a>.core</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/my%20documents/python/installer/ppygui/core.py">\my documents\python\installer\ppygui\core.py</a></font></td></tr></table>
+    <p><tt>This&nbsp;module&nbsp;contains&nbsp;the&nbsp;core&nbsp;mechanism&nbsp;of&nbsp;pycegui</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#fffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="ctypes.html">ctypes</a><br>
+</td><td width="25%" valign=top><a href="weakref.html">weakref</a><br>
+</td><td width="25%" valign=top><a href="ctypes.wintypes.html">ctypes.wintypes</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#dict">__builtin__.dict</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ppygui.core.html#EventDispatchersMap">EventDispatchersMap</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ppygui.core.html#CMDEventDispatcher">CMDEventDispatcher</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ppygui.core.html#CustomEventDispatcher">CustomEventDispatcher</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ppygui.core.html#MSGEventDispatcher">MSGEventDispatcher</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ppygui.core.html#MenuEventDispatcher">MenuEventDispatcher</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ppygui.core.html#NTFEventDispatcher">NTFEventDispatcher</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="ppygui.core.html#GuiObject">GuiObject</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ppygui.core.html#Application">Application</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ppygui.core.html#Event">Event</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ppygui.core.html#CharEvent">CharEvent</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ppygui.core.html#CommandEvent">CommandEvent</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ppygui.core.html#KeyEvent">KeyEvent</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ppygui.core.html#NotificationEvent">NotificationEvent</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ppygui.core.html#SizeEvent">SizeEvent</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ppygui.core.html#StylusEvent">StylusEvent</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="ppygui.core.html#Window">Window</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ppygui.core.html#Control">Control</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ppygui.core.html#Frame">Frame</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="ppygui.core.html#IdGenerator">IdGenerator</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ppygui.core.html#RegisteredEventsDispatcher">RegisteredEventsDispatcher</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#type">__builtin__.type</a>(<a href="__builtin__.html#object">__builtin__.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="ppygui.core.html#GuiType">GuiType</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="ppygui.core.html#MessageLoop">MessageLoop</a>
+</font></dt><dt><font face="helvetica, arial"><a href="ppygui.core.html#Schedulee">Schedulee</a>
+</font></dt></dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Application">class <strong>Application</strong></a>(<a href="ppygui.core.html#GuiObject">GuiObject</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Each&nbsp;ppygui&nbsp;application&nbsp;should&nbsp;have&nbsp;an&nbsp;instance&nbsp;of&nbsp;<a href="#Application">Application</a>.<br>
+An&nbsp;<a href="#Application">Application</a>&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;has&nbsp;a&nbsp;mainframe&nbsp;property&nbsp;which&nbsp;is&nbsp;usually&nbsp;a&nbsp;<br>
+ce.CeFrame&nbsp;<a href="__builtin__.html#object">object</a>,&nbsp;which&nbsp;quits&nbsp;the&nbsp;application&nbsp;when&nbsp;destroyed<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#Application">Application</a></dd>
+<dd><a href="ppygui.core.html#GuiObject">GuiObject</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Application-__init__"><strong>__init__</strong></a>(self, mainframe<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Application-get_mainframe"><strong>get_mainframe</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;mainframe</tt></dd></dl>
+
+<dl><dt><a name="Application-quit"><strong>quit</strong></a>(self, exitcode<font color="#909090">=0</font>)</dt><dd><tt>Quits&nbsp;the&nbsp;application&nbsp;with&nbsp;the&nbsp;exit&nbsp;code&nbsp;exitcode</tt></dd></dl>
+
+<dl><dt><a name="Application-run"><strong>run</strong></a>(self)</dt><dd><tt>Start&nbsp;the&nbsp;main&nbsp;loop&nbsp;of&nbsp;the&nbsp;application.<br>
+It&nbsp;get&nbsp;rids&nbsp;of&nbsp;the&nbsp;nasty&nbsp;busy&nbsp;cursor,&nbsp;<br>
+whatever&nbsp;PythonCE&nbsp;is&nbsp;launched<br>
+with&nbsp;/nopcceshell&nbsp;or&nbsp;not.</tt></dd></dl>
+
+<dl><dt><a name="Application-set_mainframe"><strong>set_mainframe</strong></a>(self, frame)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;mainframe</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>mainframe</strong></dt>
+<dd><tt>The&nbsp;main&nbsp;frame&nbsp;of&nbsp;the&nbsp;application.<br>
+The&nbsp;application&nbsp;will&nbsp;exit&nbsp;when&nbsp;frame&nbsp;is&nbsp;destroyed</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>doc_mainframe</strong> = '    The main frame of the application.<font color="#c040c0">\n</font>    The application will exit when frame is destroyed<font color="#c040c0">\n</font>    '</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><a name="Application-set"><strong>set</strong></a>(self, **kw)</dt><dd><tt><a href="#Application-set">set</a>(self,&nbsp;prop1=value1,&nbsp;prop2=value2,&nbsp;...)&nbsp;--&gt;&nbsp;sets&nbsp;the&nbsp;property&nbsp;prop1&nbsp;to&nbsp;value1,&nbsp;prop2&nbsp;to&nbsp;value2,&nbsp;...</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__metaclass__</strong> = &lt;class 'ppygui.core.GuiType'&gt;<dd><tt>The&nbsp;metaclass&nbsp;of&nbsp;<a href="#GuiObject">GuiObject</a>,&nbsp;useful&nbsp;for&nbsp;automatic&nbsp;property&nbsp;generation</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CMDEventDispatcher">class <strong>CMDEventDispatcher</strong></a>(<a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Used&nbsp;internally&nbsp;by&nbsp;PPyGui.&nbsp;Not&nbsp;documented&nbsp;yet<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#CMDEventDispatcher">CMDEventDispatcher</a></dd>
+<dd><a href="ppygui.core.html#EventDispatcher">EventDispatcher</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="CMDEventDispatcher-__init__"><strong>__init__</strong></a>(self, win, cmd<font color="#909090">=0</font>, eventclass<font color="#909090">=&lt;class 'ppygui.core.CommandEvent'&gt;</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>:<br>
+<dl><dt><a name="CMDEventDispatcher-bind"><strong>bind</strong></a>(self, callback<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="CMDEventDispatcher-dispatch"><strong>dispatch</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="CMDEventDispatcher-isconnected"><strong>isconnected</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="CMDEventDispatcher-unbind"><strong>unbind</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CharEvent">class <strong>CharEvent</strong></a>(<a href="ppygui.core.html#Event">Event</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>An&nbsp;event&nbsp;raised&nbsp;when&nbsp;the&nbsp;user&nbsp;press&nbsp;a&nbsp;keyboard<br>
+or&nbsp;move&nbsp;the&nbsp;joystick&nbsp;in&nbsp;the&nbsp;window<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#CharEvent">CharEvent</a></dd>
+<dd><a href="ppygui.core.html#Event">Event</a></dd>
+<dd><a href="ppygui.core.html#GuiObject">GuiObject</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="CharEvent-__init__"><strong>__init__</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="CharEvent-get_key"><strong>get_key</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;key</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>key</strong></dt>
+<dd><tt></tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><a name="CharEvent-get_window"><strong>get_window</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="CharEvent-skip"><strong>skip</strong></a>(self)</dt><dd><tt>Tells&nbsp;the&nbsp;default&nbsp;window&nbsp;procedure&nbsp;to&nbsp;handle&nbsp;the&nbsp;event.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><strong>window</strong></dt>
+<dd><tt>Source&nbsp;Window&nbsp;instance&nbsp;that&nbsp;triggered&nbsp;the&nbsp;event</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><strong>doc_window</strong> = 'Source Window instance that triggered the event'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><a name="CharEvent-set"><strong>set</strong></a>(self, **kw)</dt><dd><tt><a href="#CharEvent-set">set</a>(self,&nbsp;prop1=value1,&nbsp;prop2=value2,&nbsp;...)&nbsp;--&gt;&nbsp;sets&nbsp;the&nbsp;property&nbsp;prop1&nbsp;to&nbsp;value1,&nbsp;prop2&nbsp;to&nbsp;value2,&nbsp;...</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__metaclass__</strong> = &lt;class 'ppygui.core.GuiType'&gt;<dd><tt>The&nbsp;metaclass&nbsp;of&nbsp;<a href="#GuiObject">GuiObject</a>,&nbsp;useful&nbsp;for&nbsp;automatic&nbsp;property&nbsp;generation</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CommandEvent">class <strong>CommandEvent</strong></a>(<a href="ppygui.core.html#Event">Event</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>An&nbsp;<a href="#Event">Event</a>&nbsp;that&nbsp;wraps&nbsp;Win32&nbsp;WM_COMMAND&nbsp;messages<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#CommandEvent">CommandEvent</a></dd>
+<dd><a href="ppygui.core.html#Event">Event</a></dd>
+<dd><a href="ppygui.core.html#GuiObject">GuiObject</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="CommandEvent-__init__"><strong>__init__</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="CommandEvent-get_cmd"><strong>get_cmd</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;cmd</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>cmd</strong></dt>
+<dd><tt></tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><a name="CommandEvent-get_window"><strong>get_window</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="CommandEvent-skip"><strong>skip</strong></a>(self)</dt><dd><tt>Tells&nbsp;the&nbsp;default&nbsp;window&nbsp;procedure&nbsp;to&nbsp;handle&nbsp;the&nbsp;event.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><strong>window</strong></dt>
+<dd><tt>Source&nbsp;Window&nbsp;instance&nbsp;that&nbsp;triggered&nbsp;the&nbsp;event</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><strong>doc_window</strong> = 'Source Window instance that triggered the event'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><a name="CommandEvent-set"><strong>set</strong></a>(self, **kw)</dt><dd><tt><a href="#CommandEvent-set">set</a>(self,&nbsp;prop1=value1,&nbsp;prop2=value2,&nbsp;...)&nbsp;--&gt;&nbsp;sets&nbsp;the&nbsp;property&nbsp;prop1&nbsp;to&nbsp;value1,&nbsp;prop2&nbsp;to&nbsp;value2,&nbsp;...</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__metaclass__</strong> = &lt;class 'ppygui.core.GuiType'&gt;<dd><tt>The&nbsp;metaclass&nbsp;of&nbsp;<a href="#GuiObject">GuiObject</a>,&nbsp;useful&nbsp;for&nbsp;automatic&nbsp;property&nbsp;generation</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Control">class <strong>Control</strong></a>(<a href="ppygui.core.html#Window">Window</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;base&nbsp;class&nbsp;for&nbsp;common&nbsp;controls.<br>
+It&nbsp;introduces&nbsp;the&nbsp;text&nbsp;and&nbsp;font&nbsp;properties<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#Control">Control</a></dd>
+<dd><a href="ppygui.core.html#Window">Window</a></dd>
+<dd><a href="ppygui.core.html#GuiObject">GuiObject</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Control-__del__"><strong>__del__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Control-__init__"><strong>__init__</strong></a>(self, parent, title<font color="#909090">=''</font>, border<font color="#909090">=False</font>, visible<font color="#909090">=True</font>, enabled<font color="#909090">=True</font>, pos<font color="#909090">=(-1, -1, -1, -1)</font>, tab_stop<font color="#909090">=True</font>, **kw)</dt></dl>
+
+<dl><dt><a name="Control-get_best_size"><strong>get_best_size</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;best_size</tt></dd></dl>
+
+<dl><dt><a name="Control-get_font"><strong>get_font</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;font</tt></dd></dl>
+
+<dl><dt><a name="Control-set_font"><strong>set_font</strong></a>(self, font)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;font</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>best_size</strong></dt>
+<dd><tt></tt></dd>
+</dl>
+<dl><dt><strong>font</strong></dt>
+<dd><tt>The&nbsp;font&nbsp;of&nbsp;the&nbsp;control&nbsp;as&nbsp;a&nbsp;font.Font&nbsp;instance</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>doc_font</strong> = 'The font of the control as a font.Font instance'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#Window">Window</a>:<br>
+<dl><dt><a name="Control-bind"><strong>bind</strong></a>(self, **kw)</dt><dd><tt><a href="#Control-bind">bind</a>(self,&nbsp;event1=callback1,&nbsp;event2=callbac2,&nbsp;...)&nbsp;--&gt;<br>
+maps&nbsp;gui&nbsp;events&nbsp;to&nbsp;callbacks,<br>
+callbacks&nbsp;are&nbsp;any&nbsp;callable&nbsp;fthat&nbsp;accept&nbsp;a&nbsp;single&nbsp;argument.</tt></dd></dl>
+
+<dl><dt><a name="Control-bringtofront"><strong>bringtofront</strong></a>(self)</dt><dd><tt>Bring&nbsp;the&nbsp;window&nbsp;to&nbsp;foreground</tt></dd></dl>
+
+<dl><dt><a name="Control-call_base_proc"><strong>call_base_proc</strong></a>(self, event)</dt></dl>
+
+<dl><dt><a name="Control-close"><strong>close</strong></a>(self)</dt><dd><tt>Programmaticaly&nbsp;request&nbsp;the&nbsp;window&nbsp;to&nbsp;be&nbsp;closed</tt></dd></dl>
+
+<dl><dt><a name="Control-destroy"><strong>destroy</strong></a>(self)</dt><dd><tt>Destroy&nbsp;the&nbsp;window&nbsp;and&nbsp;its&nbsp;child,&nbsp;releasing&nbsp;their&nbsp;resources,&nbsp;and&nbsp;break&nbsp;<br>
+reference&nbsp;cycle&nbsp;that&nbsp;could&nbsp;be&nbsp;induced&nbsp;by&nbsp;the&nbsp;event&nbsp;system.</tt></dd></dl>
+
+<dl><dt><a name="Control-disable"><strong>disable</strong></a>(self)</dt><dd><tt>Disable&nbsp;the&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="Control-enable"><strong>enable</strong></a>(self, val<font color="#909090">=True</font>)</dt><dd><tt>Enable&nbsp;or&nbsp;disable&nbsp;the&nbsp;window,&nbsp;depending&nbsp;of&nbsp;the<br>
+boolean&nbsp;value&nbsp;of&nbsp;val.</tt></dd></dl>
+
+<dl><dt><a name="Control-focus"><strong>focus</strong></a>(self)</dt><dd><tt>Force&nbsp;the&nbsp;focus&nbsp;on&nbsp;this&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="Control-get_client_rect"><strong>get_client_rect</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;client_rect</tt></dd></dl>
+
+<dl><dt><a name="Control-get_parent"><strong>get_parent</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;parent</tt></dd></dl>
+
+<dl><dt><a name="Control-get_pos"><strong>get_pos</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;pos</tt></dd></dl>
+
+<dl><dt><a name="Control-get_size"><strong>get_size</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;size</tt></dd></dl>
+
+<dl><dt><a name="Control-get_text"><strong>get_text</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;text</tt></dd></dl>
+
+<dl><dt><a name="Control-get_window_rect"><strong>get_window_rect</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;window_rect</tt></dd></dl>
+
+<dl><dt><a name="Control-hide"><strong>hide</strong></a>(self)</dt><dd><tt>Hide&nbsp;the&nbsp;window.&nbsp;Equivalent&nbsp;to&nbsp;win.<a href="#Control-show">show</a>(False)</tt></dd></dl>
+
+<dl><dt><a name="Control-move"><strong>move</strong></a>(self, left, top, width, height)</dt><dd><tt>Moves&nbsp;the&nbsp;window&nbsp;to&nbsp;the&nbsp;desired&nbsp;rect&nbsp;(left,&nbsp;top,&nbsp;width,&nbsp;height)</tt></dd></dl>
+
+<dl><dt><a name="Control-set_pos"><strong>set_pos</strong></a>(self, pos)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;pos</tt></dd></dl>
+
+<dl><dt><a name="Control-set_redraw"><strong>set_redraw</strong></a>(self, redraw)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;redraw</tt></dd></dl>
+
+<dl><dt><a name="Control-set_size"><strong>set_size</strong></a>(self, size)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;size</tt></dd></dl>
+
+<dl><dt><a name="Control-set_text"><strong>set_text</strong></a>(self, txt)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;text</tt></dd></dl>
+
+<dl><dt><a name="Control-show"><strong>show</strong></a>(self, val<font color="#909090">=True</font>)</dt><dd><tt>Show&nbsp;or&nbsp;hide&nbsp;the&nbsp;window,&nbsp;depending&nbsp;of&nbsp;the<br>
+boolean&nbsp;value&nbsp;of&nbsp;val.</tt></dd></dl>
+
+<dl><dt><a name="Control-update"><strong>update</strong></a>(self)</dt><dd><tt>Forces&nbsp;the&nbsp;window&nbsp;to&nbsp;be&nbsp;repainted</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#Window">Window</a>:<br>
+<dl><dt><strong>client_rect</strong></dt>
+<dd><tt>The&nbsp;window&nbsp;client&nbsp;rect,&nbsp;i.e.&nbsp;the&nbsp;inner&nbsp;rect&nbsp;of&nbsp;the&nbsp;window</tt></dd>
+</dl>
+<dl><dt><strong>parent</strong></dt>
+<dd><tt>The&nbsp;parent&nbsp;window&nbsp;instance&nbsp;or&nbsp;None&nbsp;for&nbsp;a&nbsp;top&nbsp;window</tt></dd>
+</dl>
+<dl><dt><strong>pos</strong></dt>
+<dd><tt>The&nbsp;relative&nbsp;window&nbsp;position&nbsp;in&nbsp;its&nbsp;parent&nbsp;container&nbsp;as&nbsp;a&nbsp;tuple&nbsp;(left,&nbsp;top)</tt></dd>
+</dl>
+<dl><dt><strong>redraw</strong></dt>
+<dd><tt>The&nbsp;redraw&nbsp;state&nbsp;as&nbsp;a&nbsp;bool.&nbsp;When&nbsp;setting&nbsp;it&nbsp;to<br>
+False,&nbsp;the&nbsp;window&nbsp;will&nbsp;not&nbsp;be&nbsp;repainted,&nbsp;until&nbsp;it<br>
+is&nbsp;set&nbsp;to&nbsp;True&nbsp;again</tt></dd>
+</dl>
+<dl><dt><strong>size</strong></dt>
+<dd><tt>The&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;as&nbsp;a&nbsp;tuple&nbsp;(width,&nbsp;height)</tt></dd>
+</dl>
+<dl><dt><strong>text</strong></dt>
+<dd><tt>The&nbsp;text&nbsp;displayed&nbsp;by&nbsp;the&nbsp;control&nbsp;as&nbsp;a&nbsp;string</tt></dd>
+</dl>
+<dl><dt><strong>window_rect</strong></dt>
+<dd><tt>The&nbsp;window&nbsp;rect&nbsp;in&nbsp;its&nbsp;parent&nbsp;container</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#Window">Window</a>:<br>
+<dl><dt><strong>doc_client_rect</strong> = 'The window client rect, i.e. the inner rect of the window'</dl>
+
+<dl><dt><strong>doc_parent</strong> = 'The parent window instance or None for a top window'</dl>
+
+<dl><dt><strong>doc_pos</strong> = 'The relative window position in its parent container as a tuple (left, top)'</dl>
+
+<dl><dt><strong>doc_redraw</strong> = '    The redraw state as a bool. When setting it ...t be repainted, until it<font color="#c040c0">\n</font>    is set to True again'</dl>
+
+<dl><dt><strong>doc_size</strong> = 'The size of the window as a tuple (width, height)'</dl>
+
+<dl><dt><strong>doc_text</strong> = 'The text displayed by the control as a string'</dl>
+
+<dl><dt><strong>doc_window_rect</strong> = 'The window rect in its parent container'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><a name="Control-set"><strong>set</strong></a>(self, **kw)</dt><dd><tt><a href="#Control-set">set</a>(self,&nbsp;prop1=value1,&nbsp;prop2=value2,&nbsp;...)&nbsp;--&gt;&nbsp;sets&nbsp;the&nbsp;property&nbsp;prop1&nbsp;to&nbsp;value1,&nbsp;prop2&nbsp;to&nbsp;value2,&nbsp;...</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__metaclass__</strong> = &lt;class 'ppygui.core.GuiType'&gt;<dd><tt>The&nbsp;metaclass&nbsp;of&nbsp;<a href="#GuiObject">GuiObject</a>,&nbsp;useful&nbsp;for&nbsp;automatic&nbsp;property&nbsp;generation</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CustomEventDispatcher">class <strong>CustomEventDispatcher</strong></a>(<a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#CustomEventDispatcher">CustomEventDispatcher</a></dd>
+<dd><a href="ppygui.core.html#EventDispatcher">EventDispatcher</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="CustomEventDispatcher-call"><strong>call</strong></a>(self, event)</dt></dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>:<br>
+<dl><dt><a name="CustomEventDispatcher-__init__"><strong>__init__</strong></a>(self, eventclass<font color="#909090">=&lt;class 'ppygui.core.Event'&gt;</font>)</dt></dl>
+
+<dl><dt><a name="CustomEventDispatcher-bind"><strong>bind</strong></a>(self, callback<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="CustomEventDispatcher-dispatch"><strong>dispatch</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="CustomEventDispatcher-isconnected"><strong>isconnected</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="CustomEventDispatcher-unbind"><strong>unbind</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Event">class <strong>Event</strong></a>(<a href="ppygui.core.html#GuiObject">GuiObject</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Basic&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;that&nbsp;wraps&nbsp;a&nbsp;win32&nbsp;message,&nbsp;it&nbsp;is&nbsp;often<br>
+the&nbsp;first&nbsp;argument&nbsp;received&nbsp;by&nbsp;a&nbsp;callback.<br>
+Use&nbsp;the&nbsp;read-only&nbsp;properties&nbsp;to&nbsp;have&nbsp;more&nbsp;information&nbsp;about&nbsp;an&nbsp;<a href="#Event">Event</a>&nbsp;instance.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#Event">Event</a></dd>
+<dd><a href="ppygui.core.html#GuiObject">GuiObject</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Event-__init__"><strong>__init__</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="Event-get_window"><strong>get_window</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="Event-skip"><strong>skip</strong></a>(self)</dt><dd><tt>Tells&nbsp;the&nbsp;default&nbsp;window&nbsp;procedure&nbsp;to&nbsp;handle&nbsp;the&nbsp;event.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>window</strong></dt>
+<dd><tt>Source&nbsp;Window&nbsp;instance&nbsp;that&nbsp;triggered&nbsp;the&nbsp;event</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>doc_window</strong> = 'Source Window instance that triggered the event'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><a name="Event-set"><strong>set</strong></a>(self, **kw)</dt><dd><tt><a href="#Event-set">set</a>(self,&nbsp;prop1=value1,&nbsp;prop2=value2,&nbsp;...)&nbsp;--&gt;&nbsp;sets&nbsp;the&nbsp;property&nbsp;prop1&nbsp;to&nbsp;value1,&nbsp;prop2&nbsp;to&nbsp;value2,&nbsp;...</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__metaclass__</strong> = &lt;class 'ppygui.core.GuiType'&gt;<dd><tt>The&nbsp;metaclass&nbsp;of&nbsp;<a href="#GuiObject">GuiObject</a>,&nbsp;useful&nbsp;for&nbsp;automatic&nbsp;property&nbsp;generation</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="EventDispatcher">class <strong>EventDispatcher</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Used&nbsp;internally&nbsp;by&nbsp;PPyGui.&nbsp;Not&nbsp;documented&nbsp;yet<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="EventDispatcher-__init__"><strong>__init__</strong></a>(self, eventclass<font color="#909090">=&lt;class 'ppygui.core.Event'&gt;</font>)</dt></dl>
+
+<dl><dt><a name="EventDispatcher-bind"><strong>bind</strong></a>(self, callback<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="EventDispatcher-dispatch"><strong>dispatch</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="EventDispatcher-isconnected"><strong>isconnected</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="EventDispatcher-unbind"><strong>unbind</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="EventDispatchersMap">class <strong>EventDispatchersMap</strong></a>(<a href="__builtin__.html#dict">__builtin__.dict</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Used&nbsp;internally&nbsp;by&nbsp;PPyGui.&nbsp;Not&nbsp;documented&nbsp;yet<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#EventDispatchersMap">EventDispatchersMap</a></dd>
+<dd><a href="__builtin__.html#dict">__builtin__.dict</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="EventDispatchersMap-__del__"><strong>__del__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="EventDispatchersMap-__setitem__"><strong>__setitem__</strong></a>(self, i, dispatcher)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="__builtin__.html#dict">__builtin__.dict</a>:<br>
+<dl><dt><a name="EventDispatchersMap-__cmp__"><strong>__cmp__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__cmp__">__cmp__</a>(y)&nbsp;&lt;==&gt;&nbsp;cmp(x,y)</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__contains__"><strong>__contains__</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-__contains__">__contains__</a>(k)&nbsp;-&gt;&nbsp;True&nbsp;if&nbsp;D&nbsp;has&nbsp;a&nbsp;key&nbsp;k,&nbsp;else&nbsp;False</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__delitem__"><strong>__delitem__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__delitem__">__delitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;del&nbsp;x[y]</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__eq__"><strong>__eq__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__eq__">__eq__</a>(y)&nbsp;&lt;==&gt;&nbsp;x==y</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__ge__"><strong>__ge__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__ge__">__ge__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&gt;=y</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__getitem__"><strong>__getitem__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__getitem__">__getitem__</a>(y)&nbsp;&lt;==&gt;&nbsp;x[y]</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__gt__"><strong>__gt__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__gt__">__gt__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&gt;y</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__init__"><strong>__init__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__init__">__init__</a>(...)&nbsp;initializes&nbsp;x;&nbsp;see&nbsp;x.__class__.__doc__&nbsp;for&nbsp;signature</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__iter__"><strong>__iter__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__iter__">__iter__</a>()&nbsp;&lt;==&gt;&nbsp;iter(x)</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__le__"><strong>__le__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__le__">__le__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&lt;=y</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__len__"><strong>__len__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__len__">__len__</a>()&nbsp;&lt;==&gt;&nbsp;len(x)</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__lt__"><strong>__lt__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__lt__">__lt__</a>(y)&nbsp;&lt;==&gt;&nbsp;x&lt;y</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__ne__"><strong>__ne__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__ne__">__ne__</a>(y)&nbsp;&lt;==&gt;&nbsp;x!=y</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#EventDispatchersMap-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-clear"><strong>clear</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-clear">clear</a>()&nbsp;-&gt;&nbsp;None.&nbsp;&nbsp;Remove&nbsp;all&nbsp;items&nbsp;from&nbsp;D.</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-copy"><strong>copy</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-copy">copy</a>()&nbsp;-&gt;&nbsp;a&nbsp;shallow&nbsp;copy&nbsp;of&nbsp;D</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-get"><strong>get</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-get">get</a>(k[,d])&nbsp;-&gt;&nbsp;D[k]&nbsp;if&nbsp;k&nbsp;in&nbsp;D,&nbsp;else&nbsp;d.&nbsp;&nbsp;d&nbsp;defaults&nbsp;to&nbsp;None.</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-has_key"><strong>has_key</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-has_key">has_key</a>(k)&nbsp;-&gt;&nbsp;True&nbsp;if&nbsp;D&nbsp;has&nbsp;a&nbsp;key&nbsp;k,&nbsp;else&nbsp;False</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-items"><strong>items</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-items">items</a>()&nbsp;-&gt;&nbsp;list&nbsp;of&nbsp;D's&nbsp;(key,&nbsp;value)&nbsp;pairs,&nbsp;as&nbsp;2-tuples</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-iteritems"><strong>iteritems</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-iteritems">iteritems</a>()&nbsp;-&gt;&nbsp;an&nbsp;iterator&nbsp;over&nbsp;the&nbsp;(key,&nbsp;value)&nbsp;items&nbsp;of&nbsp;D</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-iterkeys"><strong>iterkeys</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-iterkeys">iterkeys</a>()&nbsp;-&gt;&nbsp;an&nbsp;iterator&nbsp;over&nbsp;the&nbsp;keys&nbsp;of&nbsp;D</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-itervalues"><strong>itervalues</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-itervalues">itervalues</a>()&nbsp;-&gt;&nbsp;an&nbsp;iterator&nbsp;over&nbsp;the&nbsp;values&nbsp;of&nbsp;D</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-keys"><strong>keys</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-keys">keys</a>()&nbsp;-&gt;&nbsp;list&nbsp;of&nbsp;D's&nbsp;keys</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-pop"><strong>pop</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-pop">pop</a>(k[,d])&nbsp;-&gt;&nbsp;v,&nbsp;remove&nbsp;specified&nbsp;key&nbsp;and&nbsp;return&nbsp;the&nbsp;corresponding&nbsp;value<br>
+If&nbsp;key&nbsp;is&nbsp;not&nbsp;found,&nbsp;d&nbsp;is&nbsp;returned&nbsp;if&nbsp;given,&nbsp;otherwise&nbsp;KeyError&nbsp;is&nbsp;raised</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-popitem"><strong>popitem</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-popitem">popitem</a>()&nbsp;-&gt;&nbsp;(k,&nbsp;v),&nbsp;remove&nbsp;and&nbsp;return&nbsp;some&nbsp;(key,&nbsp;value)&nbsp;pair&nbsp;as&nbsp;a<br>
+2-tuple;&nbsp;but&nbsp;raise&nbsp;KeyError&nbsp;if&nbsp;D&nbsp;is&nbsp;empty</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-setdefault"><strong>setdefault</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-setdefault">setdefault</a>(k[,d])&nbsp;-&gt;&nbsp;D.<a href="#EventDispatchersMap-get">get</a>(k,d),&nbsp;also&nbsp;set&nbsp;D[k]=d&nbsp;if&nbsp;k&nbsp;not&nbsp;in&nbsp;D</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-update"><strong>update</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-update">update</a>(E,&nbsp;**F)&nbsp;-&gt;&nbsp;None.&nbsp;&nbsp;Update&nbsp;D&nbsp;from&nbsp;E&nbsp;and&nbsp;F:&nbsp;for&nbsp;k&nbsp;in&nbsp;E:&nbsp;D[k]&nbsp;=&nbsp;E[k]<br>
+(if&nbsp;E&nbsp;has&nbsp;keys&nbsp;else:&nbsp;for&nbsp;(k,&nbsp;v)&nbsp;in&nbsp;E:&nbsp;D[k]&nbsp;=&nbsp;v)&nbsp;then:&nbsp;for&nbsp;k&nbsp;in&nbsp;F:&nbsp;D[k]&nbsp;=&nbsp;F[k]</tt></dd></dl>
+
+<dl><dt><a name="EventDispatchersMap-values"><strong>values</strong></a>(...)</dt><dd><tt>D.<a href="#EventDispatchersMap-values">values</a>()&nbsp;-&gt;&nbsp;list&nbsp;of&nbsp;D's&nbsp;values</tt></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="__builtin__.html#dict">__builtin__.dict</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object at 0x01030648&gt;<dd><tt>T.<a href="#EventDispatchersMap-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;<a href="__builtin__.html#type">type</a>&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+<dl><dt><strong>fromkeys</strong> = &lt;built-in method fromkeys of type object at 0x00618B10&gt;<dd><tt><a href="__builtin__.html#dict">dict</a>.<a href="#EventDispatchersMap-fromkeys">fromkeys</a>(S[,v])&nbsp;-&gt;&nbsp;New&nbsp;<a href="__builtin__.html#dict">dict</a>&nbsp;with&nbsp;keys&nbsp;from&nbsp;S&nbsp;and&nbsp;values&nbsp;equal&nbsp;to&nbsp;v.<br>
+v&nbsp;defaults&nbsp;to&nbsp;None.</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Frame">class <strong>Frame</strong></a>(<a href="ppygui.core.html#Window">Window</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Frame">Frame</a>&nbsp;extends&nbsp;<a href="#Window">Window</a>&nbsp;to&nbsp;provide&nbsp;layout&nbsp;facilities.<br>
+You&nbsp;can&nbsp;bind&nbsp;a&nbsp;sizer&nbsp;to&nbsp;a&nbsp;<a href="#Frame">Frame</a>&nbsp;using&nbsp;the&nbsp;sizer&nbsp;property<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#Frame">Frame</a></dd>
+<dd><a href="ppygui.core.html#Window">Window</a></dd>
+<dd><a href="ppygui.core.html#GuiObject">GuiObject</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Frame-__init__"><strong>__init__</strong></a>(self, parent, title<font color="#909090">=''</font>, pos<font color="#909090">=(-1, -1, -1, -1)</font>, visible<font color="#909090">=True</font>, enabled<font color="#909090">=True</font>, tab_traversal<font color="#909090">=True</font>, **kw)</dt></dl>
+
+<dl><dt><a name="Frame-get_best_size"><strong>get_best_size</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;best_size</tt></dd></dl>
+
+<dl><dt><a name="Frame-get_sizer"><strong>get_sizer</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;sizer</tt></dd></dl>
+
+<dl><dt><a name="Frame-layout"><strong>layout</strong></a>(self)</dt><dd><tt>Forces&nbsp;the&nbsp;frame&nbsp;to&nbsp;lay&nbsp;its&nbsp;content&nbsp;out&nbsp;with&nbsp;its&nbsp;sizer&nbsp;property.&nbsp;<br>
+Note&nbsp;it&nbsp;is&nbsp;automatically&nbsp;called&nbsp;anytime&nbsp;the&nbsp;<a href="#Frame">Frame</a>&nbsp;is&nbsp;moved&nbsp;or&nbsp;resized,&nbsp;<br>
+or&nbsp;when&nbsp;the&nbsp;sizer&nbsp;property&nbsp;is&nbsp;set.</tt></dd></dl>
+
+<dl><dt><a name="Frame-set_sizer"><strong>set_sizer</strong></a>(self, sizer)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;sizer</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>best_size</strong></dt>
+<dd><tt></tt></dd>
+</dl>
+<dl><dt><strong>sizer</strong></dt>
+<dd><tt>A&nbsp;sizer.Sizer,&nbsp;sizer.HSizer&nbsp;or&nbsp;sizer.VSizer&nbsp;instance&nbsp;responsible&nbsp;of&nbsp;the&nbsp;layout</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>doc_sizer</strong> = 'A sizer.Sizer, sizer.HSizer or sizer.VSizer instance responsible of the layout'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#Window">Window</a>:<br>
+<dl><dt><a name="Frame-bind"><strong>bind</strong></a>(self, **kw)</dt><dd><tt><a href="#Frame-bind">bind</a>(self,&nbsp;event1=callback1,&nbsp;event2=callbac2,&nbsp;...)&nbsp;--&gt;<br>
+maps&nbsp;gui&nbsp;events&nbsp;to&nbsp;callbacks,<br>
+callbacks&nbsp;are&nbsp;any&nbsp;callable&nbsp;fthat&nbsp;accept&nbsp;a&nbsp;single&nbsp;argument.</tt></dd></dl>
+
+<dl><dt><a name="Frame-bringtofront"><strong>bringtofront</strong></a>(self)</dt><dd><tt>Bring&nbsp;the&nbsp;window&nbsp;to&nbsp;foreground</tt></dd></dl>
+
+<dl><dt><a name="Frame-call_base_proc"><strong>call_base_proc</strong></a>(self, event)</dt></dl>
+
+<dl><dt><a name="Frame-close"><strong>close</strong></a>(self)</dt><dd><tt>Programmaticaly&nbsp;request&nbsp;the&nbsp;window&nbsp;to&nbsp;be&nbsp;closed</tt></dd></dl>
+
+<dl><dt><a name="Frame-destroy"><strong>destroy</strong></a>(self)</dt><dd><tt>Destroy&nbsp;the&nbsp;window&nbsp;and&nbsp;its&nbsp;child,&nbsp;releasing&nbsp;their&nbsp;resources,&nbsp;and&nbsp;break&nbsp;<br>
+reference&nbsp;cycle&nbsp;that&nbsp;could&nbsp;be&nbsp;induced&nbsp;by&nbsp;the&nbsp;event&nbsp;system.</tt></dd></dl>
+
+<dl><dt><a name="Frame-disable"><strong>disable</strong></a>(self)</dt><dd><tt>Disable&nbsp;the&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="Frame-enable"><strong>enable</strong></a>(self, val<font color="#909090">=True</font>)</dt><dd><tt>Enable&nbsp;or&nbsp;disable&nbsp;the&nbsp;window,&nbsp;depending&nbsp;of&nbsp;the<br>
+boolean&nbsp;value&nbsp;of&nbsp;val.</tt></dd></dl>
+
+<dl><dt><a name="Frame-focus"><strong>focus</strong></a>(self)</dt><dd><tt>Force&nbsp;the&nbsp;focus&nbsp;on&nbsp;this&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="Frame-get_client_rect"><strong>get_client_rect</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;client_rect</tt></dd></dl>
+
+<dl><dt><a name="Frame-get_parent"><strong>get_parent</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;parent</tt></dd></dl>
+
+<dl><dt><a name="Frame-get_pos"><strong>get_pos</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;pos</tt></dd></dl>
+
+<dl><dt><a name="Frame-get_size"><strong>get_size</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;size</tt></dd></dl>
+
+<dl><dt><a name="Frame-get_text"><strong>get_text</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;text</tt></dd></dl>
+
+<dl><dt><a name="Frame-get_window_rect"><strong>get_window_rect</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;window_rect</tt></dd></dl>
+
+<dl><dt><a name="Frame-hide"><strong>hide</strong></a>(self)</dt><dd><tt>Hide&nbsp;the&nbsp;window.&nbsp;Equivalent&nbsp;to&nbsp;win.<a href="#Frame-show">show</a>(False)</tt></dd></dl>
+
+<dl><dt><a name="Frame-move"><strong>move</strong></a>(self, left, top, width, height)</dt><dd><tt>Moves&nbsp;the&nbsp;window&nbsp;to&nbsp;the&nbsp;desired&nbsp;rect&nbsp;(left,&nbsp;top,&nbsp;width,&nbsp;height)</tt></dd></dl>
+
+<dl><dt><a name="Frame-set_pos"><strong>set_pos</strong></a>(self, pos)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;pos</tt></dd></dl>
+
+<dl><dt><a name="Frame-set_redraw"><strong>set_redraw</strong></a>(self, redraw)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;redraw</tt></dd></dl>
+
+<dl><dt><a name="Frame-set_size"><strong>set_size</strong></a>(self, size)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;size</tt></dd></dl>
+
+<dl><dt><a name="Frame-set_text"><strong>set_text</strong></a>(self, txt)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;text</tt></dd></dl>
+
+<dl><dt><a name="Frame-show"><strong>show</strong></a>(self, val<font color="#909090">=True</font>)</dt><dd><tt>Show&nbsp;or&nbsp;hide&nbsp;the&nbsp;window,&nbsp;depending&nbsp;of&nbsp;the<br>
+boolean&nbsp;value&nbsp;of&nbsp;val.</tt></dd></dl>
+
+<dl><dt><a name="Frame-update"><strong>update</strong></a>(self)</dt><dd><tt>Forces&nbsp;the&nbsp;window&nbsp;to&nbsp;be&nbsp;repainted</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#Window">Window</a>:<br>
+<dl><dt><strong>client_rect</strong></dt>
+<dd><tt>The&nbsp;window&nbsp;client&nbsp;rect,&nbsp;i.e.&nbsp;the&nbsp;inner&nbsp;rect&nbsp;of&nbsp;the&nbsp;window</tt></dd>
+</dl>
+<dl><dt><strong>parent</strong></dt>
+<dd><tt>The&nbsp;parent&nbsp;window&nbsp;instance&nbsp;or&nbsp;None&nbsp;for&nbsp;a&nbsp;top&nbsp;window</tt></dd>
+</dl>
+<dl><dt><strong>pos</strong></dt>
+<dd><tt>The&nbsp;relative&nbsp;window&nbsp;position&nbsp;in&nbsp;its&nbsp;parent&nbsp;container&nbsp;as&nbsp;a&nbsp;tuple&nbsp;(left,&nbsp;top)</tt></dd>
+</dl>
+<dl><dt><strong>redraw</strong></dt>
+<dd><tt>The&nbsp;redraw&nbsp;state&nbsp;as&nbsp;a&nbsp;bool.&nbsp;When&nbsp;setting&nbsp;it&nbsp;to<br>
+False,&nbsp;the&nbsp;window&nbsp;will&nbsp;not&nbsp;be&nbsp;repainted,&nbsp;until&nbsp;it<br>
+is&nbsp;set&nbsp;to&nbsp;True&nbsp;again</tt></dd>
+</dl>
+<dl><dt><strong>size</strong></dt>
+<dd><tt>The&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;as&nbsp;a&nbsp;tuple&nbsp;(width,&nbsp;height)</tt></dd>
+</dl>
+<dl><dt><strong>text</strong></dt>
+<dd><tt>The&nbsp;text&nbsp;displayed&nbsp;by&nbsp;the&nbsp;control&nbsp;as&nbsp;a&nbsp;string</tt></dd>
+</dl>
+<dl><dt><strong>window_rect</strong></dt>
+<dd><tt>The&nbsp;window&nbsp;rect&nbsp;in&nbsp;its&nbsp;parent&nbsp;container</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#Window">Window</a>:<br>
+<dl><dt><strong>doc_client_rect</strong> = 'The window client rect, i.e. the inner rect of the window'</dl>
+
+<dl><dt><strong>doc_parent</strong> = 'The parent window instance or None for a top window'</dl>
+
+<dl><dt><strong>doc_pos</strong> = 'The relative window position in its parent container as a tuple (left, top)'</dl>
+
+<dl><dt><strong>doc_redraw</strong> = '    The redraw state as a bool. When setting it ...t be repainted, until it<font color="#c040c0">\n</font>    is set to True again'</dl>
+
+<dl><dt><strong>doc_size</strong> = 'The size of the window as a tuple (width, height)'</dl>
+
+<dl><dt><strong>doc_text</strong> = 'The text displayed by the control as a string'</dl>
+
+<dl><dt><strong>doc_window_rect</strong> = 'The window rect in its parent container'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><a name="Frame-set"><strong>set</strong></a>(self, **kw)</dt><dd><tt><a href="#Frame-set">set</a>(self,&nbsp;prop1=value1,&nbsp;prop2=value2,&nbsp;...)&nbsp;--&gt;&nbsp;sets&nbsp;the&nbsp;property&nbsp;prop1&nbsp;to&nbsp;value1,&nbsp;prop2&nbsp;to&nbsp;value2,&nbsp;...</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__metaclass__</strong> = &lt;class 'ppygui.core.GuiType'&gt;<dd><tt>The&nbsp;metaclass&nbsp;of&nbsp;<a href="#GuiObject">GuiObject</a>,&nbsp;useful&nbsp;for&nbsp;automatic&nbsp;property&nbsp;generation</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="GuiObject">class <strong>GuiObject</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;most&nbsp;basic&nbsp;pycegui&nbsp;<a href="__builtin__.html#type">type</a>.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="GuiObject-__init__"><strong>__init__</strong></a>(self, **kw)</dt></dl>
+
+<dl><dt><a name="GuiObject-set"><strong>set</strong></a>(self, **kw)</dt><dd><tt><a href="#GuiObject-set">set</a>(self,&nbsp;prop1=value1,&nbsp;prop2=value2,&nbsp;...)&nbsp;--&gt;&nbsp;sets&nbsp;the&nbsp;property&nbsp;prop1&nbsp;to&nbsp;value1,&nbsp;prop2&nbsp;to&nbsp;value2,&nbsp;...</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__metaclass__</strong> = &lt;class 'ppygui.core.GuiType'&gt;<dd><tt>The&nbsp;metaclass&nbsp;of&nbsp;<a href="#GuiObject">GuiObject</a>,&nbsp;useful&nbsp;for&nbsp;automatic&nbsp;property&nbsp;generation</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="GuiType">class <strong>GuiType</strong></a>(<a href="__builtin__.html#type">__builtin__.type</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;metaclass&nbsp;of&nbsp;<a href="#GuiObject">GuiObject</a>,&nbsp;useful&nbsp;for&nbsp;automatic&nbsp;property&nbsp;generation<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#GuiType">GuiType</a></dd>
+<dd><a href="__builtin__.html#type">__builtin__.type</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="GuiType-__init__"><strong>__init__</strong></a>(cls, name, bases, dict)</dt></dl>
+
+<hr>
+Methods inherited from <a href="__builtin__.html#type">__builtin__.type</a>:<br>
+<dl><dt><a name="GuiType-__call__"><strong>__call__</strong></a>(...)</dt><dd><tt>x.<a href="#GuiType-__call__">__call__</a>(...)&nbsp;&lt;==&gt;&nbsp;x(...)</tt></dd></dl>
+
+<dl><dt><a name="GuiType-__cmp__"><strong>__cmp__</strong></a>(...)</dt><dd><tt>x.<a href="#GuiType-__cmp__">__cmp__</a>(y)&nbsp;&lt;==&gt;&nbsp;cmp(x,y)</tt></dd></dl>
+
+<dl><dt><a name="GuiType-__delattr__"><strong>__delattr__</strong></a>(...)</dt><dd><tt>x.<a href="#GuiType-__delattr__">__delattr__</a>('name')&nbsp;&lt;==&gt;&nbsp;del&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="GuiType-__getattribute__"><strong>__getattribute__</strong></a>(...)</dt><dd><tt>x.<a href="#GuiType-__getattribute__">__getattribute__</a>('name')&nbsp;&lt;==&gt;&nbsp;x.name</tt></dd></dl>
+
+<dl><dt><a name="GuiType-__hash__"><strong>__hash__</strong></a>(...)</dt><dd><tt>x.<a href="#GuiType-__hash__">__hash__</a>()&nbsp;&lt;==&gt;&nbsp;hash(x)</tt></dd></dl>
+
+<dl><dt><a name="GuiType-__repr__"><strong>__repr__</strong></a>(...)</dt><dd><tt>x.<a href="#GuiType-__repr__">__repr__</a>()&nbsp;&lt;==&gt;&nbsp;repr(x)</tt></dd></dl>
+
+<dl><dt><a name="GuiType-__setattr__"><strong>__setattr__</strong></a>(...)</dt><dd><tt>x.<a href="#GuiType-__setattr__">__setattr__</a>('name',&nbsp;value)&nbsp;&lt;==&gt;&nbsp;x.name&nbsp;=&nbsp;value</tt></dd></dl>
+
+<dl><dt><a name="GuiType-__subclasses__"><strong>__subclasses__</strong></a>(...)</dt><dd><tt><a href="#GuiType-__subclasses__">__subclasses__</a>()&nbsp;-&gt;&nbsp;list&nbsp;of&nbsp;immediate&nbsp;subclasses</tt></dd></dl>
+
+<dl><dt><a name="GuiType-mro"><strong>mro</strong></a>(...)</dt><dd><tt><a href="#GuiType-mro">mro</a>()&nbsp;-&gt;&nbsp;list<br>
+return&nbsp;a&nbsp;<a href="__builtin__.html#type">type</a>'s&nbsp;method&nbsp;resolution&nbsp;order</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="__builtin__.html#type">__builtin__.type</a>:<br>
+<dl><dt><strong>__base__</strong></dt>
+</dl>
+<dl><dt><strong>__bases__</strong></dt>
+</dl>
+<dl><dt><strong>__basicsize__</strong></dt>
+</dl>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+<dl><dt><strong>__dictoffset__</strong></dt>
+</dl>
+<dl><dt><strong>__flags__</strong></dt>
+</dl>
+<dl><dt><strong>__itemsize__</strong></dt>
+</dl>
+<dl><dt><strong>__mro__</strong></dt>
+</dl>
+<dl><dt><strong>__weakrefoffset__</strong></dt>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="__builtin__.html#type">__builtin__.type</a>:<br>
+<dl><dt><strong>__new__</strong> = &lt;built-in method __new__ of type object at 0x01042C08&gt;<dd><tt>T.<a href="#GuiType-__new__">__new__</a>(S,&nbsp;...)&nbsp;-&gt;&nbsp;a&nbsp;new&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;with&nbsp;<a href="__builtin__.html#type">type</a>&nbsp;S,&nbsp;a&nbsp;subtype&nbsp;of&nbsp;T</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="IdGenerator">class <strong>IdGenerator</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;global&nbsp;class&nbsp;to&nbsp;generate&nbsp;unique&nbsp;integers<br>
+ids&nbsp;starting&nbsp;from&nbsp;1000<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Class methods defined here:<br>
+<dl><dt><a name="IdGenerator-next"><strong>next</strong></a>(cls)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<dl><dt><a name="IdGenerator-reuseid"><strong>reuseid</strong></a>(cls, id)<font color="#909090"><font face="helvetica, arial"> from <a href="__builtin__.html#type">__builtin__.type</a></font></font></dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>current_id</strong> = 999</dl>
+
+<dl><dt><strong>recycle</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="KeyEvent">class <strong>KeyEvent</strong></a>(<a href="ppygui.core.html#Event">Event</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>An&nbsp;event&nbsp;raised&nbsp;when&nbsp;the&nbsp;user&nbsp;press&nbsp;a&nbsp;keyboard<br>
+or&nbsp;move&nbsp;the&nbsp;joystick&nbsp;in&nbsp;the&nbsp;window<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#KeyEvent">KeyEvent</a></dd>
+<dd><a href="ppygui.core.html#Event">Event</a></dd>
+<dd><a href="ppygui.core.html#GuiObject">GuiObject</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="KeyEvent-__init__"><strong>__init__</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="KeyEvent-get_key_code"><strong>get_key_code</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;key_code</tt></dd></dl>
+
+<dl><dt><a name="KeyEvent-get_repeat_count"><strong>get_repeat_count</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;repeat_count</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>key_code</strong></dt>
+<dd><tt></tt></dd>
+</dl>
+<dl><dt><strong>repeat_count</strong></dt>
+<dd><tt></tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>doc_key_count</strong> = 'The virtual key code of the key pressed'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><a name="KeyEvent-get_window"><strong>get_window</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="KeyEvent-skip"><strong>skip</strong></a>(self)</dt><dd><tt>Tells&nbsp;the&nbsp;default&nbsp;window&nbsp;procedure&nbsp;to&nbsp;handle&nbsp;the&nbsp;event.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><strong>window</strong></dt>
+<dd><tt>Source&nbsp;Window&nbsp;instance&nbsp;that&nbsp;triggered&nbsp;the&nbsp;event</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><strong>doc_window</strong> = 'Source Window instance that triggered the event'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><a name="KeyEvent-set"><strong>set</strong></a>(self, **kw)</dt><dd><tt><a href="#KeyEvent-set">set</a>(self,&nbsp;prop1=value1,&nbsp;prop2=value2,&nbsp;...)&nbsp;--&gt;&nbsp;sets&nbsp;the&nbsp;property&nbsp;prop1&nbsp;to&nbsp;value1,&nbsp;prop2&nbsp;to&nbsp;value2,&nbsp;...</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__metaclass__</strong> = &lt;class 'ppygui.core.GuiType'&gt;<dd><tt>The&nbsp;metaclass&nbsp;of&nbsp;<a href="#GuiObject">GuiObject</a>,&nbsp;useful&nbsp;for&nbsp;automatic&nbsp;property&nbsp;generation</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MSGEventDispatcher">class <strong>MSGEventDispatcher</strong></a>(<a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Used&nbsp;internally&nbsp;by&nbsp;PPyGui.&nbsp;Not&nbsp;documented&nbsp;yet<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#MSGEventDispatcher">MSGEventDispatcher</a></dd>
+<dd><a href="ppygui.core.html#EventDispatcher">EventDispatcher</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="MSGEventDispatcher-__init__"><strong>__init__</strong></a>(self, win, nMsg, eventclass<font color="#909090">=&lt;class 'ppygui.core.Event'&gt;</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>:<br>
+<dl><dt><a name="MSGEventDispatcher-bind"><strong>bind</strong></a>(self, callback<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="MSGEventDispatcher-dispatch"><strong>dispatch</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="MSGEventDispatcher-isconnected"><strong>isconnected</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="MSGEventDispatcher-unbind"><strong>unbind</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MenuEventDispatcher">class <strong>MenuEventDispatcher</strong></a>(<a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Used&nbsp;internally&nbsp;by&nbsp;PPyGui.&nbsp;Not&nbsp;documented&nbsp;yet<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#MenuEventDispatcher">MenuEventDispatcher</a></dd>
+<dd><a href="ppygui.core.html#EventDispatcher">EventDispatcher</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="MenuEventDispatcher-__init__"><strong>__init__</strong></a>(self, id)</dt></dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>:<br>
+<dl><dt><a name="MenuEventDispatcher-bind"><strong>bind</strong></a>(self, callback<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="MenuEventDispatcher-dispatch"><strong>dispatch</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="MenuEventDispatcher-isconnected"><strong>isconnected</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="MenuEventDispatcher-unbind"><strong>unbind</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MessageLoop">class <strong>MessageLoop</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Used&nbsp;internally&nbsp;by&nbsp;PPyGui.&nbsp;Not&nbsp;documented&nbsp;yet<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="MessageLoop-AddFilter"><strong>AddFilter</strong></a>(self, filterFunc)</dt></dl>
+
+<dl><dt><a name="MessageLoop-PreTranslateMessage"><strong>PreTranslateMessage</strong></a>(self, msg)</dt></dl>
+
+<dl><dt><a name="MessageLoop-RemoveFilter"><strong>RemoveFilter</strong></a>(self, filterFunc)</dt></dl>
+
+<dl><dt><a name="MessageLoop-Run"><strong>Run</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="MessageLoop-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="NTFEventDispatcher">class <strong>NTFEventDispatcher</strong></a>(<a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Used&nbsp;internally&nbsp;by&nbsp;PPyGui.&nbsp;Not&nbsp;documented&nbsp;yet<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#NTFEventDispatcher">NTFEventDispatcher</a></dd>
+<dd><a href="ppygui.core.html#EventDispatcher">EventDispatcher</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="NTFEventDispatcher-__init__"><strong>__init__</strong></a>(self, win, code, eventclass<font color="#909090">=&lt;class 'ppygui.core.NotificationEvent'&gt;</font>)</dt></dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>:<br>
+<dl><dt><a name="NTFEventDispatcher-bind"><strong>bind</strong></a>(self, callback<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="NTFEventDispatcher-dispatch"><strong>dispatch</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="NTFEventDispatcher-isconnected"><strong>isconnected</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="NTFEventDispatcher-unbind"><strong>unbind</strong></a>(self)</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#EventDispatcher">EventDispatcher</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="NotificationEvent">class <strong>NotificationEvent</strong></a>(<a href="ppygui.core.html#Event">Event</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>An&nbsp;<a href="#Event">Event</a>&nbsp;that&nbsp;wraps&nbsp;Win32&nbsp;WM_NOTIFY&nbsp;messages<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#NotificationEvent">NotificationEvent</a></dd>
+<dd><a href="ppygui.core.html#Event">Event</a></dd>
+<dd><a href="ppygui.core.html#GuiObject">GuiObject</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="NotificationEvent-__init__"><strong>__init__</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="NotificationEvent-get_code"><strong>get_code</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;code</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>code</strong></dt>
+<dd><tt></tt></dd>
+</dl>
+<hr>
+Methods inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><a name="NotificationEvent-get_window"><strong>get_window</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="NotificationEvent-skip"><strong>skip</strong></a>(self)</dt><dd><tt>Tells&nbsp;the&nbsp;default&nbsp;window&nbsp;procedure&nbsp;to&nbsp;handle&nbsp;the&nbsp;event.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><strong>window</strong></dt>
+<dd><tt>Source&nbsp;Window&nbsp;instance&nbsp;that&nbsp;triggered&nbsp;the&nbsp;event</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><strong>doc_window</strong> = 'Source Window instance that triggered the event'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><a name="NotificationEvent-set"><strong>set</strong></a>(self, **kw)</dt><dd><tt><a href="#NotificationEvent-set">set</a>(self,&nbsp;prop1=value1,&nbsp;prop2=value2,&nbsp;...)&nbsp;--&gt;&nbsp;sets&nbsp;the&nbsp;property&nbsp;prop1&nbsp;to&nbsp;value1,&nbsp;prop2&nbsp;to&nbsp;value2,&nbsp;...</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__metaclass__</strong> = &lt;class 'ppygui.core.GuiType'&gt;<dd><tt>The&nbsp;metaclass&nbsp;of&nbsp;<a href="#GuiObject">GuiObject</a>,&nbsp;useful&nbsp;for&nbsp;automatic&nbsp;property&nbsp;generation</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RegisteredEventsDispatcher">class <strong>RegisteredEventsDispatcher</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Used&nbsp;internally&nbsp;by&nbsp;PPyGui.&nbsp;Not&nbsp;documented&nbsp;yet<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RegisteredEventsDispatcher-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="RegisteredEventsDispatcher-install"><strong>install</strong></a>(self, dispatcher)</dt></dl>
+
+<dl><dt><a name="RegisteredEventsDispatcher-match"><strong>match</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="RegisteredEventsDispatcher-remove"><strong>remove</strong></a>(self, dispatcher)</dt></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Schedulee">class <strong>Schedulee</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Used&nbsp;internally&nbsp;by&nbsp;PPyGui.&nbsp;Not&nbsp;documented&nbsp;yet<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Schedulee-__init__"><strong>__init__</strong></a>(self, func, args, kw)</dt></dl>
+
+<dl><dt><a name="Schedulee-apply"><strong>apply</strong></a>(self)</dt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SizeEvent">class <strong>SizeEvent</strong></a>(<a href="ppygui.core.html#Event">Event</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>An&nbsp;<a href="#Event">Event</a>&nbsp;that&nbsp;is&nbsp;raised&nbsp;by&nbsp;a&nbsp;window&nbsp;when&nbsp;resized<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#SizeEvent">SizeEvent</a></dd>
+<dd><a href="ppygui.core.html#Event">Event</a></dd>
+<dd><a href="ppygui.core.html#GuiObject">GuiObject</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="SizeEvent-__init__"><strong>__init__</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="SizeEvent-get_size"><strong>get_size</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;size</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>size</strong></dt>
+<dd><tt>The&nbsp;new&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;as&nbsp;a&nbsp;tuple&nbsp;(widht,&nbsp;height)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>doc_size</strong> = 'The new size of the window as a tuple (widht, height)'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><a name="SizeEvent-get_window"><strong>get_window</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="SizeEvent-skip"><strong>skip</strong></a>(self)</dt><dd><tt>Tells&nbsp;the&nbsp;default&nbsp;window&nbsp;procedure&nbsp;to&nbsp;handle&nbsp;the&nbsp;event.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><strong>window</strong></dt>
+<dd><tt>Source&nbsp;Window&nbsp;instance&nbsp;that&nbsp;triggered&nbsp;the&nbsp;event</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><strong>doc_window</strong> = 'Source Window instance that triggered the event'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><a name="SizeEvent-set"><strong>set</strong></a>(self, **kw)</dt><dd><tt><a href="#SizeEvent-set">set</a>(self,&nbsp;prop1=value1,&nbsp;prop2=value2,&nbsp;...)&nbsp;--&gt;&nbsp;sets&nbsp;the&nbsp;property&nbsp;prop1&nbsp;to&nbsp;value1,&nbsp;prop2&nbsp;to&nbsp;value2,&nbsp;...</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__metaclass__</strong> = &lt;class 'ppygui.core.GuiType'&gt;<dd><tt>The&nbsp;metaclass&nbsp;of&nbsp;<a href="#GuiObject">GuiObject</a>,&nbsp;useful&nbsp;for&nbsp;automatic&nbsp;property&nbsp;generation</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="StylusEvent">class <strong>StylusEvent</strong></a>(<a href="ppygui.core.html#Event">Event</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>An&nbsp;<a href="#Event">Event</a>&nbsp;that&nbsp;is&nbsp;raised&nbsp;on&nbsp;interaction&nbsp;of&nbsp;a&nbsp;window&nbsp;with&nbsp;the&nbsp;stylus.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#StylusEvent">StylusEvent</a></dd>
+<dd><a href="ppygui.core.html#Event">Event</a></dd>
+<dd><a href="ppygui.core.html#GuiObject">GuiObject</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="StylusEvent-__init__"><strong>__init__</strong></a>(self, hWnd, nMsg, wParam, lParam)</dt></dl>
+
+<dl><dt><a name="StylusEvent-get_position"><strong>get_position</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;position</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>position</strong></dt>
+<dd><tt>The&nbsp;position&nbsp;of&nbsp;the&nbsp;stylus&nbsp;as&nbsp;a&nbsp;tuple&nbsp;(left,&nbsp;top)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>doc_position</strong> = 'The position of the stylus as a tuple (left, top)'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><a name="StylusEvent-get_window"><strong>get_window</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="StylusEvent-skip"><strong>skip</strong></a>(self)</dt><dd><tt>Tells&nbsp;the&nbsp;default&nbsp;window&nbsp;procedure&nbsp;to&nbsp;handle&nbsp;the&nbsp;event.</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><strong>window</strong></dt>
+<dd><tt>Source&nbsp;Window&nbsp;instance&nbsp;that&nbsp;triggered&nbsp;the&nbsp;event</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#Event">Event</a>:<br>
+<dl><dt><strong>doc_window</strong> = 'Source Window instance that triggered the event'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><a name="StylusEvent-set"><strong>set</strong></a>(self, **kw)</dt><dd><tt><a href="#StylusEvent-set">set</a>(self,&nbsp;prop1=value1,&nbsp;prop2=value2,&nbsp;...)&nbsp;--&gt;&nbsp;sets&nbsp;the&nbsp;property&nbsp;prop1&nbsp;to&nbsp;value1,&nbsp;prop2&nbsp;to&nbsp;value2,&nbsp;...</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__metaclass__</strong> = &lt;class 'ppygui.core.GuiType'&gt;<dd><tt>The&nbsp;metaclass&nbsp;of&nbsp;<a href="#GuiObject">GuiObject</a>,&nbsp;useful&nbsp;for&nbsp;automatic&nbsp;property&nbsp;generation</tt></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Window">class <strong>Window</strong></a>(<a href="ppygui.core.html#GuiObject">GuiObject</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>The&nbsp;base&nbsp;class&nbsp;of&nbsp;all&nbsp;displayable&nbsp;elements<br>
+Events:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;paint&nbsp;-&gt;&nbsp;<a href="#Event">Event</a>:&nbsp;sent&nbsp;when&nbsp;the&nbsp;window&nbsp;needs&nbsp;repainting<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;close&nbsp;-&gt;&nbsp;<a href="#Event">Event</a>:&nbsp;sent&nbsp;when&nbsp;the&nbsp;user&nbsp;or&nbsp;os&nbsp;request&nbsp;the&nbsp;window&nbsp;to&nbsp;be&nbsp;closed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;destroy&nbsp;-&gt;&nbsp;<a href="#Event">Event</a>:&nbsp;sent&nbsp;when&nbsp;the&nbsp;window&nbsp;is&nbsp;about&nbsp;to&nbsp;be&nbsp;destroyed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;size&nbsp;-&gt;&nbsp;<a href="#SizeEvent">SizeEvent</a>:&nbsp;sent&nbsp;when&nbsp;the&nbsp;window&nbsp;is&nbsp;resized<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;lbdown&nbsp;-&gt;&nbsp;<a href="#StylusEvent">StylusEvent</a>:&nbsp;sent&nbsp;when&nbsp;the&nbsp;stylus&nbsp;is&nbsp;pressed&nbsp;down&nbsp;on&nbsp;the&nbsp;window&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;lbmove&nbsp;-&gt;&nbsp;<a href="#StylusEvent">StylusEvent</a>:&nbsp;sent&nbsp;when&nbsp;the&nbsp;stylus&nbsp;is&nbsp;sliding&nbsp;on&nbsp;the&nbsp;window&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;lbup&nbsp;-&gt;&nbsp;<a href="#StylusEvent">StylusEvent</a>:&nbsp;sent&nbsp;when&nbsp;the&nbsp;stylus&nbsp;is&nbsp;pressed&nbsp;down&nbsp;on&nbsp;the&nbsp;window<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="ppygui.core.html#Window">Window</a></dd>
+<dd><a href="ppygui.core.html#GuiObject">GuiObject</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Window-__init__"><strong>__init__</strong></a>(self, parent<font color="#909090">=None</font>, title<font color="#909090">='PocketPyGui'</font>, style<font color="#909090">='normal'</font>, visible<font color="#909090">=True</font>, enabled<font color="#909090">=True</font>, pos<font color="#909090">=(-1, -1, -1, -1)</font>, tab_traversal<font color="#909090">=True</font>, **kw)</dt><dd><tt>\.<br>
+Arguments:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;parent:&nbsp;the&nbsp;parent&nbsp;window&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;title:&nbsp;the&nbsp;title&nbsp;as&nbsp;appearing&nbsp;in&nbsp;the&nbsp;title&nbsp;bar.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;style:&nbsp;normal&nbsp;or&nbsp;control<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;pos:&nbsp;a&nbsp;tuple&nbsp;(left,&nbsp;top,&nbsp;width,&nbsp;height)&nbsp;that&nbsp;determines&nbsp;the&nbsp;initial&nbsp;position&nbsp;of&nbsp;the&nbsp;window.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use&nbsp;-1&nbsp;in&nbsp;any&nbsp;tuple&nbsp;element&nbsp;for&nbsp;default&nbsp;positioning.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It&nbsp;is&nbsp;strongly&nbsp;recommanded&nbsp;to&nbsp;use&nbsp;the&nbsp;Sizer&nbsp;classes&nbsp;to&nbsp;perform&nbsp;the&nbsp;layout.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;tab_traversal&nbsp;:&nbsp;whether&nbsp;the&nbsp;<a href="#Window">Window</a>&nbsp;implements&nbsp;automatic&nbsp;tab/jog-dial</tt></dd></dl>
+
+<dl><dt><a name="Window-bind"><strong>bind</strong></a>(self, **kw)</dt><dd><tt><a href="#Window-bind">bind</a>(self,&nbsp;event1=callback1,&nbsp;event2=callbac2,&nbsp;...)&nbsp;--&gt;<br>
+maps&nbsp;gui&nbsp;events&nbsp;to&nbsp;callbacks,<br>
+callbacks&nbsp;are&nbsp;any&nbsp;callable&nbsp;fthat&nbsp;accept&nbsp;a&nbsp;single&nbsp;argument.</tt></dd></dl>
+
+<dl><dt><a name="Window-bringtofront"><strong>bringtofront</strong></a>(self)</dt><dd><tt>Bring&nbsp;the&nbsp;window&nbsp;to&nbsp;foreground</tt></dd></dl>
+
+<dl><dt><a name="Window-call_base_proc"><strong>call_base_proc</strong></a>(self, event)</dt></dl>
+
+<dl><dt><a name="Window-close"><strong>close</strong></a>(self)</dt><dd><tt>Programmaticaly&nbsp;request&nbsp;the&nbsp;window&nbsp;to&nbsp;be&nbsp;closed</tt></dd></dl>
+
+<dl><dt><a name="Window-destroy"><strong>destroy</strong></a>(self)</dt><dd><tt>Destroy&nbsp;the&nbsp;window&nbsp;and&nbsp;its&nbsp;child,&nbsp;releasing&nbsp;their&nbsp;resources,&nbsp;and&nbsp;break&nbsp;<br>
+reference&nbsp;cycle&nbsp;that&nbsp;could&nbsp;be&nbsp;induced&nbsp;by&nbsp;the&nbsp;event&nbsp;system.</tt></dd></dl>
+
+<dl><dt><a name="Window-disable"><strong>disable</strong></a>(self)</dt><dd><tt>Disable&nbsp;the&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="Window-enable"><strong>enable</strong></a>(self, val<font color="#909090">=True</font>)</dt><dd><tt>Enable&nbsp;or&nbsp;disable&nbsp;the&nbsp;window,&nbsp;depending&nbsp;of&nbsp;the<br>
+boolean&nbsp;value&nbsp;of&nbsp;val.</tt></dd></dl>
+
+<dl><dt><a name="Window-focus"><strong>focus</strong></a>(self)</dt><dd><tt>Force&nbsp;the&nbsp;focus&nbsp;on&nbsp;this&nbsp;window</tt></dd></dl>
+
+<dl><dt><a name="Window-get_client_rect"><strong>get_client_rect</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;client_rect</tt></dd></dl>
+
+<dl><dt><a name="Window-get_parent"><strong>get_parent</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;parent</tt></dd></dl>
+
+<dl><dt><a name="Window-get_pos"><strong>get_pos</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;pos</tt></dd></dl>
+
+<dl><dt><a name="Window-get_size"><strong>get_size</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;size</tt></dd></dl>
+
+<dl><dt><a name="Window-get_text"><strong>get_text</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;text</tt></dd></dl>
+
+<dl><dt><a name="Window-get_window_rect"><strong>get_window_rect</strong></a>(self)</dt><dd><tt>getter&nbsp;for&nbsp;property&nbsp;window_rect</tt></dd></dl>
+
+<dl><dt><a name="Window-hide"><strong>hide</strong></a>(self)</dt><dd><tt>Hide&nbsp;the&nbsp;window.&nbsp;Equivalent&nbsp;to&nbsp;win.<a href="#Window-show">show</a>(False)</tt></dd></dl>
+
+<dl><dt><a name="Window-move"><strong>move</strong></a>(self, left, top, width, height)</dt><dd><tt>Moves&nbsp;the&nbsp;window&nbsp;to&nbsp;the&nbsp;desired&nbsp;rect&nbsp;(left,&nbsp;top,&nbsp;width,&nbsp;height)</tt></dd></dl>
+
+<dl><dt><a name="Window-set_pos"><strong>set_pos</strong></a>(self, pos)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;pos</tt></dd></dl>
+
+<dl><dt><a name="Window-set_redraw"><strong>set_redraw</strong></a>(self, redraw)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;redraw</tt></dd></dl>
+
+<dl><dt><a name="Window-set_size"><strong>set_size</strong></a>(self, size)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;size</tt></dd></dl>
+
+<dl><dt><a name="Window-set_text"><strong>set_text</strong></a>(self, txt)</dt><dd><tt>setter&nbsp;for&nbsp;property&nbsp;text</tt></dd></dl>
+
+<dl><dt><a name="Window-show"><strong>show</strong></a>(self, val<font color="#909090">=True</font>)</dt><dd><tt>Show&nbsp;or&nbsp;hide&nbsp;the&nbsp;window,&nbsp;depending&nbsp;of&nbsp;the<br>
+boolean&nbsp;value&nbsp;of&nbsp;val.</tt></dd></dl>
+
+<dl><dt><a name="Window-update"><strong>update</strong></a>(self)</dt><dd><tt>Forces&nbsp;the&nbsp;window&nbsp;to&nbsp;be&nbsp;repainted</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>client_rect</strong></dt>
+<dd><tt>The&nbsp;window&nbsp;client&nbsp;rect,&nbsp;i.e.&nbsp;the&nbsp;inner&nbsp;rect&nbsp;of&nbsp;the&nbsp;window</tt></dd>
+</dl>
+<dl><dt><strong>parent</strong></dt>
+<dd><tt>The&nbsp;parent&nbsp;window&nbsp;instance&nbsp;or&nbsp;None&nbsp;for&nbsp;a&nbsp;top&nbsp;window</tt></dd>
+</dl>
+<dl><dt><strong>pos</strong></dt>
+<dd><tt>The&nbsp;relative&nbsp;window&nbsp;position&nbsp;in&nbsp;its&nbsp;parent&nbsp;container&nbsp;as&nbsp;a&nbsp;tuple&nbsp;(left,&nbsp;top)</tt></dd>
+</dl>
+<dl><dt><strong>redraw</strong></dt>
+<dd><tt>The&nbsp;redraw&nbsp;state&nbsp;as&nbsp;a&nbsp;bool.&nbsp;When&nbsp;setting&nbsp;it&nbsp;to<br>
+False,&nbsp;the&nbsp;window&nbsp;will&nbsp;not&nbsp;be&nbsp;repainted,&nbsp;until&nbsp;it<br>
+is&nbsp;set&nbsp;to&nbsp;True&nbsp;again</tt></dd>
+</dl>
+<dl><dt><strong>size</strong></dt>
+<dd><tt>The&nbsp;size&nbsp;of&nbsp;the&nbsp;window&nbsp;as&nbsp;a&nbsp;tuple&nbsp;(width,&nbsp;height)</tt></dd>
+</dl>
+<dl><dt><strong>text</strong></dt>
+<dd><tt>The&nbsp;text&nbsp;displayed&nbsp;by&nbsp;the&nbsp;control&nbsp;as&nbsp;a&nbsp;string</tt></dd>
+</dl>
+<dl><dt><strong>window_rect</strong></dt>
+<dd><tt>The&nbsp;window&nbsp;rect&nbsp;in&nbsp;its&nbsp;parent&nbsp;container</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>doc_client_rect</strong> = 'The window client rect, i.e. the inner rect of the window'</dl>
+
+<dl><dt><strong>doc_parent</strong> = 'The parent window instance or None for a top window'</dl>
+
+<dl><dt><strong>doc_pos</strong> = 'The relative window position in its parent container as a tuple (left, top)'</dl>
+
+<dl><dt><strong>doc_redraw</strong> = '    The redraw state as a bool. When setting it ...t be repainted, until it<font color="#c040c0">\n</font>    is set to True again'</dl>
+
+<dl><dt><strong>doc_size</strong> = 'The size of the window as a tuple (width, height)'</dl>
+
+<dl><dt><strong>doc_text</strong> = 'The text displayed by the control as a string'</dl>
+
+<dl><dt><strong>doc_window_rect</strong> = 'The window rect in its parent container'</dl>
+
+<hr>
+Methods inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><a name="Window-set"><strong>set</strong></a>(self, **kw)</dt><dd><tt><a href="#Window-set">set</a>(self,&nbsp;prop1=value1,&nbsp;prop2=value2,&nbsp;...)&nbsp;--&gt;&nbsp;sets&nbsp;the&nbsp;property&nbsp;prop1&nbsp;to&nbsp;value1,&nbsp;prop2&nbsp;to&nbsp;value2,&nbsp;...</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="ppygui.core.html#GuiObject">GuiObject</a>:<br>
+<dl><dt><strong>__metaclass__</strong> = &lt;class 'ppygui.core.GuiType'&gt;<dd><tt>The&nbsp;metaclass&nbsp;of&nbsp;<a href="#GuiObject">GuiObject</a>,&nbsp;useful&nbsp;for&nbsp;automatic&nbsp;property&nbsp;generation</tt></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-FormatError"><strong>FormatError</strong></a>(...)</dt><dd><tt><a href="#-FormatError">FormatError</a>([integer])&nbsp;-&gt;&nbsp;string<br>
+&nbsp;<br>
+Convert&nbsp;a&nbsp;win32&nbsp;error&nbsp;code&nbsp;into&nbsp;a&nbsp;string.&nbsp;If&nbsp;the&nbsp;error&nbsp;code&nbsp;is&nbsp;not<br>
+given,&nbsp;the&nbsp;return&nbsp;value&nbsp;of&nbsp;a&nbsp;call&nbsp;to&nbsp;GetLastError()&nbsp;is&nbsp;used.</tt></dd></dl>
+ <dl><dt><a name="-GetMessageLoop"><strong>GetMessageLoop</strong></a>()</dt></dl>
+ <dl><dt><a name="-addressof"><strong>addressof</strong></a>(...)</dt><dd><tt><a href="#-addressof">addressof</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;integer<br>
+Return&nbsp;the&nbsp;address&nbsp;of&nbsp;the&nbsp;C&nbsp;instance&nbsp;internal&nbsp;buffer</tt></dd></dl>
+ <dl><dt><a name="-alignment"><strong>alignment</strong></a>(...)</dt><dd><tt><a href="#-alignment">alignment</a>(C&nbsp;<a href="__builtin__.html#type">type</a>)&nbsp;-&gt;&nbsp;integer<br>
+<a href="#-alignment">alignment</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;integer<br>
+Return&nbsp;the&nbsp;alignment&nbsp;requirements&nbsp;of&nbsp;a&nbsp;C&nbsp;instance</tt></dd></dl>
+ <dl><dt><a name="-byref"><strong>byref</strong></a>(...)</dt><dd><tt><a href="#-byref">byref</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;byref-<a href="__builtin__.html#object">object</a><br>
+Return&nbsp;a&nbsp;pointer&nbsp;lookalike&nbsp;to&nbsp;a&nbsp;C&nbsp;instance,&nbsp;only&nbsp;usable<br>
+as&nbsp;function&nbsp;argument</tt></dd></dl>
+ <dl><dt><a name="-globalWndProc"><strong>globalWndProc</strong></a>(hWnd, nMsg, wParam, lParam)</dt><dd><tt>Used&nbsp;internally&nbsp;by&nbsp;PPyGui.&nbsp;Not&nbsp;documented&nbsp;yet</tt></dd></dl>
+ <dl><dt><a name="-resize"><strong>resize</strong></a>(...)</dt><dd><tt>Resize&nbsp;the&nbsp;memory&nbsp;buffer&nbsp;of&nbsp;a&nbsp;ctypes&nbsp;instance</tt></dd></dl>
+ <dl><dt><a name="-schedule"><strong>schedule</strong></a>(func, args<font color="#909090">=[]</font>, kw<font color="#909090">={}</font>)</dt><dd><tt>Schedule&nbsp;the&nbsp;fuction&nbsp;func<br>
+to&nbsp;be&nbsp;called&nbsp;as&nbsp;function(*args,&nbsp;**kw)<br>
+in&nbsp;the&nbsp;main&nbsp;thread.<br>
+Gui&nbsp;objects&nbsp;are&nbsp;not&nbsp;generally&nbsp;thread<br>
+safe,&nbsp;so&nbsp;a&nbsp;thread&nbsp;should&nbsp;use&nbsp;schedule&nbsp;instead<br>
+of&nbsp;modifying&nbsp;directly&nbsp;the&nbsp;gui</tt></dd></dl>
+ <dl><dt><a name="-set_conversion_mode"><strong>set_conversion_mode</strong></a>(...)</dt><dd><tt><a href="#-set_conversion_mode">set_conversion_mode</a>(encoding,&nbsp;errors)&nbsp;-&gt;&nbsp;(previous-encoding,&nbsp;previous-errors)<br>
+&nbsp;<br>
+Set&nbsp;the&nbsp;encoding&nbsp;and&nbsp;error&nbsp;handling&nbsp;ctypes&nbsp;uses&nbsp;when&nbsp;converting<br>
+between&nbsp;unicode&nbsp;and&nbsp;strings.&nbsp;&nbsp;Returns&nbsp;the&nbsp;previous&nbsp;values.</tt></dd></dl>
+ <dl><dt><a name="-sizeof"><strong>sizeof</strong></a>(...)</dt><dd><tt><a href="#-sizeof">sizeof</a>(C&nbsp;<a href="__builtin__.html#type">type</a>)&nbsp;-&gt;&nbsp;integer<br>
+<a href="#-sizeof">sizeof</a>(C&nbsp;instance)&nbsp;-&gt;&nbsp;integer<br>
+Return&nbsp;the&nbsp;size&nbsp;in&nbsp;bytes&nbsp;of&nbsp;a&nbsp;C&nbsp;instance</tt></dd></dl>
+</td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>AppendMenu</strong> = &lt;_FuncPtr object at 0x005623F0&gt;<br>
+<strong>BDR_INNER</strong> = 12<br>
+<strong>BDR_OUTER</strong> = 3<br>
+<strong>BDR_RAISED</strong> = 5<br>
+<strong>BDR_RAISEDINNER</strong> = 4<br>
+<strong>BDR_RAISEDOUTER</strong> = 1<br>
+<strong>BDR_SUNKEN</strong> = 10<br>
+<strong>BDR_SUNKENINNER</strong> = 8<br>
+<strong>BDR_SUNKENOUTER</strong> = 2<br>
+<strong>BF_BOTTOM</strong> = 8<br>
+<strong>BF_LEFT</strong> = 1<br>
+<strong>BF_RIGHT</strong> = 4<br>
+<strong>BF_TOP</strong> = 2<br>
+<strong>BN_CLICKED</strong> = 0<br>
+<strong>BS_DEFPUSHBUTTON</strong> = 1L<br>
+<strong>BS_GROUPBOX</strong> = 7<br>
+<strong>BTNS_SHOWTEXT</strong> = 64<br>
+<strong>BeginDeferWindowPos</strong> = &lt;_FuncPtr object at 0x00562F30&gt;<br>
+<strong>BeginPaint</strong> = &lt;_FuncPtr object at 0x00562A80&gt;<br>
+<strong>BitBlt</strong> = &lt;_FuncPtr object at 0x00569B70&gt;<br>
+<strong>ButtonDefaultFont</strong> = &lt;ppygui.font.Font object at 0x00575BD0&gt;<br>
+<strong>CF_TEXT</strong> = 1<br>
+<strong>COLOR_3DDKSHADOW</strong> = 21<br>
+<strong>COLOR_3DFACE</strong> = 15<br>
+<strong>COLOR_3DHIGHLIGHT</strong> = 20<br>
+<strong>COLOR_3DHILIGHT</strong> = 20<br>
+<strong>COLOR_3DLIGHT</strong> = 22<br>
+<strong>COLOR_3DSHADOW</strong> = 16<br>
+<strong>COLOR_ACTIVEBORDER</strong> = 10<br>
+<strong>COLOR_ACTIVECAPTION</strong> = 2<br>
+<strong>COLOR_APPWORKSPACE</strong> = 12<br>
+<strong>COLOR_BACKGROUND</strong> = 1<br>
+<strong>COLOR_BTNFACE</strong> = 15<br>
+<strong>COLOR_BTNHIGHLIGHT</strong> = 20<br>
+<strong>COLOR_BTNHILIGHT</strong> = 20<br>
+<strong>COLOR_BTNSHADOW</strong> = 16<br>
+<strong>COLOR_BTNTEXT</strong> = 18<br>
+<strong>COLOR_CAPTIONTEXT</strong> = 9<br>
+<strong>COLOR_DESKTOP</strong> = 1<br>
+<strong>COLOR_GRAYTEXT</strong> = 17<br>
+<strong>COLOR_HIGHLIGHT</strong> = 13<br>
+<strong>COLOR_HIGHLIGHTTEXT</strong> = 14<br>
+<strong>COLOR_INACTIVEBORDER</strong> = 11<br>
+<strong>COLOR_INACTIVECAPTION</strong> = 3<br>
+<strong>COLOR_INACTIVECAPTIONTEXT</strong> = 19<br>
+<strong>COLOR_INFOBK</strong> = 24<br>
+<strong>COLOR_INFOTEXT</strong> = 23<br>
+<strong>COLOR_MENU</strong> = 4<br>
+<strong>COLOR_MENUTEXT</strong> = 7<br>
+<strong>COLOR_SCROLLBAR</strong> = 0<br>
+<strong>COLOR_WINDOW</strong> = 5<br>
+<strong>COLOR_WINDOWFRAME</strong> = 6<br>
+<strong>COLOR_WINDOWTEXT</strong> = 8<br>
+<strong>COMBOXBOX</strong> = 133<br>
+<strong>CP_ACP</strong> = 0<br>
+<strong>CS_HREDRAW</strong> = 2<br>
+<strong>CS_VREDRAW</strong> = 1<br>
+<strong>CTLCOLOR_BTN</strong> = 3<br>
+<strong>CTLCOLOR_DLG</strong> = 4<br>
+<strong>CTLCOLOR_EDIT</strong> = 1<br>
+<strong>CTLCOLOR_LISTBOX</strong> = 2<br>
+<strong>CTLCOLOR_MAX</strong> = 7<br>
+<strong>CTLCOLOR_MSGBOX</strong> = 0<br>
+<strong>CTLCOLOR_SCROLLBAR</strong> = 5<br>
+<strong>CTLCOLOR_STATIC</strong> = 6<br>
+<strong>CW_USEDEFAULT</strong> = 2147483648L<br>
+<strong>CallNextHookEx</strong> = &lt;_FuncPtr object at 0x005666C0&gt;<br>
+<strong>CallWindowProc</strong> = &lt;_FuncPtr object at 0x005298A0&gt;<br>
+<strong>CheckMenuItem</strong> = &lt;_FuncPtr object at 0x005624E0&gt;<br>
+<strong>ChildWindowFromPoint</strong> = &lt;_FuncPtr object at 0x005663F0&gt;<br>
+<strong>ClientToScreen</strong> = &lt;_FuncPtr object at 0x00562D50&gt;<br>
+<strong>CloseClipboard</strong> = &lt;_FuncPtr object at 0x00566BE8&gt;<br>
+<strong>CommandBar_Create</strong> = &lt;_FuncPtr object at 0x0056C468&gt;<br>
+<strong>CreateAcceleratorTable</strong> = &lt;_FuncPtr object at 0x00566120&gt;<br>
+<strong>CreateBitmap</strong> = &lt;_FuncPtr object at 0x00569DC8&gt;<br>
+<strong>CreateCompatibleBitmap</strong> = &lt;_FuncPtr object at 0x00569990&gt;<br>
+<strong>CreateCompatibleDC</strong> = &lt;_FuncPtr object at 0x00569918&gt;<br>
+<strong>CreateDIBSection</strong> = &lt;_FuncPtr object at 0x0056C120&gt;<br>
+<strong>CreateDialogIndirectParam</strong> = &lt;_FuncPtr object at 0x00569030&gt;<br>
+<strong>CreateEvent</strong> = &lt;_FuncPtr object at 0x00569468&gt;<br>
+<strong>CreateFontIndirect</strong> = &lt;_FuncPtr object at 0x0056C210&gt;<br>
+<strong>CreateMenu</strong> = &lt;_FuncPtr object at 0x00562288&gt;<br>
+<strong>CreatePatternBrush</strong> = &lt;_FuncPtr object at 0x00569CD8&gt;<br>
+<strong>CreatePen</strong> = &lt;_FuncPtr object at 0x0056C030&gt;<br>
+<strong>CreatePopupMenu</strong> = &lt;_FuncPtr object at 0x00562300&gt;<br>
+<strong>CreateSolidBrush</strong> = &lt;_FuncPtr object at 0x00569D50&gt;<br>
+<strong>CreateWindowEx</strong> = &lt;_FuncPtr object at 0x00529D50&gt;<br>
+<strong>DCX_CACHE</strong> = 2<br>
+<strong>DCX_CLIPCHILDREN</strong> = 8<br>
+<strong>DCX_CLIPSIBLINGS</strong> = 16<br>
+<strong>DCX_EXCLUDERGN</strong> = 64<br>
+<strong>DCX_INTERSECTRGN</strong> = 128<br>
+<strong>DCX_LOCKWINDOWUPDATE</strong> = 1024<br>
+<strong>DCX_NORESETATTRS</strong> = 4<br>
+<strong>DCX_PARENTCLIP</strong> = 32<br>
+<strong>DCX_VALIDATE</strong> = 2097152<br>
+<strong>DCX_WINDOW</strong> = 1<br>
+<strong>DEFAULT_MODE</strong> = 0<br>
+<strong>DS_MODALFRAME</strong> = 128<br>
+<strong>DS_SETFONT</strong> = 64<br>
+<strong>DT_HIDEPREFIX</strong> = 1048576<br>
+<strong>DT_NOPREFIX</strong> = 2048<br>
+<strong>DefWindowProc</strong> = &lt;_FuncPtr object at 0x00529828&gt;<br>
+<strong>DefaultFont</strong> = &lt;ppygui.font.Font object at 0x00575B70&gt;<br>
+<strong>DeferWindowPos</strong> = &lt;_FuncPtr object at 0x00566030&gt;<br>
+<strong>DeleteDC</strong> = &lt;_FuncPtr object at 0x0056C198&gt;<br>
+<strong>DeleteObject</strong> = &lt;_FuncPtr object at 0x00569AF8&gt;<br>
+<strong>DestroyAcceleratorTable</strong> = &lt;_FuncPtr object at 0x00566198&gt;<br>
+<strong>DestroyIcon</strong> = &lt;_FuncPtr object at 0x00529AF8&gt;<br>
+<strong>DestroyMenu</strong> = &lt;_FuncPtr object at 0x00562378&gt;<br>
+<strong>DestroyWindow</strong> = &lt;_FuncPtr object at 0x00562210&gt;<br>
+<strong>DialogBoxIndirectParam</strong> = &lt;_FuncPtr object at 0x005690A8&gt;<br>
+<strong>DispatchMessage</strong> = &lt;_FuncPtr object at 0x005620A8&gt;<br>
+<strong>DrawEdge</strong> = &lt;_FuncPtr object at 0x005698A0&gt;<br>
+<strong>DrawFocusRect</strong> = &lt;_FuncPtr object at 0x00569F30&gt;<br>
+<strong>DrawMenuBar</strong> = &lt;_FuncPtr object at 0x0056C3F0&gt;<br>
+<strong>DrawText</strong> = &lt;_FuncPtr object at 0x0056C0A8&gt;<br>
+<strong>EDGE_BUMP</strong> = 9<br>
+<strong>EDGE_ETCHED</strong> = 6<br>
+<strong>EDGE_RAISED</strong> = 5<br>
+<strong>EDGE_SUNKEN</strong> = 10<br>
+<strong>EDITTEXT</strong> = 129<br>
+<strong>EN_CHANGE</strong> = 768<br>
+<strong>ES_AUTOHSCROLL</strong> = 128L<br>
+<strong>ES_AUTOVSCROLL</strong> = 64L<br>
+<strong>ES_MULTILINE</strong> = 4<br>
+<strong>ES_READONLY</strong> = 2048<br>
+<strong>EVENT_ALL_ACCESS</strong> = 2031619L<br>
+<strong>Ellipse</strong> = &lt;_FuncPtr object at 0x005695D0&gt;<br>
+<strong>EmptyClipboard</strong> = &lt;_FuncPtr object at 0x00566A08&gt;<br>
+<strong>EnableMenuItem</strong> = &lt;_FuncPtr object at 0x00562468&gt;<br>
+<strong>EnableWindow</strong> = &lt;_FuncPtr object at 0x00529EB8&gt;<br>
+<strong>EndDeferWindowPos</strong> = &lt;_FuncPtr object at 0x005660A8&gt;<br>
+<strong>EndDialog</strong> = &lt;_FuncPtr object at 0x00566E40&gt;<br>
+<strong>EndPaint</strong> = &lt;_FuncPtr object at 0x00562AF8&gt;<br>
+<strong>EnumClipboardFormats</strong> = &lt;_FuncPtr object at 0x00566C60&gt;<br>
+<strong>FALSE</strong> = 0<br>
+<strong>FALT</strong> = 16<br>
+<strong>FCONTROL</strong> = 8<br>
+<strong>FNOINVERT</strong> = 2<br>
+<strong>FSHIFT</strong> = 4<br>
+<strong>FVIRTKEY</strong> = 1<br>
+<strong>FillRect</strong> = &lt;_FuncPtr object at 0x0056C300&gt;<br>
+<strong>FindResource</strong> = &lt;_FuncPtr object at 0x00566288&gt;<br>
+<strong>FindWindow</strong> = &lt;_FuncPtr object at 0x00566300&gt;<br>
+<strong>GCL_STYLE</strong> = -26<br>
+<strong>GMEM_DDESHARE</strong> = 8192<br>
+<strong>GMEM_DISCARDABLE</strong> = 256<br>
+<strong>GMEM_FIXED</strong> = 0<br>
+<strong>GMEM_INVALID_HANDLE</strong> = 32768<br>
+<strong>GMEM_LOWER</strong> = 4096<br>
+<strong>GMEM_MODIFY</strong> = 128<br>
+<strong>GMEM_MOVEABLE</strong> = 2<br>
+<strong>GMEM_NOCOMPACT</strong> = 16<br>
+<strong>GMEM_NODISCARD</strong> = 32<br>
+<strong>GMEM_NOTIFY</strong> = 16384<br>
+<strong>GMEM_NOT_BANKED</strong> = 4096<br>
+<strong>GMEM_SHARE</strong> = 8192<br>
+<strong>GMEM_VALID_FLAGS</strong> = 32626<br>
+<strong>GMEM_ZEROINIT</strong> = 64<br>
+<strong>GN_CONTEXTMENU</strong> = 1000<br>
+<strong>GWL_WNDPROC</strong> = -4<br>
+<strong>GetActiveWindow</strong> = &lt;_FuncPtr object at 0x00562E40&gt;<br>
+<strong>GetCapture</strong> = &lt;_FuncPtr object at 0x00562BE8&gt;<br>
+<strong>GetClassInfo</strong> = &lt;_FuncPtr object at 0x00569378&gt;<br>
+<strong>GetClassLong</strong> = &lt;_FuncPtr object at 0x00562918&gt;<br>
+<strong>GetClassName</strong> = &lt;_FuncPtr object at 0x00566DC8&gt;<br>
+<strong>GetClientRect</strong> = &lt;_FuncPtr object at 0x00562648&gt;<br>
+<strong>GetClipboardData</strong> = &lt;_FuncPtr object at 0x00566AF8&gt;<br>
+<strong>GetCursorPos</strong> = &lt;_FuncPtr object at 0x00569288&gt;<br>
+<strong>GetDC</strong> = &lt;_FuncPtr object at 0x00529990&gt;<br>
+<strong>GetDCEx</strong> = &lt;_FuncPtr object at 0x00529918&gt;<br>
+<strong>GetDesktopWindow</strong> = &lt;_FuncPtr object at 0x00566EB8&gt;<br>
+<strong>GetDlgItem</strong> = &lt;_FuncPtr object at 0x00566D50&gt;<br>
+<strong>GetFocus</strong> = &lt;_FuncPtr object at 0x005668A0&gt;<br>
+<strong>GetForegroundWindow</strong> = &lt;_FuncPtr object at 0x00566378&gt;<br>
+<strong>GetLastError</strong> = &lt;_FuncPtr object at 0x00529378&gt;<br>
+<strong>GetMenuItemInfo</strong> = &lt;_FuncPtr object at 0x005664E0&gt;<br>
+<strong>GetMessage</strong> = &lt;_FuncPtr object at 0x00529F30&gt;<br>
+<strong>GetMessagePos</strong> = &lt;_FuncPtr object at 0x00562EB8&gt;<br>
+<strong>GetModuleHandle</strong> = &lt;_FuncPtr object at 0x00529738&gt;<br>
+<strong>GetObject</strong> = &lt;_FuncPtr object at 0x00569A80&gt;<br>
+<strong>GetParent</strong> = &lt;_FuncPtr object at 0x00562738&gt;<br>
+<strong>GetStockObject</strong> = &lt;_FuncPtr object at 0x005696C0&gt;<br>
+<strong>GetSubMenu</strong> = &lt;_FuncPtr object at 0x00566558&gt;<br>
+<strong>GetSysColorBrush</strong> = &lt;_FuncPtr object at 0x00569C60&gt;<br>
+<strong>GetTextExtentExPointW</strong> = &lt;_FuncPtr object at 0x0056C7B0&gt;<br>
+<strong>GetVersion</strong> = &lt;_FuncPtr object at 0x00529648&gt;<br>
+<strong>GetWindowLong</strong> = &lt;_FuncPtr object at 0x005627B0&gt;<br>
+<strong>GetWindowRect</strong> = &lt;_FuncPtr object at 0x00562120&gt;<br>
+<strong>GlobalAlloc</strong> = &lt;_FuncPtr object at 0x005694E0&gt;<br>
+<strong>GlobalFree</strong> = &lt;_FuncPtr object at 0x00569558&gt;<br>
+<strong>HIRES</strong> = True<br>
+<strong>HWND_BOTTOM</strong> = 1<br>
+<strong>HWND_TOP</strong> = 0<br>
+<strong>HWND_TOPMOST</strong> = -1<br>
+<strong>IDABORT</strong> = 3<br>
+<strong>IDCANCEL</strong> = 2<br>
+<strong>IDCLOSE</strong> = 8<br>
+<strong>IDC_ARROW</strong> = 32512<br>
+<strong>IDC_SIZE</strong> = 32640<br>
+<strong>IDC_SIZEALL</strong> = 32646<br>
+<strong>IDC_SIZENESW</strong> = 32643<br>
+<strong>IDC_SIZENS</strong> = 32645<br>
+<strong>IDC_SIZENWSE</strong> = 32642<br>
+<strong>IDC_SIZEWE</strong> = 32644<br>
+<strong>IDHELP</strong> = 9<br>
+<strong>IDIGNORE</strong> = 5<br>
+<strong>IDI_APPLICATION</strong> = 32512<br>
+<strong>IDNO</strong> = 7<br>
+<strong>IDOK</strong> = 1<br>
+<strong>IDRETRY</strong> = 4<br>
+<strong>IDYES</strong> = 6<br>
+<strong>ILC_COLOR</strong> = 0<br>
+<strong>ILC_COLOR16</strong> = 16<br>
+<strong>ILC_COLOR24</strong> = 24<br>
+<strong>ILC_COLOR32</strong> = 32<br>
+<strong>ILC_COLOR4</strong> = 4<br>
+<strong>ILC_COLOR8</strong> = 8<br>
+<strong>ILC_COLORDDB</strong> = 254<br>
+<strong>ILC_MASK</strong> = 1<br>
+<strong>ILC_PALETTE</strong> = 2048<br>
+<strong>IMAGE_BITMAP</strong> = 0<br>
+<strong>IMAGE_ICON</strong> = 1<br>
+<strong>I_IMAGENONE</strong> = -2<br>
+<strong>InvalidateRect</strong> = &lt;_FuncPtr object at 0x00562A08&gt;<br>
+<strong>InvertRect</strong> = &lt;_FuncPtr object at 0x00569EB8&gt;<br>
+<strong>IsClipboardFormatAvailable</strong> = &lt;_FuncPtr object at 0x00566CD8&gt;<br>
+<strong>IsDialogMessage</strong> = &lt;_FuncPtr object at 0x00562DC8&gt;<br>
+<strong>IsWindowVisible</strong> = &lt;_FuncPtr object at 0x00569210&gt;<br>
+<strong>KillTimer</strong> = &lt;_FuncPtr object at 0x00569198&gt;<br>
+<strong>LISTBOX</strong> = 131<br>
+<strong>LOCALE_SYSTEM_DEFAULT</strong> = 2048<br>
+<strong>LR_LOADFROMFILE</strong> = 16<br>
+<strong>LR_LOADMAP3DCOLORS</strong> = 4096<br>
+<strong>LR_LOADTRANSPARENT</strong> = 32<br>
+<strong>LR_VGACOLOR</strong> = 128<br>
+<strong>LTEXT</strong> = 130<br>
+<strong>LVSIL_NORMAL</strong> = 0<br>
+<strong>LVSIL_SMALL</strong> = 1<br>
+<strong>LVSIL_STATE</strong> = 2<br>
+<strong>LineTo</strong> = &lt;_FuncPtr object at 0x00569738&gt;<br>
+<strong>LoadCursor</strong> = &lt;_FuncPtr object at 0x00529B70&gt;<br>
+<strong>LoadIcon</strong> = &lt;_FuncPtr object at 0x00529A80&gt;<br>
+<strong>LoadImage</strong> = &lt;_FuncPtr object at 0x00529BE8&gt;<br>
+<strong>LoadLibrary</strong> = &lt;_FuncPtr object at 0x00566210&gt;<br>
+<strong>MAX_PATH</strong> = 260<br>
+<strong>MB_ABORTRETRYIGNORE</strong> = 2<br>
+<strong>MB_ICONASTERISK</strong> = 64<br>
+<strong>MB_ICONERROR</strong> = 16<br>
+<strong>MB_ICONEXCLAMATION</strong> = 48<br>
+<strong>MB_ICONHAND</strong> = 16<br>
+<strong>MB_ICONINFORMATION</strong> = 64<br>
+<strong>MB_ICONMASK</strong> = 240<br>
+<strong>MB_ICONQUESTION</strong> = 32<br>
+<strong>MB_ICONSTOP</strong> = 16<br>
+<strong>MB_ICONWARNING</strong> = 48<br>
+<strong>MB_OK</strong> = 0<br>
+<strong>MB_OKCANCEL</strong> = 1<br>
+<strong>MB_RETRYCANCEL</strong> = 5<br>
+<strong>MB_YESNO</strong> = 4<br>
+<strong>MB_YESNOCANCEL</strong> = 3<br>
+<strong>MFS_CHECKED</strong> = 8<br>
+<strong>MFS_DEFAULT</strong> = 4096<br>
+<strong>MFS_DISABLED</strong> = 3L<br>
+<strong>MFS_ENABLED</strong> = 0<br>
+<strong>MFS_GRAYED</strong> = 3L<br>
+<strong>MFS_HILITE</strong> = 128<br>
+<strong>MFS_UNCHECKED</strong> = 0<br>
+<strong>MFS_UNHILITE</strong> = 0<br>
+<strong>MFT_BITMAP</strong> = 4<br>
+<strong>MFT_MENUBARBREAK</strong> = 32<br>
+<strong>MFT_MENUBREAK</strong> = 64<br>
+<strong>MFT_OWNERDRAW</strong> = 256<br>
+<strong>MFT_RADIOCHECK</strong> = 512<br>
+<strong>MFT_RIGHTJUSTIFY</strong> = 16384<br>
+<strong>MFT_RIGHTORDER</strong> = 8192L<br>
+<strong>MFT_SEPARATOR</strong> = 2048<br>
+<strong>MFT_STRING</strong> = 0<br>
+<strong>MF_APPEND</strong> = 256<br>
+<strong>MF_BITMAP</strong> = 4<br>
+<strong>MF_BYCOMMAND</strong> = 0<br>
+<strong>MF_BYPOSITION</strong> = 1024<br>
+<strong>MF_CHANGE</strong> = 128<br>
+<strong>MF_CHECKED</strong> = 8<br>
+<strong>MF_DEFAULT</strong> = 4096<br>
+<strong>MF_DELETE</strong> = 512<br>
+<strong>MF_DISABLED</strong> = 2<br>
+<strong>MF_ENABLED</strong> = 0<br>
+<strong>MF_END</strong> = 128<br>
+<strong>MF_GRAYED</strong> = 1<br>
+<strong>MF_HELP</strong> = 16384<br>
+<strong>MF_HILITE</strong> = 128<br>
+<strong>MF_INSERT</strong> = 0<br>
+<strong>MF_MENUBARBREAK</strong> = 32<br>
+<strong>MF_MENUBREAK</strong> = 64<br>
+<strong>MF_MOUSESELECT</strong> = 32768<br>
+<strong>MF_OWNERDRAW</strong> = 256<br>
+<strong>MF_POPUP</strong> = 16<br>
+<strong>MF_REMOVE</strong> = 4096<br>
+<strong>MF_RIGHTJUSTIFY</strong> = 16384<br>
+<strong>MF_SEPARATOR</strong> = 2048<br>
+<strong>MF_STRING</strong> = 0<br>
+<strong>MF_SYSMENU</strong> = 8192<br>
+<strong>MF_UNCHECKED</strong> = 0<br>
+<strong>MF_UNHILITE</strong> = 0<br>
+<strong>MF_USECHECKBITMAPS</strong> = 512<br>
+<strong>MIIM_BITMAP</strong> = 128<br>
+<strong>MIIM_CHECKMARKS</strong> = 8<br>
+<strong>MIIM_DATA</strong> = 32<br>
+<strong>MIIM_FTYPE</strong> = 256<br>
+<strong>MIIM_ID</strong> = 2<br>
+<strong>MIIM_STATE</strong> = 1<br>
+<strong>MIIM_STRING</strong> = 64<br>
+<strong>MIIM_SUBMENU</strong> = 4<br>
+<strong>MIIM_TYPE</strong> = 16<br>
+<strong>MK_CONTROL</strong> = 8<br>
+<strong>MK_LBUTTON</strong> = 1<br>
+<strong>MK_MBUTTON</strong> = 16<br>
+<strong>MK_RBUTTON</strong> = 2<br>
+<strong>MK_SHIFT</strong> = 4<br>
+<strong>MSGS</strong> = [('WM_NULL', 0), ('WM_CREATE', 1), ('WM_CANCELMODE', 31), ('WM_CAPTURECHANGED', 533), ('WM_CLOSE', 16), ('WM_COMMAND', 273), ('WM_DESTROY', 2), ('WM_ERASEBKGND', 20), ('WM_ENABLE', 10), ('WM_GETFONT', 49), ('WM_INITDIALOG', 272), ('WM_INITMENUPOPUP', 279), ('WM_KEYDOWN', 256), ('WM_KEYFIRST', 256), ('WM_KEYLAST', 264), ('WM_KEYUP', 257), ('WM_LBUTTONDBLCLK', 515), ('WM_LBUTTONDOWN', 513), ('WM_LBUTTONUP', 514), ('WM_MBUTTONDBLCLK', 521), ...]<br>
+<strong>MessageBox</strong> = &lt;_FuncPtr object at 0x005667B0&gt;<br>
+<strong>MoveToEx</strong> = &lt;_FuncPtr object at 0x005697B0&gt;<br>
+<strong>MoveWindow</strong> = &lt;_FuncPtr object at 0x00562198&gt;<br>
+<strong>MultiByteToWideChar</strong> = &lt;_FuncPtr object at 0x00566F30&gt;<br>
+<strong>NULL</strong> = 0<br>
+<strong>OpenClipboard</strong> = &lt;_FuncPtr object at 0x00566990&gt;<br>
+<strong>OpenEvent</strong> = &lt;_FuncPtr object at 0x005693F0&gt;<br>
+<strong>PUSHBUTTON</strong> = 128<br>
+<strong>PatBlt</strong> = &lt;_FuncPtr object at 0x00569E40&gt;<br>
+<strong>Polyline</strong> = &lt;_FuncPtr object at 0x0056C288&gt;<br>
+<strong>PostMessage</strong> = &lt;_FuncPtr object at 0x005625D0&gt;<br>
+<strong>PostQuitMessage</strong> = &lt;_FuncPtr object at 0x005297B0&gt;<br>
+<strong>PtInRect</strong> = &lt;_FuncPtr object at 0x005296C0&gt;<br>
+<strong>RBBIM_BACKGROUND</strong> = 128<br>
+<strong>RBBIM_CHILD</strong> = 16<br>
+<strong>RBBIM_CHILDSIZE</strong> = 32<br>
+<strong>RBBIM_COLORS</strong> = 2<br>
+<strong>RBBIM_ID</strong> = 256<br>
+<strong>RBBIM_IDEALSIZE</strong> = 512<br>
+<strong>RBBIM_IMAGE</strong> = 8<br>
+<strong>RBBIM_SIZE</strong> = 64<br>
+<strong>RBBIM_STYLE</strong> = 1<br>
+<strong>RBBIM_TEXT</strong> = 4<br>
+<strong>RB_GETBANDCOUNT</strong> = 1036<br>
+<strong>RB_INSERTBAND</strong> = 1025<br>
+<strong>RB_INSERTBANDA</strong> = 1025<br>
+<strong>RB_INSERTBANDW</strong> = 1034<br>
+<strong>RB_SETBARINFO</strong> = 1028<br>
+<strong>RTLD_GLOBAL</strong> = 0<br>
+<strong>RTLD_LOCAL</strong> = 0<br>
+<strong>RT_DIALOG</strong> = '5'<br>
+<strong>RegisterClass</strong> = &lt;_FuncPtr object at 0x00529C60&gt;<br>
+<strong>RegisterClipboardFormat</strong> = &lt;_FuncPtr object at 0x00566B70&gt;<br>
+<strong>RegisterWindowMessage</strong> = &lt;_FuncPtr object at 0x005626C0&gt;<br>
+<strong>ReleaseCapture</strong> = &lt;_FuncPtr object at 0x00562C60&gt;<br>
+<strong>ReleaseDC</strong> = &lt;_FuncPtr object at 0x00529A08&gt;<br>
+<strong>SB_BOTH</strong> = 3<br>
+<strong>SB_BOTTOM</strong> = 7<br>
+<strong>SB_CTL</strong> = 2<br>
+<strong>SB_ENDSCROLL</strong> = 8<br>
+<strong>SB_HORZ</strong> = 0<br>
+<strong>SB_LEFT</strong> = 6<br>
+<strong>SB_LINEDOWN</strong> = 1<br>
+<strong>SB_LINELEFT</strong> = 0<br>
+<strong>SB_LINERIGHT</strong> = 1<br>
+<strong>SB_LINEUP</strong> = 0<br>
+<strong>SB_PAGEDOWN</strong> = 3<br>
+<strong>SB_PAGELEFT</strong> = 2<br>
+<strong>SB_PAGERIGHT</strong> = 3<br>
+<strong>SB_PAGEUP</strong> = 2<br>
+<strong>SB_RIGHT</strong> = 7<br>
+<strong>SB_THUMBPOSITION</strong> = 4<br>
+<strong>SB_THUMBTRACK</strong> = 5<br>
+<strong>SB_TOP</strong> = 6<br>
+<strong>SB_VERT</strong> = 1<br>
+<strong>SCROLLBAR</strong> = 132<br>
+<strong>SHCMBF_COLORBK</strong> = 8<br>
+<strong>SHCMBF_EMPTYBAR</strong> = 1<br>
+<strong>SHCMBF_HIDDEN</strong> = 2<br>
+<strong>SHCMBF_HIDESIPBUTTON</strong> = 4<br>
+<strong>SHCMBF_HMENU</strong> = 16<br>
+<strong>SHCreateMenuBar</strong> = &lt;_FuncPtr object at 0x0056C4E0&gt;<br>
+<strong>SHHandleWMActivate</strong> = &lt;_FuncPtr object at 0x0056C6C0&gt;<br>
+<strong>SHHandleWMSettingChange</strong> = &lt;_FuncPtr object at 0x0056C738&gt;<br>
+<strong>SHIDIF_DONEBUTTON</strong> = 1<br>
+<strong>SHIDIF_SIZEDLGFULLSCREEN</strong> = 4<br>
+<strong>SHInitDialog</strong> = &lt;_FuncPtr object at 0x0056C5D0&gt;<br>
+<strong>SHRG_RETURNCMD</strong> = 1<br>
+<strong>SHRecognizeGesture</strong> = &lt;_FuncPtr object at 0x0056C648&gt;<br>
+<strong>SHSipInfo</strong> = &lt;_FuncPtr object at 0x0056C558&gt;<br>
+<strong>SPI_GETSIPINFO</strong> = 225<br>
+<strong>SPI_SETSIPINFO</strong> = 224<br>
+<strong>SRCCOPY</strong> = 13369376<br>
+<strong>STANDARD_RIGHTS_REQUIRED</strong> = 983040L<br>
+<strong>SWP_ASYNCWINDOWPOS</strong> = 16384<br>
+<strong>SWP_DEFERERASE</strong> = 8192<br>
+<strong>SWP_DRAWFRAME</strong> = 32<br>
+<strong>SWP_FRAMECHANGED</strong> = 32<br>
+<strong>SWP_HIDEWINDOW</strong> = 128<br>
+<strong>SWP_NOACTIVATE</strong> = 16<br>
+<strong>SWP_NOCOPYBITS</strong> = 256<br>
+<strong>SWP_NOMOVE</strong> = 2<br>
+<strong>SWP_NOOWNERZORDER</strong> = 512<br>
+<strong>SWP_NOREDRAW</strong> = 8<br>
+<strong>SWP_NOREPOSITION</strong> = 512<br>
+<strong>SWP_NOSENDCHANGING</strong> = 1024<br>
+<strong>SWP_NOSIZE</strong> = 1<br>
+<strong>SWP_NOZORDER</strong> = 4<br>
+<strong>SWP_SHOWWINDOW</strong> = 64<br>
+<strong>SW_HIDE</strong> = 0<br>
+<strong>SW_SHOW</strong> = 5<br>
+<strong>SW_SHOWNORMAL</strong> = 1<br>
+<strong>SYNCHRONIZE</strong> = 1048576L<br>
+<strong>ScreenToClient</strong> = &lt;_FuncPtr object at 0x00562CD8&gt;<br>
+<strong>SelectObject</strong> = &lt;_FuncPtr object at 0x00569A08&gt;<br>
+<strong>SendMessage</strong> = &lt;_FuncPtr object at 0x00562558&gt;<br>
+<strong>SetBkColor</strong> = &lt;_FuncPtr object at 0x00569648&gt;<br>
+<strong>SetCapture</strong> = &lt;_FuncPtr object at 0x00562B70&gt;<br>
+<strong>SetClassLong</strong> = &lt;_FuncPtr object at 0x005628A0&gt;<br>
+<strong>SetClipboardData</strong> = &lt;_FuncPtr object at 0x00566A80&gt;<br>
+<strong>SetCursor</strong> = &lt;_FuncPtr object at 0x00529CD8&gt;<br>
+<strong>SetFocus</strong> = &lt;_FuncPtr object at 0x00566918&gt;<br>
+<strong>SetForegroundWindow</strong> = &lt;_FuncPtr object at 0x00569300&gt;<br>
+<strong>SetMenuItemInfo</strong> = &lt;_FuncPtr object at 0x005665D0&gt;<br>
+<strong>SetTextColor</strong> = &lt;_FuncPtr object at 0x0056C378&gt;<br>
+<strong>SetTimer</strong> = &lt;_FuncPtr object at 0x00569120&gt;<br>
+<strong>SetWindowLong</strong> = &lt;_FuncPtr object at 0x00562828&gt;<br>
+<strong>SetWindowPos</strong> = &lt;_FuncPtr object at 0x00562990&gt;<br>
+<strong>SetWindowText</strong> = &lt;_FuncPtr object at 0x00566828&gt;<br>
+<strong>SetWindowsHookEx</strong> = &lt;_FuncPtr object at 0x00566648&gt;<br>
+<strong>ShowWindow</strong> = &lt;_FuncPtr object at 0x00529DC8&gt;<br>
+<strong>StretchBlt</strong> = &lt;_FuncPtr object at 0x00569BE8&gt;<br>
+<strong>TBIF_TEXT</strong> = 2<br>
+<strong>TBSTATE_ENABLED</strong> = 4<br>
+<strong>TCIF_IMAGE</strong> = 2<br>
+<strong>TCIF_PARAM</strong> = 8<br>
+<strong>TCIF_RTLREADING</strong> = 4<br>
+<strong>TCIF_TEXT</strong> = 1<br>
+<strong>TCS_MULTILINE</strong> = 512<br>
+<strong>TPM_BOTTOMALIGN</strong> = 32<br>
+<strong>TPM_CENTERALIGN</strong> = 4<br>
+<strong>TPM_HORIZONTAL</strong> = 0<br>
+<strong>TPM_LEFTALIGN</strong> = 0<br>
+<strong>TPM_LEFTBUTTON</strong> = 0<br>
+<strong>TPM_NONOTIFY</strong> = 128<br>
+<strong>TPM_RETURNCMD</strong> = 256<br>
+<strong>TPM_RIGHTALIGN</strong> = 8<br>
+<strong>TPM_RIGHTBUTTON</strong> = 2<br>
+<strong>TPM_TOPALIGN</strong> = 0<br>
+<strong>TPM_VCENTERALIGN</strong> = 16<br>
+<strong>TPM_VERTICAL</strong> = 64<br>
+<strong>TRUE</strong> = 1<br>
+<strong>TVSIL_NORMAL</strong> = 0<br>
+<strong>TVSIL_STATE</strong> = 2<br>
+<strong>TrackPopupMenuEx</strong> = &lt;_FuncPtr object at 0x00566468&gt;<br>
+<strong>TranslateMessage</strong> = &lt;_FuncPtr object at 0x00562030&gt;<br>
+<strong>UnhookWindowsHookEx</strong> = &lt;_FuncPtr object at 0x00566738&gt;<br>
+<strong>UpdateWindow</strong> = &lt;_FuncPtr object at 0x00529E40&gt;<br>
+<strong>VK_DELETE</strong> = 46<br>
+<strong>VK_DOWN</strong> = 40<br>
+<strong>VK_LEFT</strong> = 37<br>
+<strong>VK_RIGHT</strong> = 39<br>
+<strong>WA_ACTIVE</strong> = 1<br>
+<strong>WA_CLICKACTIVE</strong> = 2<br>
+<strong>WA_INACTIVE</strong> = 0<br>
+<strong>WHITE_BRUSH</strong> = 0<br>
+<strong>WH_CBT</strong> = 5<br>
+<strong>WH_MSGFILTER</strong> = -1<br>
+<strong>WIN32_IE</strong> = 1360<br>
+<strong>WM_ACTIVATE</strong> = 6<br>
+<strong>WM_APP</strong> = 32768<br>
+<strong>WM_CANCELMODE</strong> = 31<br>
+<strong>WM_CAPTURECHANGED</strong> = 533<br>
+<strong>WM_CHAR</strong> = 258<br>
+<strong>WM_CLOSE</strong> = 16<br>
+<strong>WM_COMMAND</strong> = 273<br>
+<strong>WM_CONTEXTMENU</strong> = 123<br>
+<strong>WM_COPY</strong> = 769<br>
+<strong>WM_COPYDATA</strong> = 74<br>
+<strong>WM_CREATE</strong> = 1<br>
+<strong>WM_CTLCOLORBTN</strong> = 309<br>
+<strong>WM_CTLCOLORDLG</strong> = 310<br>
+<strong>WM_CTLCOLOREDIT</strong> = 307<br>
+<strong>WM_CTLCOLORLISTBOX</strong> = 308<br>
+<strong>WM_CTLCOLORMSGBOX</strong> = 306<br>
+<strong>WM_CTLCOLORSCROLLBAR</strong> = 311<br>
+<strong>WM_CTLCOLORSTATIC</strong> = 312<br>
+<strong>WM_CUT</strong> = 768<br>
+<strong>WM_DESTROY</strong> = 2<br>
+<strong>WM_ENABLE</strong> = 10<br>
+<strong>WM_ERASEBKGND</strong> = 20<br>
+<strong>WM_GETFONT</strong> = 49<br>
+<strong>WM_GETTEXT</strong> = 13<br>
+<strong>WM_GETTEXTLENGTH</strong> = 14<br>
+<strong>WM_HSCROLL</strong> = 276<br>
+<strong>WM_INITDIALOG</strong> = 272<br>
+<strong>WM_INITMENUPOPUP</strong> = 279<br>
+<strong>WM_KEYDOWN</strong> = 256<br>
+<strong>WM_KEYFIRST</strong> = 256<br>
+<strong>WM_KEYLAST</strong> = 264<br>
+<strong>WM_KEYUP</strong> = 257<br>
+<strong>WM_LBUTTONDBLCLK</strong> = 515<br>
+<strong>WM_LBUTTONDOWN</strong> = 513<br>
+<strong>WM_LBUTTONUP</strong> = 514<br>
+<strong>WM_MBUTTONDBLCLK</strong> = 521<br>
+<strong>WM_MBUTTONDOWN</strong> = 519<br>
+<strong>WM_MBUTTONUP</strong> = 520<br>
+<strong>WM_MENUSELECT</strong> = 287<br>
+<strong>WM_MOUSEFIRST</strong> = 512<br>
+<strong>WM_MOUSEHOVER</strong> = 673<br>
+<strong>WM_MOUSELEAVE</strong> = 675<br>
+<strong>WM_MOUSEMOVE</strong> = 512<br>
+<strong>WM_MOVE</strong> = 3<br>
+<strong>WM_NCCREATE</strong> = 129<br>
+<strong>WM_NCDESTROY</strong> = 130<br>
+<strong>WM_NOTIFY</strong> = 78<br>
+<strong>WM_NULL</strong> = 0<br>
+<strong>WM_PAINT</strong> = 15<br>
+<strong>WM_PASTE</strong> = 770<br>
+<strong>WM_RBUTTONDBLCLK</strong> = 518<br>
+<strong>WM_RBUTTONDOWN</strong> = 516<br>
+<strong>WM_RBUTTONUP</strong> = 517<br>
+<strong>WM_SCHEDULE</strong> = 32770<br>
+<strong>WM_SETCURSOR</strong> = 32<br>
+<strong>WM_SETFOCUS</strong> = 7<br>
+<strong>WM_SETFONT</strong> = 48<br>
+<strong>WM_SETREDRAW</strong> = 11<br>
+<strong>WM_SETTEXT</strong> = 12<br>
+<strong>WM_SETTINGCHANGE</strong> = 26<br>
+<strong>WM_SIZE</strong> = 5<br>
+<strong>WM_SYSKEYDOWN</strong> = 260<br>
+<strong>WM_SYSKEYUP</strong> = 261<br>
+<strong>WM_TIMER</strong> = 275<br>
+<strong>WM_USER</strong> = 1024<br>
+<strong>WM_VSCROLL</strong> = 277<br>
+<strong>WM_WINDOWPOSCHANGED</strong> = 71<br>
+<strong>WM_WINDOWPOSCHANGING</strong> = 70<br>
+<strong>WS_BORDER</strong> = 8388608<br>
+<strong>WS_CAPTION</strong> = 12582912<br>
+<strong>WS_CHILD</strong> = 1073741824<br>
+<strong>WS_CHILDWINDOW</strong> = 1073741824<br>
+<strong>WS_CLIPCHILDREN</strong> = 33554432<br>
+<strong>WS_CLIPSIBLINGS</strong> = 67108864<br>
+<strong>WS_DISABLED</strong> = 134217728<br>
+<strong>WS_DLGFRAME</strong> = 4194304<br>
+<strong>WS_EX_APPWINDOW</strong> = 262144<br>
+<strong>WS_EX_CLIENTEDGE</strong> = 512<br>
+<strong>WS_EX_LEFT</strong> = 0<br>
+<strong>WS_EX_LTRREADING</strong> = 0<br>
+<strong>WS_EX_OVERLAPPEDWINDOW</strong> = 768<br>
+<strong>WS_EX_RIGHTSCROLLBAR</strong> = 0<br>
+<strong>WS_EX_STATICEDGE</strong> = 131072<br>
+<strong>WS_EX_TOOLWINDOW</strong> = 128<br>
+<strong>WS_EX_WINDOWEDGE</strong> = 256<br>
+<strong>WS_GROUP</strong> = 131072<br>
+<strong>WS_HSCROLL</strong> = 1048576<br>
+<strong>WS_ICONIC</strong> = 536870912<br>
+<strong>WS_MAXIMIZE</strong> = 16777216<br>
+<strong>WS_MAXIMIZEBOX</strong> = 65536<br>
+<strong>WS_MINIMIZE</strong> = 536870912<br>
+<strong>WS_MINIMIZEBOX</strong> = 131072<br>
+<strong>WS_OVERLAPPED</strong> = 0<br>
+<strong>WS_OVERLAPPEDWINDOW</strong> = 13565952<br>
+<strong>WS_POPUP</strong> = 2147483648L<br>
+<strong>WS_POPUPWINDOW</strong> = 2156396544L<br>
+<strong>WS_SIZEBOX</strong> = 262144<br>
+<strong>WS_SYSMENU</strong> = 524288<br>
+<strong>WS_TABSTOP</strong> = 65536<br>
+<strong>WS_THICKFRAME</strong> = 262144<br>
+<strong>WS_TILED</strong> = 0<br>
+<strong>WS_TILEDWINDOW</strong> = 13565952<br>
+<strong>WS_VISIBLE</strong> = 268435456<br>
+<strong>WS_VSCROLL</strong> = 2097152<br>
+<strong>cGlobalWndProc</strong> = &lt;WinFunctionType object at 0x0056C828&gt;<br>
+<strong>cdll</strong> = &lt;ctypes.LibraryLoader object at 0x00552A70&gt;<br>
+<strong>createHndlMap</strong> = {}<br>
+<strong>hInstance</strong> = -1548321378<br>
+<strong>hwndWindowMap</strong> = &lt;WeakValueDictionary at 5710312&gt;<br>
+<strong>key</strong> = 'WM_CHAR'<br>
+<strong>mainframe_hwnd</strong> = 0<br>
+<strong>memmove</strong> = &lt;CFunctionType object at 0x005293F0&gt;<br>
+<strong>memset</strong> = &lt;CFunctionType object at 0x00529468&gt;<br>
+<strong>oledll</strong> = &lt;ctypes.LibraryLoader object at 0x00552AF0&gt;<br>
+<strong>pydll</strong> = &lt;ctypes.LibraryLoader object at 0x00552A90&gt;<br>
+<strong>pythonapi</strong> = &lt;PyDLL 'python dll', handle 82c8de6c at 552ab0&gt;<br>
+<strong>registeredEventDispatcher</strong> = &lt;ppygui.core.RegisteredEventsDispatcher object at 0x00575C30&gt;<br>
+<strong>schedulees</strong> = {}<br>
+<strong>theMessageLoop</strong> = &lt;ppygui.core.MessageLoop instance at 0x0057E350&gt;<br>
+<strong>val</strong> = 258<br>
+<strong>versionInfo</strong> = &lt;ppygui.w32api.OSVERSIONINFO object at 0x00517F30&gt;<br>
+<strong>windll</strong> = &lt;ctypes.LibraryLoader object at 0x00552AD0&gt;<br>
+<strong>wndClasses</strong> = []</td></tr></table>
+</body></html>
